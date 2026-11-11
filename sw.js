@@ -1,6 +1,6 @@
 // Purple Dream Rustkaarten: zorgt dat de app ook zonder internet werkt.
 // Verhoog het versienummer als er iets aan de app verandert.
-const CACHE = "rustkaarten-v14";
+const CACHE = "rustkaarten-v15";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
