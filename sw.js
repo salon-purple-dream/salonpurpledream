@@ -1,36 +1,791 @@
-// Purple Dream Rustkaarten: zorgt dat de app ook zonder internet werkt.
-// Verhoog het versienummer als er iets aan de app verandert.
-const CACHE = "rustkaarten-v15";
-const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salon Purple Dream | ASMR hoofdmassage, HeadSpa en Yon-Ka in Nieuw-Vennep</title>
+<meta name="description" content="Salon Purple Dream in Nieuw-Vennep en Roelofarendsveen. ASMR hoofdmassage, HeadSpa en gezichtsbehandelingen voor vrouwen die even helemaal niets hoeven.">
+<meta name="author" content="Celina van der Aar, Salon Purple Dream">
+<meta name="copyright" content="© 2026 Salon Purple Dream">
+<link rel="icon" href="img/logo-monogram.png">
+<link rel="canonical" href="https://salonpurpledream.nl/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Salon Purple Dream">
+<meta property="og:title" content="Salon Purple Dream | ASMR hoofdmassage, HeadSpa en Yon-Ka in Nieuw-Vennep">
+<meta property="og:description" content="Salon Purple Dream in Nieuw-Vennep en Roelofarendsveen. ASMR hoofdmassage, HeadSpa en gezichtsbehandelingen voor vrouwen die even helemaal niets hoeven.">
+<meta property="og:url" content="https://salonpurpledream.nl/">
+<meta property="og:image" content="https://salonpurpledream.nl/img/celina-aandacht.jpg">
+<meta property="og:locale" content="nl_NL">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BeautySalon", "@id": "https://salonpurpledream.nl/#nieuw-vennep", "name": "Salon Purple Dream", "url": "https://salonpurpledream.nl/", "image": "https://salonpurpledream.nl/img/celina-aandacht.jpg", "logo": "https://salonpurpledream.nl/img/logo.png", "description": "Salon voor ontspanning voor vrouwen: ASMR hoofdmassage, HeadSpa en gezichtsbehandelingen in Nieuw-Vennep.", "telephone": "+31638248785", "email": "info@salonpurpledream.nl", "vatID": "NL004305985B36", "identifier": {"@type": "PropertyValue", "propertyID": "KvK", "value": "86768964"}, "priceRange": "€55 - €140", "address": {"@type": "PostalAddress", "streetAddress": "Vronen 180", "addressLocality": "Nieuw-Vennep", "addressRegion": "Noord-Holland", "addressCountry": "NL"}, "areaServed": ["Nieuw-Vennep", "Hoofddorp", "Haarlemmermeer"], "founder": {"@type": "Person", "name": "Celina van der Aar"}, "sameAs": ["https://www.instagram.com/salon_purple_dream/", "https://www.linkedin.com/company/salon-purple-dream/", "https://www.facebook.com/share/19iHY3zDQq/", "https://www.tiktok.com/@salonpurpledream", "https://whatsapp.com/channel/0029VaDBzeiCXC3MtQ2nJg1h"]}, {"@type": "BeautySalon", "@id": "https://salonpurpledream.nl/roelofarendsveen#roelofarendsveen", "name": "Salon Purple Dream bij Business Sisters", "url": "https://salonpurpledream.nl/roelofarendsveen", "telephone": "+31638248785", "priceRange": "€55 - €115", "address": {"@type": "PostalAddress", "streetAddress": "De Lasso-Zuid 3F", "postalCode": "2371 EV", "addressLocality": "Roelofarendsveen", "addressRegion": "Zuid-Holland", "addressCountry": "NL"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday"], "opens": "15:00", "closes": "19:00"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Huisstijl Salon Purple Dream. Layout: rustige editorial pagina, crème papier met diep paarse banden, goud alleen als dunne lijn */
+  --aubergine:#3d2547;
+  --paars:#7f649d;
+  --grijspaars:#9486a4;
+  --lavendel:#dacee6;
+  --zand:#e2d0be;
+  --creme:#fefbf4;
+  --wit:#ffffff;
+  --goud:#b8975a;
+  --tekst:#3d2547;
+  --tekst-zacht:#6a5a78;
+  --display:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body:"Jost", "Avenir Next", Arial, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--creme);color:var(--tekst);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.7}
+img,svg{max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--goud);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:400;font-style:italic;line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,5vw,2.9rem)}
+h3{font-size:1.55rem}
+p{margin:0}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+.smal{max-width:62ch}
+.label{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:400;color:var(--paars)}
+.lijn{width:56px;height:1px;background:var(--goud);border:0;margin:0}
 
-self.addEventListener("install", e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
-});
+/* Navigatie */
+.nav{position:sticky;top:0;z-index:10;background:rgba(254,251,244,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(61,37,71,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.merk{display:flex;align-items:center;gap:12px;text-decoration:none}
+.merk span{font-family:var(--display);font-style:italic;font-size:1.35rem;line-height:1}
+.merk small{display:block;font-family:var(--body);font-style:normal;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grijspaars);margin-top:4px}
+.menu{display:flex;gap:26px;font-size:.92rem}
+.menu a{text-decoration:none;color:var(--tekst-zacht)}
+.menu a:hover{color:var(--aubergine)}
+.knop{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;background:var(--aubergine);color:var(--creme);text-decoration:none;font-weight:400;font-size:.95rem;letter-spacing:.03em;border:1px solid var(--aubergine);transition:background .2s,color .2s}
+.knop:hover{background:var(--paars);border-color:var(--paars)}
+.knop.licht{background:transparent;color:var(--aubergine)}
+.knop.licht:hover{background:var(--aubergine);color:var(--creme)}
+.knop.goud{background:var(--creme);color:var(--aubergine);border-color:var(--creme)}
+.knop.goud:hover{background:var(--lavendel);border-color:var(--lavendel)}
+.nav .knop{padding:10px 20px;font-size:.88rem}
+@media (max-width:860px){.menu{display:none}}
+.knop{white-space:nowrap}
+@media (max-width:420px){.merk small{display:none}.merk span{font-size:1.2rem}}
 
-self.addEventListener("activate", e => {
-  e.waitUntil(
-    caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
-      .then(() => self.clients.claim())
-  );
-});
+/* Hero */
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.5vw,4.6rem);margin:18px 0 22px}
+.hero p.intro{font-size:1.12rem;color:var(--tekst-zacht);max-width:52ch}
+.hero .acties{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-beeld{aspect-ratio:4/5;border-radius:220px 220px 18px 18px;background:radial-gradient(120% 80% at 50% 10%,var(--paars) 0%,var(--aubergine) 70%);position:relative;overflow:hidden;display:grid;place-items:center}
+.hero-beeld .citaat{position:absolute;left:24px;right:24px;bottom:26px;color:var(--lavendel);font-family:var(--display);font-style:italic;font-size:1.2rem;line-height:1.35;text-align:center}
+.hero-beeld .foto-tip{position:absolute;top:22px;left:0;right:0;text-align:center;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grijspaars)}
+.feiten{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;font-size:.88rem;color:var(--tekst-zacht)}
+.feiten span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--goud);margin-right:10px;vertical-align:middle}
+@media (max-width:860px){.hero{padding:40px 0 48px}.hero .wrap{grid-template-columns:1fr;gap:36px}.hero-beeld{max-width:380px;width:100%;margin-inline:auto}}
 
-self.addEventListener("fetch", e => {
-  if (e.request.method !== "GET") return;
-  const url = new URL(e.request.url);
-  // Pagina zelf: eerst online proberen (nieuwste versie), anders uit de cache.
-  if (e.request.mode === "navigate") {
-    e.respondWith(
-      fetch(e.request).then(r => { const copy = r.clone(); caches.open(CACHE).then(c => c.put("./index.html", copy)); return r; })
-        .catch(() => caches.match("./index.html"))
-    );
-    return;
+/* Foto's */
+.foto{display:block;width:100%;height:100%;object-fit:cover}
+.hero-beeld{background:var(--aubergine)}
+.hero-beeld img{position:absolute;inset:0}
+.hero-beeld::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(61,37,71,0) 50%,rgba(61,37,71,.85) 100%)}
+.hero-beeld .citaat{z-index:1;color:var(--creme)}
+.pakket .pfoto{aspect-ratio:4/3;border-radius:10px;overflow:hidden;margin:-12px -12px 6px}
+.paneel .pfoto{aspect-ratio:4/3;border-radius:14px;overflow:hidden;margin-bottom:8px}
+.portret{overflow:hidden}
+.portret img{border-radius:50%;position:relative;z-index:0}
+.strook{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.strook figure{margin:0;aspect-ratio:4/5;border-radius:14px;overflow:hidden}
+@media (max-width:600px){.strook{grid-template-columns:1fr 1fr}.strook figure:last-child{display:none}}
+.bon{background:none;border:0;padding:0;aspect-ratio:auto}
+.bon::before{display:none}
+.bon img{border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+
+/* Herkenning */
+.herkenning{background:var(--aubergine);color:var(--creme);padding:84px 0}
+.herkenning .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.herkenning h2{color:var(--lavendel)}
+.herkenning p{color:#e9e1f0}
+.herkenning .label{color:var(--zand)}
+.lijstje{display:grid;gap:18px;margin-top:6px}
+.lijstje div{padding:18px 0;border-bottom:1px solid rgba(218,206,230,.2);font-family:var(--display);font-style:italic;font-size:1.35rem;color:var(--creme)}
+@media (max-width:860px){.herkenning{padding:60px 0}.herkenning .wrap{grid-template-columns:1fr;gap:32px}}
+
+/* Secties */
+section.blok{padding:92px 0}
+.kop{display:grid;gap:16px;margin-bottom:48px}
+@media (max-width:860px){section.blok{padding:64px 0}}
+
+/* Pakketten */
+.pakketten{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pakket{background:var(--wit);border:1px solid rgba(61,37,71,.09);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:14px}
+.pakket .soort{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paars)}
+.pakket p{color:var(--tekst-zacht);font-size:.98rem}
+.pakket .meta{margin-top:auto;padding-top:16px;border-top:1px solid var(--lavendel);display:flex;justify-content:space-between;align-items:baseline;font-size:.9rem;color:var(--tekst-zacht)}
+.pakket .prijs{font-family:var(--display);font-size:1.6rem;color:var(--aubergine);font-variant-numeric:tabular-nums}
+.pakket.uitgelicht{background:var(--lavendel);border-color:var(--lavendel)}
+@media (max-width:900px){.pakketten{grid-template-columns:1fr}}
+
+/* Behandelingen */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.tab{font-family:var(--body);font-weight:400;font-size:.92rem;padding:10px 20px;border-radius:999px;border:1px solid var(--grijspaars);background:transparent;color:var(--aubergine);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--aubergine);border-color:var(--aubergine);color:var(--creme)}
+.paneel{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.paneel[hidden]{display:none}
+.paneel .uitleg{display:grid;gap:16px;align-content:start}
+.paneel .uitleg p{color:var(--tekst-zacht)}
+.menukaart{display:grid}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding:20px 0;border-bottom:1px solid rgba(61,37,71,.1)}
+.item:first-child{border-top:1px solid rgba(61,37,71,.1)}
+.item h3{font-size:1.3rem}
+.item .prijs{font-family:var(--display);font-size:1.35rem;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.item p{grid-column:1/-1;font-size:.94rem;color:var(--tekst-zacht)}
+.item .tijd{font-size:.85rem;color:var(--grijspaars);grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{display:inline-block;font-size:.72rem;letter-spacing:.06em;padding:3px 10px;border-radius:999px;background:var(--zand);color:var(--aubergine)}
+.chip.rv{background:var(--lavendel)}
+@media (max-width:860px){.paneel{grid-template-columns:1fr;gap:28px}}
+
+/* Over mij */
+.over{background:var(--zand)}
+.over .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.portret{aspect-ratio:1;border-radius:50%;background:var(--creme);display:grid;place-items:center;max-width:380px;width:100%;margin-inline:auto;position:relative}
+.portret::after{content:"";position:absolute;inset:14px;border-radius:50%;border:1px solid var(--goud);opacity:.6}
+.portret span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grijspaars)}
+.over .tekst{display:grid;gap:18px}
+.over .tekst p{color:#4b3a55}
+.handtekening{font-family:var(--display);font-style:italic;font-size:1.8rem;color:var(--aubergine)}
+@media (max-width:860px){.over .wrap{grid-template-columns:1fr;gap:36px}}
+
+/* Zintuigen */
+.zintuigen{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.zintuig{padding:28px 0;border-top:1px solid var(--goud);display:grid;gap:10px}
+.zintuig h3{font-size:1.45rem}
+.zintuig p{font-size:.95rem;color:var(--tekst-zacht)}
+@media (max-width:860px){.zintuigen{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.zintuigen{grid-template-columns:1fr}}
+
+/* Reviews */
+.reviews{background:var(--lavendel)}
+.reviewrij{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.review{background:var(--creme);border-radius:16px;padding:32px;display:grid;gap:18px;align-content:space-between}
+.review blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:1.28rem;line-height:1.45;color:var(--aubergine)}
+.review cite{font-style:normal;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paars)}
+.reviews .onder{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+@media (max-width:860px){.reviewrij{grid-template-columns:1fr}}
+
+/* Cadeau */
+.cadeau{background:var(--aubergine);color:var(--creme)}
+.cadeau .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.cadeau h2{color:var(--lavendel)}
+.cadeau p{color:#e9e1f0}
+.cadeau .label{color:var(--zand)}
+.bon{aspect-ratio:1.6;border-radius:14px;background:linear-gradient(135deg,#4a2d57,var(--aubergine));border:1px solid rgba(184,151,90,.6);display:grid;place-items:center;text-align:center;padding:24px;position:relative}
+.bon::before{content:"";position:absolute;inset:10px;border:1px solid rgba(184,151,90,.35);border-radius:9px}
+.bon strong{display:block;font-family:var(--display);font-weight:400;font-style:italic;font-size:2rem;color:var(--creme)}
+.bon em{font-style:normal;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--goud)}
+@media (max-width:860px){.cadeau .wrap{grid-template-columns:1fr;gap:36px}}
+
+/* Locaties */
+.locaties{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.locatie{border:1px solid rgba(61,37,71,.12);border-radius:16px;padding:32px;display:grid;gap:14px;background:var(--wit)}
+.locatie dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:6px 0 0;font-size:.95rem}
+.locatie dt{color:var(--grijspaars)}
+.locatie dd{margin:0}
+@media (max-width:860px){.locaties{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{display:grid;max-width:820px}
+details{border-bottom:1px solid rgba(61,37,71,.12);padding:20px 0}
+details:first-child{border-top:1px solid rgba(61,37,71,.12)}
+summary{cursor:pointer;list-style:none;font-family:var(--display);font-style:italic;font-size:1.35rem;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--body);font-style:normal;font-weight:300;color:var(--paars)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:12px;color:var(--tekst-zacht);max-width:65ch}
+
+/* Slot */
+.slot{text-align:center;padding:100px 0}
+.slot h2{max-width:20ch;margin:0 auto 18px}
+.slot p{max-width:52ch;margin:0 auto 32px;color:var(--tekst-zacht)}
+footer{background:var(--aubergine);color:#cdbfd9;padding:52px 0 40px;font-size:.9rem}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer h3{color:var(--creme);font-size:1.3rem;margin-bottom:10px}
+footer a{color:#cdbfd9}
+footer .klein{grid-column:1/-1;border-top:1px solid rgba(218,206,230,.15);padding-top:22px;margin-top:10px;font-size:.8rem;color:var(--grijspaars)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+/* Menu en pagina's */
+.menu a[aria-current="page"]{color:var(--aubergine);font-weight:400}
+.menuknop{display:none;background:none;border:1px solid var(--grijspaars);border-radius:999px;padding:8px 14px;font:inherit;font-size:.88rem;color:var(--aubergine);cursor:pointer}
+.navrechts{display:flex;align-items:center;gap:10px}
+.mobielmenu{display:none;border-top:1px solid rgba(61,37,71,.08);background:var(--creme)}
+.mobielmenu.open{display:block}
+.mobielmenu a{display:block;padding:14px 20px;text-decoration:none;border-bottom:1px solid rgba(61,37,71,.06);font-family:var(--display);font-style:italic;font-size:1.25rem}
+@media (max-width:1180px){.menuknop{display:inline-block}.menu{display:none!important}}
+.menu{gap:20px}
+@media (max-width:1060px) and (min-width:861px){.menu{gap:14px;font-size:.85rem}}
+.view[hidden]{display:none}
+.pagehero{padding:64px 0 56px}
+.pagehero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.pagehero h1{font-size:clamp(2.4rem,5.5vw,3.8rem);margin:16px 0 20px}
+.pagehero .intro{font-size:1.1rem;color:var(--tekst-zacht);max-width:54ch}
+.pagehero .acties{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.pagehero .beeld{aspect-ratio:4/5;border-radius:18px;overflow:hidden}
+@media (max-width:860px){.pagehero{padding:36px 0 44px}.pagehero .wrap{grid-template-columns:1fr;gap:30px}.pagehero .beeld{max-width:420px;width:100%}}
+.kruimel{font-size:.82rem;color:var(--grijspaars)}
+.kruimel a{color:var(--grijspaars)}
+.tweekol{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.tweekol .tekst{display:grid;gap:16px}
+.tweekol .tekst p{color:var(--tekst-zacht)}
+@media (max-width:860px){.tweekol{grid-template-columns:1fr;gap:28px}}
+.donker{background:var(--aubergine);color:var(--creme)}
+.donker h2{color:var(--lavendel)}
+.donker p{color:#e9e1f0}
+.donker .label{color:var(--zand)}
+.stappen{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:stap}
+.stappen li{counter-increment:stap;display:grid;grid-template-columns:56px 1fr;gap:6px 18px;padding:22px 0;border-bottom:1px solid rgba(218,206,230,.2)}
+.stappen li::before{content:counter(stap,decimal-leading-zero);font-family:var(--display);font-style:italic;font-size:1.6rem;color:var(--goud);grid-row:span 2}
+.stappen h3{font-size:1.35rem;color:var(--creme)}
+.stappen p{font-size:.96rem}
+.licht .stappen li{border-color:rgba(61,37,71,.1)}
+.licht .stappen h3{color:var(--aubergine)}
+.licht .stappen p{color:var(--tekst-zacht)}
+.voorwie{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.voorwie div{background:var(--wit);border:1px solid rgba(61,37,71,.09);border-radius:14px;padding:24px;display:grid;gap:8px}
+.voorwie h3{font-size:1.3rem}
+.voorwie p{font-size:.95rem;color:var(--tekst-zacht)}
+@media (max-width:860px){.voorwie{grid-template-columns:1fr}}
+.losse-review{max-width:760px;margin:0 auto;text-align:center;display:grid;gap:16px}
+.losse-review blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.4;color:var(--aubergine)}
+.losse-review cite{font-style:normal;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paars)}
+.cta-band{background:var(--lavendel);padding:64px 0;text-align:center}
+.cta-band h2{margin-bottom:14px}
+.cta-band p{max-width:50ch;margin:0 auto 26px;color:#4b3a55}
+.cta-band .rij{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lees{display:inline-block;margin-top:6px;font-size:.9rem;color:var(--paars);text-decoration:underline;text-underline-offset:3px}
+.contactkaart{display:grid;gap:10px;background:var(--wit);border:1px solid rgba(61,37,71,.12);border-radius:16px;padding:32px}
+.contactkaart a{color:var(--aubergine)}
+.merken{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.merken div{border-top:1px solid var(--goud);padding-top:18px;display:grid;gap:8px}
+.merken p{font-size:.95rem;color:var(--tekst-zacht)}
+.artikel{max-width:68ch;margin:0 auto;display:grid;gap:18px;font-size:1.05rem}
+.artikel p,.artikel li{color:#4b3a55}
+.artikel h3{font-size:1.7rem;margin-top:18px}
+.artikel ol{margin:0;padding-left:1.3em;display:grid;gap:10px}
+.artikel strong{font-weight:500;color:var(--aubergine)}
+.artikelkop{max-width:68ch;margin:0 auto;display:grid;gap:14px;padding:56px 0 30px}
+.artikelkop h1{font-size:clamp(2.2rem,5vw,3.4rem)}
+.artikelfoto{max-width:900px;margin:0 auto 40px;aspect-ratio:16/9;border-radius:18px;overflow:hidden}
+.blogkaarten{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.blogkaart{background:var(--wit);border:1px solid rgba(61,37,71,.09);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none}
+.videoblok .wrap{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
+.reel{width:min(320px,80vw);aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:var(--aubergine);box-shadow:0 20px 50px rgba(61,37,71,.25)}
+.reel video{width:100%;height:100%;object-fit:cover;display:block}
+.videoblok .tekst{display:grid;gap:16px;max-width:52ch}
+.videoblok .tekst p{color:var(--tekst-zacht)}
+@media (max-width:760px){.videoblok .wrap{grid-template-columns:1fr;justify-items:center;gap:30px}}
+.formkaart form{display:grid;gap:16px;margin-top:6px}
+.formkaart .velden{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.formkaart label{display:grid;gap:6px;font-size:.92rem;color:var(--aubergine)}
+.formkaart input,.formkaart select,.formkaart textarea{font:inherit;font-size:1rem;padding:12px 14px;border:1px solid var(--grijspaars);border-radius:10px;background:var(--creme);color:var(--aubergine)}
+.formkaart input:focus,.formkaart select:focus,.formkaart textarea:focus{outline:2px solid var(--paars);outline-offset:1px}
+.formkaart .knop{justify-self:start}
+.verstopt{position:absolute;left:-9999px}
+.klein-privacy{font-size:.82rem;color:var(--grijspaars)}
+.formmelding{background:var(--lavendel);padding:12px 16px;border-radius:10px}
+@media (max-width:640px){.formkaart .velden{grid-template-columns:1fr}}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(218,206,230,.35);color:var(--creme);transition:background .2s}
+.socials a:hover{background:var(--paars)}
+.socials svg{width:22px;height:22px}
+.socials.licht a{border-color:var(--grijspaars);color:var(--aubergine)}
+.socials.licht a:hover{background:var(--lavendel)}
+.nav{border-bottom:1px solid rgba(184,151,90,.45)}
+.hero-beeld{overflow:visible}
+.hero-beeld img{border-radius:inherit}
+.hero-beeld::before{content:"";position:absolute;inset:-10px;border:1px solid rgba(184,151,90,.7);border-radius:230px 230px 24px 24px;pointer-events:none}
+.hero-beeld::after{border-radius:inherit}
+.nav::before{content:"";display:block;height:3px;background:linear-gradient(90deg,transparent,var(--goud),transparent)}
+.label{display:inline-flex;align-items:center;gap:12px}
+.label::before{content:"";width:22px;height:1px;background:var(--goud);flex:none}
+.score .label::before{display:none}
+.knop:not(.licht):not(.goud){box-shadow:inset 0 0 0 1px rgba(184,151,90,.55)}
+.reel{box-shadow:0 0 0 1px rgba(184,151,90,.7),0 20px 50px rgba(61,37,71,.25)}
+.pakket.uitgelicht{box-shadow:inset 0 0 0 1px rgba(184,151,90,.6)}
+.handtekening{color:var(--goud)}
+footer{border-top:3px solid transparent;border-image:linear-gradient(90deg,transparent,var(--goud),transparent) 1}
+.socials a{border-color:rgba(184,151,90,.55)}
+.item .prijs{color:var(--aubergine)}
+.score .cijfer{color:var(--goud)}
+.kaart{position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--lavendel);margin-top:8px;border:1px solid rgba(184,151,90,.5)}
+.kaart iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+.kaart-reserve{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:4px;color:var(--aubergine);font-size:.92rem}
+.kaart-reserve span:first-child{font-family:var(--display);font-style:italic;font-size:1.3rem}
+.opleiding{max-width:760px;display:grid;gap:12px;background:var(--wit);border:1px solid rgba(184,151,90,.55);border-radius:16px;padding:28px 32px}
+.opleiding p{color:var(--tekst-zacht)}
+.opleiding a{color:var(--paars)}
+.partnerlogo{display:block;margin-top:6px;max-width:340px}
+.partnerlogo img{width:100%;height:auto;display:block}
+.blogkaart .bf{aspect-ratio:4/3;overflow:hidden}
+.menu a{white-space:nowrap}
+.merk span{white-space:nowrap}
+@media (max-width:1400px){.merk small{display:none}}
+.blogkaart .bt{padding:22px 24px 26px;display:grid;gap:10px}
+.blogkaart h3{font-size:1.4rem}
+.blogkaart p{font-size:.95rem;color:var(--tekst-zacht)}
+@media (max-width:900px){.blogkaarten{grid-template-columns:1fr}}
+.score{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;background:var(--aubergine);color:var(--creme);border-radius:18px;padding:30px 34px;margin-bottom:34px}
+.score .cijfer{font-family:var(--display);font-style:italic;font-size:3.4rem;line-height:1;color:var(--creme)}
+.score .sterren{color:var(--goud);font-size:1.3rem;letter-spacing:.15em}
+.score p{color:#e9e1f0}
+.reviewgrid{columns:3 280px;column-gap:20px}
+.reviewgrid figure{break-inside:avoid;margin:0 0 20px;background:var(--creme);border:1px solid rgba(61,37,71,.09);border-radius:16px;padding:26px;display:grid;gap:14px}
+.reviewgrid blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:1.22rem;line-height:1.45;color:var(--aubergine)}
+.reviewgrid cite{font-style:normal;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paars)}
+@media (max-width:760px){.merken{grid-template-columns:1fr}}
+#rustcheck .rcwrap{max-width:620px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+#rustcheck .progress{height:3px;background:var(--lavendel);border-radius:3px;overflow:hidden}
+#rustcheck .progress span{display:block;height:100%;background:var(--paars);transition:width .3s}
+#rustcheck .card{background:var(--wit);border:1px solid rgba(61,37,71,.1);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:16px}
+#rustcheck h2{font-size:1.8rem}
+#rustcheck h3{font-size:1.5rem}
+#rustcheck .hint{font-size:.94rem;color:var(--tekst-zacht)}
+#rustcheck .opts{display:flex;flex-direction:column;gap:10px}
+#rustcheck .opt{display:flex;align-items:flex-start;gap:12px;text-align:left;font:inherit;color:var(--aubergine);background:var(--creme);border:1.5px solid rgba(61,37,71,.14);border-radius:14px;padding:13px 14px;cursor:pointer}
+#rustcheck .opt:focus-visible,#rustcheck .btn:focus-visible{outline:2px solid var(--goud);outline-offset:2px}
+#rustcheck .opt[aria-pressed="true"]{border-color:var(--paars);background:var(--lavendel)}
+#rustcheck .dot{flex:none;width:18px;height:18px;margin-top:2px;border:1.5px solid var(--paars);border-radius:50%;display:grid;place-items:center}
+#rustcheck .opt[aria-pressed="true"] .dot::after{content:"";width:10px;height:10px;background:var(--paars);border-radius:50%}
+#rustcheck .opt small{display:block;color:var(--tekst-zacht);font-size:.86rem}
+#rustcheck .scale{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#rustcheck .scale .opt{justify-content:center;text-align:center;padding:16px 10px}
+#rustcheck .scale .dot{display:none}
+#rustcheck .rcnav{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+#rustcheck .btn{font:inherit;font-weight:400;border-radius:999px;padding:12px 24px;cursor:pointer;border:1px solid var(--aubergine);background:var(--aubergine);color:var(--creme);text-decoration:none;display:inline-block}
+#rustcheck .btn.ghost{background:transparent;color:var(--aubergine)}
+#rustcheck .btn:disabled{opacity:.4;cursor:default}
+#rustcheck .count{font-size:.85rem;color:var(--grijspaars);font-variant-numeric:tabular-nums}
+#rustcheck .area,#rustcheck .eyebrow{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paars)}
+#rustcheck .match{background:var(--lavendel);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px}
+#rustcheck .match .name{font-family:var(--display);font-style:italic;font-size:2rem;line-height:1.1}
+#rustcheck .meta{display:flex;flex-wrap:wrap;gap:8px}
+#rustcheck .rcchip{font-size:.8rem;padding:4px 10px;border-radius:999px;background:var(--zand);color:var(--aubergine);font-variant-numeric:tabular-nums}
+#rustcheck .why{display:flex;flex-direction:column;gap:8px;padding:0;margin:0;list-style:none}
+#rustcheck .why li{padding-left:18px;position:relative;color:var(--tekst-zacht)}
+#rustcheck .why li::before{content:"";position:absolute;left:0;top:.65em;width:7px;height:7px;border-radius:50%;background:var(--goud)}
+#rustcheck .alt{display:flex;flex-direction:column;gap:6px;padding-top:14px;border-top:1px solid rgba(61,37,71,.1)}
+#rustcheck .alt:first-of-type{border-top:0;padding-top:0}
+#rustcheck .sign{font-family:var(--display);font-style:italic;font-size:1.4rem;color:var(--goud)}
+#rustcheck .contact{font-weight:500}
+#rustcheck .bars{display:flex;flex-direction:column;gap:12px}
+#rustcheck .barrow{display:grid;grid-template-columns:112px 1fr;gap:12px;align-items:center;font-size:.92rem}
+#rustcheck .track{height:10px;border-radius:10px;background:var(--lavendel);overflow:hidden}
+#rustcheck .fill{height:100%;border-radius:10px;background:var(--paars)}
+#rustcheck .fill.low{background:var(--grijspaars)}
+#rustcheck .moment{background:var(--wit);border:1px solid var(--goud);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px}
+#rustcheck .steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;list-style:decimal}
+#rustcheck .steps li{display:list-item;border:0;padding:0}
+#rustcheck .steps li::before{content:none}
+#rustcheck .legend{font-size:.82rem;color:var(--grijspaars)}
+#rcmailblok{max-width:620px;margin:20px auto 0}
+.gtwrap{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--lavendel,#dacee6);border-radius:24px;padding:clamp(24px,5vw,48px);text-align:center}
+.gt-progress{height:4px;background:#efe8f4;border-radius:4px;overflow:hidden;margin:0 auto 28px;max-width:760px}
+.gt-progress span{display:block;height:100%;background:#b8975a;transition:width .3s}
+.gt-opties{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.gt-optie{font:inherit;padding:18px 20px;border:1px solid #dacee6;border-radius:16px;background:#fefbf4;color:#3d2547;cursor:pointer;transition:all .2s}
+.gt-optie:hover,.gt-optie:focus{border-color:#7f649d;background:#f5effa}
+.gt-terug{font:inherit;background:none;border:0;color:#7f649d;text-decoration:underline;cursor:pointer}
+.gt-bol{display:block;width:90px;height:90px;border-radius:50%;margin:0 auto 18px;box-shadow:0 0 0 8px rgba(218,206,230,.5)}
+.wa-zweef{position:fixed;right:18px;bottom:96px;z-index:60;width:58px;height:58px;border-radius:50%;background:#3d2547;color:#fefbf4;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(61,37,71,.35);border:2px solid #b8975a}
+.wa-zweef svg{width:28px;height:28px}
+.nbform{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.nbform input[type=email],.nbform input[type=text]{flex:1 1 160px;padding:12px 14px;border-radius:999px;border:1px solid rgba(254,251,244,.35);background:rgba(254,251,244,.08);color:#fefbf4;font:inherit}
+.nbform input::placeholder{color:#cfc3dc}
+.nbform button{padding:12px 20px;border-radius:999px;border:1px solid #b8975a;background:#b8975a;color:#3d2547;font:inherit;cursor:pointer}
+.filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 40px}.filter button{font:inherit;padding:10px 20px;border-radius:999px;border:1px solid #dacee6;background:#fff;color:#3d2547;cursor:pointer}.filter button[aria-pressed=true]{background:#3d2547;color:#fefbf4;border-color:#3d2547}
+.bg{margin-bottom:64px}.bg-kop{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center;margin-bottom:24px}.bg-foto{border-radius:20px;overflow:hidden;aspect-ratio:1/1}.bg-foto img{width:100%;height:100%;object-fit:cover}.bg-kop h2{margin:0 0 8px}.bg-kop p{color:var(--tekst-zacht);margin:0 0 10px}
+.bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}.bk{background:#fff;border:1px solid #ece4f2;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px}.bk[hidden]{display:none}.bk-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.bk-top h3{font-size:1.3rem;margin:0}.bk .prijs{font-family:var(--display);font-size:1.5rem;color:#3d2547;white-space:nowrap}.bk-tijd{margin:0;color:var(--tekst-zacht);font-size:.92rem}.bk-tekst{margin:4px 0 12px;flex:1}.bk .knop{align-self:flex-start}
+@media(max-width:640px){.bg-kop{grid-template-columns:1fr}.bg-foto{aspect-ratio:16/9}}</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="merk" href="index.html" aria-label="Salon Purple Dream, naar de homepagina">
+      <img src="img/logo-monogram.png" alt="" style="height:40px;width:auto">
+      <span>Purple Dream<small>de salon voor ontspanning</small></span>
+    </a>
+    <nav class="menu" aria-label="Hoofdmenu"><a href="asmr-hoofdmassage.html" data-nav="asmr-hoofdmassage">ASMR</a><a href="headspa.html" data-nav="headspa">HeadSpa</a><a href="gezichtsbehandeling.html" data-nav="gezichtsbehandeling">Gezicht</a><a href="lichaam-asmr.html" data-nav="lichaam-asmr">Ontspanningsmassage</a><a href="over-mij.html" data-nav="over-mij">Over mij</a><a href="reviews.html" data-nav="reviews">Reviews</a><a href="blog.html" data-nav="blog">Blog</a><a href="roelofarendsveen.html" data-nav="roelofarendsveen">Roelofarendsveen</a><a href="cadeaubon.html" data-nav="cadeaubon">Cadeaubon</a><a href="contact.html" data-nav="contact">Contact</a></nav>
+    <div class="navrechts">
+      <button class="menuknop" id="menuknop" aria-expanded="false" aria-controls="mobielmenu">Menu</button>
+      <a class="knop" href="#bookings-link">Boek nu</a>
+    </div>
+  </div>
+  <nav class="mobielmenu" id="mobielmenu" aria-label="Menu voor mobiel"><a href="index.html">Home</a><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><a href="headspa.html">HeadSpa</a><a href="gezichtsbehandeling.html">Gezicht</a><a href="lichaam-asmr.html">Ontspanningsmassage</a><a href="over-mij.html">Over mij</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="roelofarendsveen.html">Roelofarendsveen</a><a href="cadeaubon.html">Cadeaubon</a><a href="contact.html">Contact</a></nav>
+</header>
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="label">ASMR hoofdmassage, HeadSpa en gezichtsbehandelingen</p>
+      <h1>Waar je niets hoeft, alleen maar mag genieten</h1>
+      <p class="intro">Ben jij altijd aan? Dan mag je hier even helemaal niets. Ik neem je mee in een behandeling waarin geur, aanraking, geluid en rust samenkomen. Je hoofd wordt stil, je lichaam zakt, en je loopt ontspannen en stralend weer naar buiten.</p>
+      <div class="acties">
+        <a class="knop" href="#bookings-link">Boek je moment</a>
+        <a class="knop licht" href="behandelingen.html">Bekijk behandelingen</a>
+      </div>
+      <div class="feiten">
+        <span>Alleen voor vrouwen</span>
+        <span>Nieuw-Vennep en Roelofarendsveen</span>
+        <span>Gediplomeerd schoonheidsspecialiste</span>
+      </div>
+    </div>
+    <div class="hero-beeld" role="img" aria-label="Celina geeft een ontspannende gezichtsmassage">
+      <img class="foto" src="img/celina-aandacht.jpg" style="object-position:50% 0%" alt="">
+      <p class="citaat">"Ik kwam moe en gestrest binnen en liep mega ontspannen en blij de deur weer uit."</p>
+    </div>
+  </div>
+</section>
+
+<section class="herkenning" aria-labelledby="herkenning-kop">
+  <div class="wrap">
+    <div style="display:grid;gap:18px;align-content:start">
+      <p class="label">Herken je dit?</p>
+      <h2 id="herkenning-kop">Je hoofd staat nooit stil</h2>
+      <p>Je regelt je bedrijf, je gezin, je agenda en ondertussen draait je hoofd gewoon door. Ook als je eindelijk in bed ligt. Je weet dat je rust nodig hebt, maar het komt er nooit van.</p>
+      <p>Bij mij hoef je niets te presteren en niets uit te leggen. Je mag gaan liggen, je ogen dichtdoen en gewoon ontvangen. Ik zorg voor de rest.</p>
+    </div>
+    <div class="lijstje">
+      <div>Je ligt 's nachts te piekeren</div>
+      <div>Je hebt nooit tijd voor jezelf</div>
+      <div>Je schouders zitten tot aan je oren</div>
+      <div>Je huid ziet er net zo moe uit als jij je voelt</div>
+    </div>
+  </div>
+</section>
+
+<section class="blok filmblok"><div class="wrap">
+  <div class="kop" style="text-align:center;margin:0 auto 28px;max-width:720px"><p class="label">Even kijken</p><h2>Zo voelt een moment bij mij</h2><p style="color:var(--tekst-zacht);margin-top:10px">Zachte handen, warme streken, een stil hoofd en een huid die straalt.</p></div>
+  <div id="filmkader" style="max-width:980px;margin:0 auto;border-radius:22px;overflow:hidden;border:1px solid #b8975a;box-shadow:0 20px 50px rgba(61,37,71,.18);background:#1e1124"><video id="film" autoplay muted loop playsinline controls preload="metadata" aria-label="Filmpje van een gezichtsbehandeling, ASMR hoofdmassage en rugmassage bij Salon Purple Dream" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover"></video></div>
+  <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px"><a class="knop" href="#bookings-link">Boek je moment</a><a class="knop licht" href="asmr-hoofdmassage.html">Bekijk behandelingen</a></div>
+</div></section>
+<script>(function(){var v=document.getElementById('film'),k=document.getElementById('filmkader'),m=window.matchMedia('(max-width: 700px)').matches;if(m){k.style.maxWidth='420px';v.style.aspectRatio='9/16';v.poster="img/film-staand-poster.jpg";v.src="media/film-staand-web.mp4";}else{v.poster="img/film-poster.jpg";v.src="media/film-web.mp4";}})();</script><section class="blok" aria-labelledby="pakket-kop">
+  <div class="wrap">
+    <div class="kop">
+      <p class="label">Mijn favorieten voor jou</p>
+      <h2 id="pakket-kop">Drie rituelen om mee te beginnen</h2>
+      <p class="smal" style="color:var(--tekst-zacht)">Twijfel je waar je moet beginnen? Deze drie kies ik zelf het liefst voor je uit.</p>
+    </div>
+    <div class="pakketten">
+      <article class="pakket uitgelicht">
+        <div class="pfoto"><img class="foto" src="img/stralende-huid.jpg" style="object-position:50% 12%" alt="Ontspannen klant met een stralende huid na de behandeling"></div>
+        <span class="soort">Gezicht en rust</span>
+        <h3>CBD Anti Stress</h3>
+        <p>Een gezichtsbehandeling die je huid kalmeert en je zenuwstelsel meteen mee laat zakken. Met een rugmassage erbij en een CBD serum om thuis van te blijven genieten.</p>
+        <a class="lees" href="gezichtsbehandeling.html">Lees meer</a><div class="meta"><span>90 min, Roelofarendsveen</span><span class="prijs">€110</span></div>
+      </article>
+      <article class="pakket">
+        <div class="pfoto"><img class="foto" src="img/masker.jpg" style="object-position:50% 8%" alt="Een verzorgend masker wordt met kwastjes aangebracht"></div>
+        <span class="soort">Gezicht en glans</span>
+        <h3>Yon-Ka Grand Ritual</h3>
+        <p>Mijn uitgebreidste gezichtsbehandeling met een stralend masker. Je huid voelt zacht, fris en gevoed, en jij ligt ondertussen heerlijk weg te dromen.</p>
+        <a class="lees" href="gezichtsbehandeling.html">Lees meer</a><div class="meta"><span>75 min, Nieuw-Vennep</span><span class="prijs">€75</span></div>
+      </article>
+      <article class="pakket">
+        <div class="pfoto"><img class="foto" src="img/headspa-waterboog.jpg" alt="Warm water uit de waterboog tijdens de HeadSpa"></div>
+        <span class="soort">Haar en hoofd</span>
+        <h3>HeadSpa haarverwennerij</h3>
+        <p>Warm water onder de waterboog, zachte handen en een verzorgend masker. Je hoofd voelt licht en je haar heerlijk verzorgd.</p>
+        <a class="lees" href="headspa.html">Lees meer</a><div class="meta"><span>60 min, Nieuw-Vennep</span><span class="prijs">€75</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="blok" id="behandelingen" aria-labelledby="beh-kop" style="padding-top:0">
+  <div class="wrap">
+    <div class="kop">
+      <p class="label">Alle behandelingen</p>
+      <h2 id="beh-kop">Kies wat jij nu nodig hebt</h2>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Soorten behandelingen">
+      <button class="tab" role="tab" id="tab-asmr" aria-controls="p-asmr" aria-selected="true">ASMR hoofdmassage</button>
+      <button class="tab" role="tab" id="tab-gezicht" aria-controls="p-gezicht" aria-selected="false" tabindex="-1">Gezicht</button>
+      <button class="tab" role="tab" id="tab-headspa" aria-controls="p-headspa" aria-selected="false" tabindex="-1">HeadSpa</button>
+      <button class="tab" role="tab" id="tab-lichaam" aria-controls="p-lichaam" aria-selected="false" tabindex="-1">Ontspanningsmassage</button>
+    </div>
+
+    <div class="paneel" id="p-asmr" role="tabpanel" aria-labelledby="tab-asmr">
+      <div class="uitleg">
+        <div class="pfoto"><img class="foto" src="img/haarspin.jpg" style="object-position:50% 25%" alt="ASMR hoofdmassage met een hoofdkriebelaar"></div>
+        <h3>ASMR hoofdmassage</h3>
+        <p>Zachte aanrakingen, rustige geluiden en een geur die bij jou past. Je merkt dat je adem trager wordt en je hoofd stiller. Veel vrouwen voelen een fijne tinteling en vallen bijna in slaap.</p>
+        <p>Ik begin in buikligging met je bovenrug en schouders, waar zoveel spanning zit. Daarna ga ik verder met je hoofd, nek en gezicht.</p>
+      <a class="lees" href="asmr-hoofdmassage.html">Alles over de ASMR hoofdmassage</a></div>
+      <div class="menukaart">
+        <div class="item"><h3>Purple Dream ASMR Intro</h3><span class="prijs">€55</span><span class="tijd">45 min <span class="chip">Nieuw-Vennep</span><span class="chip rv">Roelofarendsveen</span></span><p>Een korte maar complete kennismaking. Perfect als je wilt ontdekken wat ASMR voor jou doet.</p></div>
+        <div class="item"><h3>Purple Dream ASMR Calm Ritual</h3><span class="prijs">€70</span><span class="tijd">60 min, met massageolie <span class="chip">Nieuw-Vennep</span><span class="chip rv">Roelofarendsveen</span></span><p>Diepe rust met warme Altearah olie. Spanning in je nek en bovenrug mag los.</p></div>
+        <div class="item"><h3>Purple Dream ASMR Experience</h3><span class="prijs">€65</span><span class="tijd">60 min, zonder olie <span class="chip">Nieuw-Vennep</span><span class="chip rv">Roelofarendsveen</span></span><p>Dezelfde heerlijke opbouw, zonder olie. Fijn als je daarna meteen weer verder wilt.</p></div>
+        <div class="item"><h3>Purple Dream Verwen Extra</h3><span class="prijs">€20</span><span class="tijd">30 min, als aanvulling</span><p>Voeg een hoofd, hand en voetmassage toe aan je behandeling en maak je moment nog langer.</p></div>
+      </div>
+    </div>
+
+    <div class="paneel" id="p-gezicht" role="tabpanel" aria-labelledby="tab-gezicht" hidden>
+      <div class="uitleg">
+        <div class="pfoto"><img class="foto" src="img/jade.jpg" style="object-position:50% 30%" alt="Gezichtsmassage met warme jade stenen"></div>
+        <h3>Gezichtsbehandelingen</h3>
+        <p>Je huid krijgt precies wat ze nodig heeft, en jij krijgt rust. Ik werk met Yon-Ka uit Parijs, natuurlijke producten met heerlijke essentiële oliën. Je huid voelt daarna zacht, fris en stralend.</p>
+        <p>Eerst masseer ik je gezicht, onder warme damp. Terwijl het masker zijn werk doet, krijg je een ASMR hoofdmassage. Ik hars, epileer en verf niet, bij mij gaat het om je huid en om jou.</p>
+      <a class="lees" href="gezichtsbehandeling.html">Alles over de gezichtsbehandelingen</a></div>
+      <div class="menukaart">
+        <div class="item"><h3>Purple Dream Yon-Ka Escale</h3><span class="prijs">€65</span><span class="tijd">60 min <span class="chip">Nieuw-Vennep</span><span class="chip rv">Roelofarendsveen</span></span><p>Een frisse, stralende huid en een rustig hoofd. Inclusief ASMR hoofdmassage tijdens het masker.</p></div>
+        <div class="item"><h3>Purple Dream Yon-Ka Grand Ritual</h3><span class="prijs">€75</span><span class="tijd">75 min <span class="chip">Nieuw-Vennep</span></span><p>Mijn uitgebreidste ritueel voor je huid, met extra aandacht, extra massage en een stralend masker.</p></div>
+        <div class="item"><h3>Purple Dream Gezicht &amp; ASMR Ritual</h3><span class="prijs">€115</span><span class="tijd">90 min <span class="chip">Nieuw-Vennep</span><span class="chip rv">Roelofarendsveen</span></span><p>Het beste van twee werelden: een verzorgde huid en een volledige ASMR hoofdmassage.</p></div>
+        <div class="item"><h3>Purple Dream Gezichtsbehandeling &amp; HeadSpa</h3><span class="prijs">€140</span><span class="tijd">120 min <span class="chip">Nieuw-Vennep</span></span><p>Van je huid tot je haar helemaal verwend. Twee uur alleen voor jou.</p></div>
+        <div class="item"><h3>Purple Dream CBD Anti Stress</h3><span class="prijs">€110</span><span class="tijd">90 min <span class="chip rv">Roelofarendsveen</span></span><p>Kalmerend voor je huid en je hoofd, met rugmassage. Je neemt een CBD serum (waarde €34) mee naar huis.</p></div>
+      </div>
+    </div>
+
+    <div class="paneel" id="p-headspa" role="tabpanel" aria-labelledby="tab-headspa" hidden>
+      <div class="uitleg">
+        <div class="pfoto"><img class="foto" src="img/veer.jpg" style="object-position:50% 0%" alt="Een zachte paarse veer langs de hals"></div>
+        <h3>HeadSpa</h3>
+        <p>Warme waterstraaltjes over je hoofd, zachte handen en een heerlijke geur. Ik reinig je hoofdhuid en haar, en tijdens het wasritueel onder de waterboog geef ik je een korte ASMR hoofdmassage.</p>
+        <p>Daarna volgt een verzorgend masker van Natulique. Ik droog je haar licht, zodat je verzorgd en ontspannen naar huis gaat. De HeadSpa is er alleen in Nieuw-Vennep.</p>
+      <a class="lees" href="headspa.html">Alles over de HeadSpa</a></div>
+      <div class="menukaart">
+        <div class="item"><h3>Purple Dream HeadSpa Kennismaking</h3><span class="prijs">€55</span><span class="tijd">45 min <span class="chip">Nieuw-Vennep</span></span><p>Even proeven aan het wasritueel onder de waterboog.</p></div>
+        <div class="item"><h3>Purple Dream HeadSpa</h3><span class="prijs">€75</span><span class="tijd">60 min <span class="chip">Nieuw-Vennep</span></span><p>Het volledige ritueel met reiniging, masker en ASMR hoofdmassage onder warm water.</p></div>
+        <div class="item"><h3>Purple Dream HeadSpa &amp; ASMR</h3><span class="prijs">€130</span><span class="tijd">120 min <span class="chip">Nieuw-Vennep</span></span><p>Eerst de ASMR Calm Ritual voor je rug, schouders en hoofd, daarna de HeadSpa. Diepe rust van top tot teen.</p></div>
+      </div>
+    </div>
+
+    <div class="paneel" id="p-lichaam" role="tabpanel" aria-labelledby="tab-lichaam" hidden>
+      <div class="uitleg">
+        <div class="pfoto"><img class="foto" src="img/rugmassage.jpg" style="object-position:50% 5%" alt="Celina masseert de rug en schouders"></div>
+        <h3>Ontspanningsmassage met ASMR</h3>
+        <p>Een massage met warme olie, gecombineerd met zachte ASMR aanrakingen. Fijn als je spanning vooral in je rug en schouders voelt en je lichaam even helemaal mag loslaten.</p>
+      <a class="lees" href="lichaam-asmr.html">Alles over de ontspanningsmassage</a></div>
+      <div class="menukaart">
+        <div class="item"><h3>Purple Dream Rug &amp; ASMR Ritual</h3><span class="prijs">€55</span><span class="tijd">45 min <span class="chip">Nieuw-Vennep</span><span class="chip rv">Roelofarendsveen</span></span><p>Aandacht voor je rug, nek en schouders, met olie en zachte ASMR aanrakingen.</p></div>
+        <div class="item"><h3>Purple Dream Lichaam &amp; ASMR Ritual</h3><span class="prijs">€70</span><span class="tijd">60 min <span class="chip">Nieuw-Vennep</span><span class="chip rv">Roelofarendsveen</span></span><p>De hele achterkant van je lichaam verwend, van je schouders tot je benen.</p></div>
+      </div>
+    </div>
+
+    <p style="margin-top:36px;font-size:.92rem;color:var(--tekst-zacht)">Boek een pakket van zes keer dezelfde behandeling en je krijgt 10% voordeel, een jaar geldig. Vraag me gerust welke behandeling bij jou past.</p>
+  </div>
+</section>
+
+<section class="blok over" id="over" aria-labelledby="over-kop">
+  <div class="wrap">
+    <div class="portret"><img class="foto" src="img/celina-haarspin.jpg" style="object-position:40% 35%" alt="Celina van der Aar met een Haarspin, eigenaar van Salon Purple Dream"></div>
+    <div class="tekst">
+      <p class="label">Over mij</p>
+      <h2 id="over-kop">Hoi, ik ben Celina</h2>
+      <p>Salon Purple Dream is begonnen met een droom die ik deelde met mijn zus. Een plek vol geuren, waar vrouwen zich mooi en gezien voelen. Na haar overlijden heb ik besloten die droom waar te maken, op mijn eigen manier. Voor haar en voor mezelf.</p>
+      <p>Ik heb ruim twintig jaar in de kinderopvang en de zorg gewerkt. Zorgen voor een ander zit in mijn handen. Ik ben gediplomeerd schoonheidsspecialiste, gecertificeerd in ASMR en zorgmassage, en ik werk alleen met vrouwen.</p>
+      <p>Ik hou van goede koffie, van lachen en van een warme sfeer. Bij mij mag je gewoon binnenkomen zoals je bent. Ik houd rekening met wat jij fijn vindt en ik vraag tussendoor hoe het voelt.</p>
+      <p class="handtekening">Liefs, Celina 💜</p><a class="lees" href="over-mij.html">Lees mijn verhaal</a>
+    </div>
+  </div>
+</section>
+
+<section class="blok" aria-labelledby="zin-kop">
+  <div class="wrap">
+    <div class="kop">
+      <p class="label">Zo voelt een behandeling bij mij</p>
+      <h2 id="zin-kop">Al je zintuigen komen tot rust</h2>
+    </div>
+    <div class="zintuigen">
+      <div class="zintuig"><h3>Geur</h3><p>Je kiest zelf een geur uit de veertien Altearah geurrituelen. Elke behandeling begint met jouw geur.</p></div>
+      <div class="zintuig"><h3>Aanraking</h3><p>Langzame, zachte handen en fijne ASMR tools. Ik let op wat jouw lichaam prettig vindt.</p></div>
+      <div class="zintuig"><h3>Geluid</h3><p>Zacht ritselen, fluisteren, warm stromend water. Geluiden die je hoofd stil maken.</p></div>
+      <div class="zintuig"><h3>Rust</h3><p>Een warme deken, gedimd licht en tijd. Je hoeft niets, alleen maar te genieten.</p></div>
+    </div>
+    <div class="strook">
+      <figure><img class="foto" src="img/olien.jpg" style="object-position:50% 65%" alt="Altearah massageoliën en warme stenen"></figure>
+      <figure><img class="foto" src="img/gezichtsbehandeling.jpg" style="object-position:50% 40%" alt="Ontspannen klant tijdens een gezichtsbehandeling"></figure>
+      <figure><img class="foto" src="img/yonka-producten.jpg" style="object-position:50% 75%" alt="Yon-Ka producten klaar voor de behandeling"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sfeerband" style="position:relative;overflow:hidden;min-height:440px;display:flex;align-items:center;justify-content:center;text-align:center;background:#3d2547">
+  <video src="media/achtergrond-web.mp4" poster="img/achtergrond-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+  <div style="position:absolute;inset:0;background:linear-gradient(rgba(61,37,71,.62),rgba(61,37,71,.72))"></div>
+  <div class="wrap" style="position:relative;padding:70px 20px;color:#fefbf4">
+    <p class="label" style="color:#dacee6;justify-content:center">Salon Purple Dream</p>
+    <h2 style="color:#fefbf4;font-size:clamp(2.2rem,5vw,3.6rem);max-width:820px;margin:14px auto 26px">Waar je niets hoeft, alleen maar mag genieten</h2>
+    <a class="knop goud" href="#bookings-link">Boek je moment</a>
+  </div>
+</section><section class="cta-band"><div class="wrap"><p class="label" style="justify-content:center">Gratis Rustcheck</p><h2 style="margin-top:10px">Hoe gaat het eigenlijk met jou?</h2><p>Vijf minuten, eenentwintig vragen. Daarna krijg je persoonlijke tips, een geur en een behandeling die bij je past.</p><div class="rij"><a class="knop" href="rustcheck.html">Doe de Rustcheck</a></div></div></section><section class="blok reviews" id="reviews" aria-labelledby="rev-kop">
+  <div class="wrap">
+    <div class="kop">
+      <p class="label">Wat vrouwen zeggen</p>
+      <h2 id="rev-kop">Ervaringen van klanten</h2>
+    </div>
+    <div class="reviewrij">
+      <figure class="review" style="margin:0"><blockquote>"In een hele ontspannen sfeer werden verschillende zintuigen op subtiele en zachte wijze aangesproken. Geur, tast, gehoor. Het was echt een weldaad voor mijn hoofd en lichaam."</blockquote><cite>ASMR hoofdmassage</cite></figure>
+      <figure class="review" style="margin:0"><blockquote>"Ik kwam redelijk moe en gestressed binnen en na een uur liep ik mega ontspannen en blij de deur weer uit. Een uur van liefdevolle aandacht."</blockquote><cite>ASMR Calm Ritual</cite></figure>
+      <figure class="review" style="margin:0"><blockquote>"De combinatie van warme waterstraaltjes over je hoofd en een ontspannende hoofdmassage zorgde ervoor dat ik helemaal kon wegdromen."</blockquote><cite>HeadSpa</cite></figure>
+      <figure class="review" style="margin:0"><blockquote>"Lieve vrouw en hield rekening met mijn gevoeligheid. Intense geurbeleving en massage waren heerlijk ontspannend."</blockquote><cite>ASMR hoofd en schoudermassage</cite></figure>
+    </div>
+    <div class="ti-wrap" style="margin:30px 0 0"><script defer async src='https://cdn.trustindex.io/loader.js?b3eacf785c3638907006b38d3c6'></script></div><div class="onder">
+      <a class="knop" href="reviews.html">Lees alle ervaringen</a><a class="knop licht" href="https://g.page/r/Cb7ibA1aYALIEAE/review">Schrijf een review op Google</a>
+    </div>
+  </div>
+</section>
+
+<section class="blok workshop" style="background:#3d2547;color:#fefbf4"><div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:center">
+  <div><p class="label" style="color:#dacee6">Workshop, dinsdag 24 november</p>
+  <h2 style="color:#fefbf4;margin:12px 0 10px">November Glow</h2>
+  <p style="font-family:var(--display);font-style:italic;font-size:1.5rem;color:#e2d0be;margin-bottom:16px">Leer je eigen huid verwennen met Yon-Ka</p>
+  <p style="color:#dacee6;line-height:1.7">Een gezellige avond bij Business Sisters in Roelofarendsveen. Onder mijn begeleiding ga je zelf aan de slag met Yon-Ka. Je ontdekt wat jouw huid nodig heeft en je neemt een stralende huid mee naar huis.</p>
+  <p style="color:#fefbf4;margin:18px 0 8px;font-weight:500">Dit gaan we doen</p>
+  <ul style="color:#dacee6;line-height:1.8;margin:0;padding-left:20px">
+    <li>We beginnen met een geurenritueel van Altearah, zodat je even helemaal tot rust komt</li>
+    <li>Je reinigt je huid zelf, stap voor stap</li>
+    <li>Je doet een zachte peeling, voor een frisse en gladde huid</li>
+    <li>Je brengt een masker aan dat je huid laat stralen</li>
+    <li>Je krijgt mijn tips om je huid thuis goed te verzorgen</li>
+  </ul>
+  <dl style="display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:22px 0;color:#fefbf4">
+    <dt style="color:#b8975a">Wanneer</dt><dd style="margin:0">Dinsdag 24 november</dd>
+    <dt style="color:#b8975a">Waar</dt><dd style="margin:0">Business Sisters, De Lasso-Zuid 3F, Roelofarendsveen</dd>
+    <dt style="color:#b8975a">Prijs</dt><dd style="margin:0">€50, inclusief try kit en een cadeaubon van €15</dd>
+    <dt style="color:#b8975a">Plekken</dt><dd style="margin:0">Maximaal 12</dd>
+  </dl>
+  <a class="knop goud" href="https://wa.me/31638248785?text=Hoi%20Celina%2C%20ik%20wil%20me%20graag%20aanmelden%20voor%20de%20workshop%20November%20Glow%20op%20dinsdag%2024%20november%20%F0%9F%92%9C" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" style="vertical-align:-4px;margin-right:8px" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/></svg>Meld je aan via WhatsApp</a><p style="margin:10px 0 0;color:#dacee6;font-size:.9rem">Voor de workshop van dinsdag 24 november</p></div>
+  <div style="border-radius:22px;overflow:hidden;border:1px solid #b8975a"><img class="foto" src="img/workshop-producten.jpg" alt="Yon-Ka producten en tools klaar voor de workshop November Glow"></div>
+</div></section><section class="blok cadeau" id="cadeau" aria-labelledby="cad-kop">
+  <div class="wrap">
+    <div style="display:grid;gap:18px">
+      <p class="label">Cadeaubon en cadeautasjes</p>
+      <h2 id="cad-kop">Geef iemand een moment van rust</h2>
+      <p>Ken jij iemand die altijd voor een ander klaarstaat? Een vriendin, je moeder, je buurvrouw? Met een cadeaubon van Salon Purple Dream geef je haar tijd voor zichzelf. Je kiest een bedrag of een behandeling.</p>
+      <p>Liever iets om uit te pakken? Mijn paarse cadeautasjes zijn er vanaf €9,95, en er is een Yon-Ka kerstset in de vorm van een boek.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+        <a class="knop goud" href="#gift-cards-link">Bestel een cadeaubon</a>
+      </div>
+    </div>
+    <div class="bon"><img src="img/cadeaubon.jpg" alt="Cadeaubon van Salon Purple Dream, even helemaal van jou"></div>
+  </div>
+</section>
+
+<section class="blok" id="locaties" aria-labelledby="loc-kop">
+  <div class="wrap">
+    <div class="kop">
+      <p class="label">Waar je me vindt</p>
+      <h2 id="loc-kop">Twee fijne plekken</h2>
+    </div>
+    <div class="locaties">
+      <article class="locatie">
+        <h3>Nieuw-Vennep</h3>
+        <p style="color:var(--tekst-zacht)">Mijn eigen salon, met alle behandelingen, ook de HeadSpa.</p>
+        <dl>
+          <dt>Adres</dt><dd>Vronen 180, Nieuw-Vennep</dd>
+          <dt>Tijden</dt><dd>Op afspraak, bekijk mijn online agenda</dd>
+        </dl>
+      </article>
+      <article class="locatie">
+        <h3>Roelofarendsveen</h3>
+        <p style="color:var(--tekst-zacht)">Bij Business Sisters. Voor ontspanning en voor je huid, met ontspanningsmassage, ASMR, gezichtsbehandelingen en de CBD Anti Stress. Geen HeadSpa.</p>
+        <dl>
+          <dt>Adres</dt><dd>De Lasso-Zuid 3F, 2371 EV Roelofarendsveen</dd>
+          <dt>Tijden</dt><dd>Maandag en dinsdag 15.00 tot 19.00, andere tijden in overleg</dd>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="blok" aria-labelledby="faq-kop" style="padding-top:0">
+  <div class="wrap">
+    <div class="kop">
+      <p class="label">Goed om te weten</p>
+      <h2 id="faq-kop">Veelgestelde vragen</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Wat is ASMR eigenlijk?</summary><p>ASMR is dat fijne, tintelende gevoel dat je krijgt van zachte geluiden en lichte aanrakingen. Denk aan iemand die met je haar speelt. Je lichaam ontspant vanzelf en je hoofd wordt stil. Je hoeft er niets voor te doen.</p></details>
+      <details><summary>Ik heb nog nooit ASMR gehad, waar begin ik?</summary><p>Begin met de Purple Dream ASMR Intro van 45 minuten. Dan ervaar je rustig wat het met je doet. Veel vrouwen kiezen daarna voor de Calm Ritual.</p></details>
+      <details><summary>Wat neem ik mee en hoe bereid ik me voor?</summary><p>Je hoeft niets mee te nemen. Kom op tijd, zodat je rustig kunt binnenkomen. Na een HeadSpa droog ik je haar licht, dus plan na afloop liever geen belangrijke afspraak waarvoor je haar perfect moet zitten.</p></details>
+      <details><summary>Zijn de producten natuurlijk?</summary><p>Ja. Ik werk met Altearah voor de geurrituelen en massageolie, Natulique voor je haar en Yon-Ka voor je huid. Alle drie zijn natuurlijke merken, en je kunt ze ook bij mij en in mijn <a href="#webstore-link">webshop</a> kopen.</p></details>
+      <details><summary>Kan ik mijn afspraak verzetten?</summary><p>Natuurlijk. Laat het me op tijd weten via mijn online agenda of WhatsApp, dan zoeken we samen een nieuw moment.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="slot" aria-labelledby="slot-kop">
+  <div class="wrap">
+    <img src="img/logo.png" alt="Logo Salon Purple Dream, de salon voor ontspanning" style="width:min(240px,60vw);height:auto;display:block;margin:0 auto 34px">
+    <h2 id="slot-kop">Tijd voor jou, je mag gewoon zijn</h2>
+    <p>Kies je behandeling en je moment in mijn online agenda. Heb je liever eerst even contact? Stuur me gerust een appje, ik denk graag met je mee.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <a class="knop" href="#bookings-link">Boek je behandeling</a>
+      <a class="knop licht" href="https://wa.me/31638248785">WhatsApp 06 38248785</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="img/logo-wit.png" alt="Salon Purple Dream" style="width:150px;height:auto;display:block;margin-bottom:16px">
+      <p>Waar je niets hoeft, alleen maar mag genieten.</p>
+      <div class="socials"><a href="https://www.instagram.com/salon_purple_dream/" target="_blank" rel="noopener" aria-label="Instagram van Salon Purple Dream" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/share/19iHY3zDQq/" target="_blank" rel="noopener" aria-label="Facebook van Salon Purple Dream" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M15.5 8H14a2 2 0 0 0-2 2v11M9.5 13h5.5"/></svg></a><a href="https://www.tiktok.com/@salonpurpledream" target="_blank" rel="noopener" aria-label="TikTok van Salon Purple Dream" title="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 4c.4 2.4 2 4 4.5 4.3"/></svg></a><a href="https://wa.me/31638248785" target="_blank" rel="noopener" aria-label="WhatsApp van Salon Purple Dream" title="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/><path d="M9.2 8.6c.2 2.6 2.4 4.9 5 5.2l.9-1.1 1.7.8-.4 1.5c-3.8.2-7-3-6.8-6.8l1.5-.4.8 1.7z" fill="currentColor" stroke="none"/></svg></a><a href="https://www.linkedin.com/company/salon-purple-dream/" target="_blank" rel="noopener" aria-label="LinkedIn van Salon Purple Dream" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16"/><circle cx="8" cy="7.6" r=".9" fill="currentColor" stroke="none"/><path d="M11.5 16v-5.5M11.5 13c0-1.6 1-2.6 2.3-2.6s2.2.9 2.2 2.6V16"/></svg></a></div>
+      <p style="margin-top:14px"><a href="https://whatsapp.com/channel/0029VaDBzeiCXC3MtQ2nJg1h" target="_blank" rel="noopener">Volg mijn WhatsApp kanaal</a> voor tips en nieuws 💜</p>
+    </div>
+    <div>
+      <h3>Behandelingen</h3>
+      <p><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><br><a href="headspa.html">HeadSpa</a><br><a href="gezichtsbehandeling.html">Gezichtsbehandeling</a><br><a href="lichaam-asmr.html">Ontspanningsmassage</a><br><a href="cadeaubon.html">Cadeaubon</a><br><a href="behandelingen.html">Alle behandelingen en prijzen</a><br><a href="rustcheck.html">Gratis Rustcheck</a><br><a href="geurtest.html">Geurtest</a><br><a href="veelgestelde-vragen.html">Veelgestelde vragen</a><br><a href="#webstore-link">Webshop</a></p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>WhatsApp 06 38248785<br>info@salonpurpledream.nl<br><a href="https://www.instagram.com/salon_purple_dream/">Instagram @salon_purple_dream</a><br>Vronen 180, Nieuw-Vennep<br>De Lasso-Zuid 3F, Roelofarendsveen</p>
+    </div>
+    <div style="grid-column:1/-1;border-top:1px solid rgba(254,251,244,.15);padding-top:26px;margin-top:6px">
+      <h3>Rust in je mailbox</h3>
+      <p>Af en toe een lief berichtje van mij, met tips voor een rustig hoofd en als eerste weten wanneer er iets nieuws is.</p>
+      <form class="nbform" name="nieuwsbrief" method="POST" action="https://api.web3forms.com/submit"><input type="hidden" name="access_key" value="6b077518-5fc7-4c91-995f-234cbd226ec8"><input type="hidden" name="subject" value="Nieuwe aanmelding nieuwsbrief"><input type="hidden" name="from_name" value="Website Salon Purple Dream"><input type="hidden" name="redirect" value="https://salonpurpledream.nl/bedankt.html"><input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="form-name" value="nieuwsbrief">
+        <p class="verstopt" style="display:none"><label>Niet invullen <input name="bot-veld"></label></p>
+        <input type="text" name="naam" placeholder="Je voornaam" aria-label="Je voornaam" autocomplete="given-name">
+        <input type="email" name="email" placeholder="Je e-mailadres" aria-label="Je e-mailadres" autocomplete="email" required>
+        <button type="submit">Aanmelden</button>
+      </form>
+      <p class="nbmelding" hidden></p>
+    </div>
+    <p class="klein">© 2026 Salon Purple Dream, Celina van der Aar. Alle rechten voorbehouden. De teksten, foto's, filmpjes en het logo op deze website zijn van mij en mogen niet zonder mijn toestemming worden gebruikt.<br>KvK 86768964 · btw NL004305985B36 · <a href="algemene-voorwaarden.html">Algemene voorwaarden</a> · <a href="privacy.html">Privacybeleid</a></p>
+  </div>
+</footer>
+<a class="wa-zweef" href="https://wa.me/31638248785" target="_blank" rel="noopener" aria-label="Stuur Celina een berichtje via WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/><path d="M9.2 8.6c.2 2.6 2.4 4.9 5 5.2l.9-1.1 1.7.8-.4 1.5c-3.8.2-7-3-6.8-6.8l1.5-.4.8 1.7z" fill="currentColor" stroke="none"/></svg></a>
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function kies(tab){
+    tabs.forEach(function(t){
+      var aan = t === tab;
+      t.setAttribute('aria-selected', aan ? 'true' : 'false');
+      t.tabIndex = aan ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !aan;
+    });
   }
-  // Lettertypes en plaatjes: uit de cache als dat kan, anders ophalen en bewaren.
-  if (url.origin === location.origin || url.hostname.endsWith("gstatic.com") || url.hostname.endsWith("googleapis.com")) {
-    e.respondWith(
-      caches.match(e.request).then(hit => hit || fetch(e.request).then(r => {
-        const copy = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); return r;
-      }))
-    );
-  }
-});
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ kies(t); });
+    t.addEventListener('keydown', function(e){
+      var n = null;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (n){ e.preventDefault(); kies(n); n.focus(); }
+    });
+  });
+  var knop = document.getElementById('menuknop'), mm = document.getElementById('mobielmenu');
+  knop.addEventListener('click', function(){ var o = mm.classList.toggle('open'); knop.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+  })();</script>
+<script src="https://salonround.com/embed.js" data-id="salon-purple-dream" data-hide="true"></script>
+</body>
+</html>
