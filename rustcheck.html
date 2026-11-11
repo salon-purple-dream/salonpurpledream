@@ -580,6 +580,34 @@ function advies(o){
 
 function rcVulForm(d){var f=document.getElementById("rcform");if(!f)return;for(var k in d){var el=f.querySelector('[name="'+k+'"]');if(el)el.value=d[k];}document.getElementById("rcmailblok").hidden=false;}
 function rcVerbergForm(){var b=document.getElementById("rcmailblok");if(b)b.hidden=true;}
+/* Koppeling met MailerLite: wie de nieuwsbrief aanvinkt, komt in de groep Rustcheck en krijgt de automatische mails */
+(function(){
+  var ML="https://assets.mailerlite.com/jsonp/2787316/forms/203845469749642314/subscribe";
+  var PLEK={nv:"Nieuw-Vennep",rv:"Roelofarendsveen",beide:"Maakt niet uit"};
+  function koppel(){
+    var f=document.getElementById("rcform"); if(!f) return;
+    f.addEventListener("submit",function(){
+      try{
+        var nb=document.getElementById("rc-nb");
+        if(!nb||!nb.checked) return;
+        if(f.querySelector('[name="bot-veld"]').value) return;
+        var v=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value:"";};
+        var d=new FormData();
+        d.append("fields[email]",v("email"));
+        d.append("fields[name]",v("naam"));
+        d.append("fields[behandeling]",v("behandeling"));
+        d.append("fields[geur]",v("geur"));
+        d.append("fields[plek]",PLEK[v("plek")]||v("plek"));
+        d.append("ml-submit","1");
+        d.append("anticsrf","true");
+        if(!(navigator.sendBeacon&&navigator.sendBeacon(ML,d))){
+          fetch(ML,{method:"POST",body:d,mode:"no-cors",keepalive:true});
+        }
+      }catch(e){}
+    });
+  }
+  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",koppel)}else{koppel()}
+})();
 
 const AREAS = {hoofd:"Je hoofd", slaap:"Je slaap", lijf:"Je lijf", huid:"Je huid", tijd:"Tijd voor jou"};
 const SCALE = [["0","Herken ik niet"],["1","Soms"],["2","Vaak"],["3","Bijna altijd"]];
