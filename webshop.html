@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webshop Yon-Ka en cadeautasjes | Salon Purple Dream</title>
+<meta name="description" content="Bestel Yon-Ka huidverzorging, kerstsets, cadeautasjes en cadeaubonnen online. Je betaalt vooraf en haalt op in Nieuw-Vennep of Roelofarendsveen.">
+<meta name="author" content="Celina van der Aar, Salon Purple Dream">
+<meta name="copyright" content="© 2026 Salon Purple Dream">
+<link rel="icon" href="img/logo-monogram.png">
+<link rel="canonical" href="https://salonpurpledream.nl/webshop">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Salon Purple Dream">
+<meta property="og:title" content="Webshop Yon-Ka en cadeautasjes | Salon Purple Dream">
+<meta property="og:description" content="Bestel Yon-Ka huidverzorging, kerstsets, cadeautasjes en cadeaubonnen online. Je betaalt vooraf en haalt op in Nieuw-Vennep of Roelofarendsveen.">
+<meta property="og:url" content="https://salonpurpledream.nl/webshop">
+<meta property="og:image" content="https://salonpurpledream.nl/img/cadeau-ideeen.jpg">
+<meta property="og:locale" content="nl_NL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Huisstijl Salon Purple Dream. Layout: rustige editorial pagina, crème papier met diep paarse banden, goud alleen als dunne lijn */
+  --aubergine:#3d2547;
+  --paars:#7f649d;
+  --grijspaars:#9486a4;
+  --lavendel:#dacee6;
+  --zand:#e2d0be;
+  --creme:#fefbf4;
+  --wit:#ffffff;
+  --goud:#b8975a;
+  --tekst:#3d2547;
+  --tekst-zacht:#6a5a78;
+  --display:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body:"Jost", "Avenir Next", Arial, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--creme);color:var(--tekst);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.7}
+img,svg{max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--goud);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:400;font-style:italic;line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,5vw,2.9rem)}
+h3{font-size:1.55rem}
+p{margin:0}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+.smal{max-width:62ch}
+.label{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:400;color:var(--paars)}
+.lijn{width:56px;height:1px;background:var(--goud);border:0;margin:0}
+
+/* Navigatie */
+.nav{position:sticky;top:0;z-index:10;background:rgba(254,251,244,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(61,37,71,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.merk{display:flex;align-items:center;gap:12px;text-decoration:none}
+.merk span{font-family:var(--display);font-style:italic;font-size:1.35rem;line-height:1}
+.merk small{display:block;font-family:var(--body);font-style:normal;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grijspaars);margin-top:4px}
+.menu{display:flex;gap:26px;font-size:.92rem}
+.menu a{text-decoration:none;color:var(--tekst-zacht)}
+.menu a:hover{color:var(--aubergine)}
+.knop{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;background:var(--aubergine);color:var(--creme);text-decoration:none;font-weight:400;font-size:.95rem;letter-spacing:.03em;border:1px solid var(--aubergine);transition:background .2s,color .2s}
+.knop:hover{background:var(--paars);border-color:var(--paars)}
+.knop.licht{background:transparent;color:var(--aubergine)}
+.knop.licht:hover{background:var(--aubergine);color:var(--creme)}
+.knop.goud{background:var(--creme);color:var(--aubergine);border-color:var(--creme)}
+.knop.goud:hover{background:var(--lavendel);border-color:var(--lavendel)}
+.nav .knop{padding:10px 20px;font-size:.88rem}
+@media (max-width:860px){.menu{display:none}}
+.knop{white-space:nowrap}
+@media (max-width:420px){.merk small{display:none}.merk span{font-size:1.2rem}}
+
+/* Hero */
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.5vw,4.6rem);margin:18px 0 22px}
+.hero p.intro{font-size:1.12rem;color:var(--tekst-zacht);max-width:52ch}
+.hero .acties{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-beeld{aspect-ratio:4/5;border-radius:220px 220px 18px 18px;background:radial-gradient(120% 80% at 50% 10%,var(--paars) 0%,var(--aubergine) 70%);position:relative;overflow:hidden;display:grid;place-items:center}
+.hero-beeld .citaat{position:absolute;left:24px;right:24px;bottom:26px;color:var(--lavendel);font-family:var(--display);font-style:italic;font-size:1.2rem;line-height:1.35;text-align:center}
+.hero-beeld .foto-tip{position:absolute;top:22px;left:0;right:0;text-align:center;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grijspaars)}
+.feiten{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;font-size:.88rem;color:var(--tekst-zacht)}
+.feiten span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--goud);margin-right:10px;vertical-align:middle}
+@media (max-width:860px){.hero{padding:40px 0 48px}.hero .wrap{grid-template-columns:1fr;gap:36px}.hero-beeld{max-width:380px;width:100%;margin-inline:auto}}
+
+/* Foto's */
+.foto{display:block;width:100%;height:100%;object-fit:cover}
+.hero-beeld{background:var(--aubergine)}
+.hero-beeld img{position:absolute;inset:0}
+.hero-beeld::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(61,37,71,0) 50%,rgba(61,37,71,.85) 100%)}
+.hero-beeld .citaat{z-index:1;color:var(--creme)}
+.pakket .pfoto{aspect-ratio:4/3;border-radius:10px;overflow:hidden;margin:-12px -12px 6px}
+.paneel .pfoto{aspect-ratio:4/3;border-radius:14px;overflow:hidden;margin-bottom:8px}
+.portret{overflow:hidden}
+.portret img{border-radius:50%;position:relative;z-index:0}
+.strook{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.strook figure{margin:0;aspect-ratio:4/5;border-radius:14px;overflow:hidden}
+@media (max-width:600px){.strook{grid-template-columns:1fr 1fr}.strook figure:last-child{display:none}}
+.bon{background:none;border:0;padding:0;aspect-ratio:auto}
+.bon::before{display:none}
+.bon img{border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+
+/* Herkenning */
+.herkenning{background:var(--aubergine);color:var(--creme);padding:84px 0}
+.herkenning .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.herkenning h2{color:var(--lavendel)}
+.herkenning p{color:#e9e1f0}
+.herkenning .label{color:var(--zand)}
+.lijstje{display:grid;gap:18px;margin-top:6px}
+.lijstje div{padding:18px 0;border-bottom:1px solid rgba(218,206,230,.2);font-family:var(--display);font-style:italic;font-size:1.35rem;color:var(--creme)}
+@media (max-width:860px){.herkenning{padding:60px 0}.herkenning .wrap{grid-template-columns:1fr;gap:32px}}
+
+/* Secties */
+section.blok{padding:92px 0}
+.kop{display:grid;gap:16px;margin-bottom:48px}
+@media (max-width:860px){section.blok{padding:64px 0}}
+
+/* Pakketten */
+.pakketten{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pakket{background:var(--wit);border:1px solid rgba(61,37,71,.09);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:14px}
+.pakket .soort{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paars)}
+.pakket p{color:var(--tekst-zacht);font-size:.98rem}
+.pakket .meta{margin-top:auto;padding-top:16px;border-top:1px solid var(--lavendel);display:flex;justify-content:space-between;align-items:baseline;font-size:.9rem;color:var(--tekst-zacht)}
+.pakket .prijs{font-family:var(--display);font-size:1.6rem;color:var(--aubergine);font-variant-numeric:tabular-nums}
+.pakket.uitgelicht{background:var(--lavendel);border-color:var(--lavendel)}
+@media (max-width:900px){.pakketten{grid-template-columns:1fr}}
+
+/* Behandelingen */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.tab{font-family:var(--body);font-weight:400;font-size:.92rem;padding:10px 20px;border-radius:999px;border:1px solid var(--grijspaars);background:transparent;color:var(--aubergine);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--aubergine);border-color:var(--aubergine);color:var(--creme)}
+.paneel{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.paneel[hidden]{display:none}
+.paneel .uitleg{display:grid;gap:16px;align-content:start}
+.paneel .uitleg p{color:var(--tekst-zacht)}
+.menukaart{display:grid}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding:20px 0;border-bottom:1px solid rgba(61,37,71,.1)}
+.item:first-child{border-top:1px solid rgba(61,37,71,.1)}
+.item h3{font-size:1.3rem}
+.item .prijs{font-family:var(--display);font-size:1.35rem;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.item p{grid-column:1/-1;font-size:.94rem;color:var(--tekst-zacht)}
+.item .tijd{font-size:.85rem;color:var(--grijspaars);grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{display:inline-block;font-size:.72rem;letter-spacing:.06em;padding:3px 10px;border-radius:999px;background:var(--zand);color:var(--aubergine)}
+.chip.rv{background:var(--lavendel)}
+@media (max-width:860px){.paneel{grid-template-columns:1fr;gap:28px}}
+
+/* Over mij */
+.over{background:var(--zand)}
+.over .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.portret{aspect-ratio:1;border-radius:50%;background:var(--creme);display:grid;place-items:center;max-width:380px;width:100%;margin-inline:auto;position:relative}
+.portret::after{content:"";position:absolute;inset:14px;border-radius:50%;border:1px solid var(--goud);opacity:.6}
+.portret span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grijspaars)}
+.over .tekst{display:grid;gap:18px}
+.over .tekst p{color:#4b3a55}
+.handtekening{font-family:var(--display);font-style:italic;font-size:1.8rem;color:var(--aubergine)}
+@media (max-width:860px){.over .wrap{grid-template-columns:1fr;gap:36px}}
+
+/* Zintuigen */
+.zintuigen{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.zintuig{padding:28px 0;border-top:1px solid var(--goud);display:grid;gap:10px}
+.zintuig h3{font-size:1.45rem}
+.zintuig p{font-size:.95rem;color:var(--tekst-zacht)}
+@media (max-width:860px){.zintuigen{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.zintuigen{grid-template-columns:1fr}}
+
+/* Reviews */
+.reviews{background:var(--lavendel)}
+.reviewrij{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.review{background:var(--creme);border-radius:16px;padding:32px;display:grid;gap:18px;align-content:space-between}
+.review blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:1.28rem;line-height:1.45;color:var(--aubergine)}
+.review cite{font-style:normal;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paars)}
+.reviews .onder{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+@media (max-width:860px){.reviewrij{grid-template-columns:1fr}}
+
+/* Cadeau */
+.cadeau{background:var(--aubergine);color:var(--creme)}
+.cadeau .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.cadeau h2{color:var(--lavendel)}
+.cadeau p{color:#e9e1f0}
+.cadeau .label{color:var(--zand)}
+.bon{aspect-ratio:1.6;border-radius:14px;background:linear-gradient(135deg,#4a2d57,var(--aubergine));border:1px solid rgba(184,151,90,.6);display:grid;place-items:center;text-align:center;padding:24px;position:relative}
+.bon::before{content:"";position:absolute;inset:10px;border:1px solid rgba(184,151,90,.35);border-radius:9px}
+.bon strong{display:block;font-family:var(--display);font-weight:400;font-style:italic;font-size:2rem;color:var(--creme)}
+.bon em{font-style:normal;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--goud)}
+@media (max-width:860px){.cadeau .wrap{grid-template-columns:1fr;gap:36px}}
+
+/* Locaties */
+.locaties{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.locatie{border:1px solid rgba(61,37,71,.12);border-radius:16px;padding:32px;display:grid;gap:14px;background:var(--wit)}
+.locatie dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:6px 0 0;font-size:.95rem}
+.locatie dt{color:var(--grijspaars)}
+.locatie dd{margin:0}
+@media (max-width:860px){.locaties{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{display:grid;max-width:820px}
+details{border-bottom:1px solid rgba(61,37,71,.12);padding:20px 0}
+details:first-child{border-top:1px solid rgba(61,37,71,.12)}
+summary{cursor:pointer;list-style:none;font-family:var(--display);font-style:italic;font-size:1.35rem;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--body);font-style:normal;font-weight:300;color:var(--paars)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:12px;color:var(--tekst-zacht);max-width:65ch}
+
+/* Slot */
+.slot{text-align:center;padding:100px 0}
+.slot h2{max-width:20ch;margin:0 auto 18px}
+.slot p{max-width:52ch;margin:0 auto 32px;color:var(--tekst-zacht)}
+footer{background:var(--aubergine);color:#cdbfd9;padding:52px 0 40px;font-size:.9rem}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer h3{color:var(--creme);font-size:1.3rem;margin-bottom:10px}
+footer a{color:#cdbfd9}
+footer .klein{grid-column:1/-1;border-top:1px solid rgba(218,206,230,.15);padding-top:22px;margin-top:10px;font-size:.8rem;color:var(--grijspaars)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+/* Menu en pagina's */
+.menu a[aria-current="page"]{color:var(--aubergine);font-weight:400}
+.menuknop{display:none;background:none;border:1px solid var(--grijspaars);border-radius:999px;padding:8px 14px;font:inherit;font-size:.88rem;color:var(--aubergine);cursor:pointer}
+.navrechts{display:flex;align-items:center;gap:10px}
+.mobielmenu{display:none;border-top:1px solid rgba(61,37,71,.08);background:var(--creme)}
+.mobielmenu.open{display:block}
+.mobielmenu a{display:block;padding:14px 20px;text-decoration:none;border-bottom:1px solid rgba(61,37,71,.06);font-family:var(--display);font-style:italic;font-size:1.25rem}
+@media (max-width:1180px){.menuknop{display:inline-block}.menu{display:none!important}}
+.menu{gap:20px}
+@media (max-width:1060px) and (min-width:861px){.menu{gap:14px;font-size:.85rem}}
+.view[hidden]{display:none}
+.pagehero{padding:64px 0 56px}
+.pagehero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.pagehero h1{font-size:clamp(2.4rem,5.5vw,3.8rem);margin:16px 0 20px}
+.pagehero .intro{font-size:1.1rem;color:var(--tekst-zacht);max-width:54ch}
+.pagehero .acties{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.pagehero .beeld{aspect-ratio:4/5;border-radius:18px;overflow:hidden}
+@media (max-width:860px){.pagehero{padding:36px 0 44px}.pagehero .wrap{grid-template-columns:1fr;gap:30px}.pagehero .beeld{max-width:420px;width:100%}}
+.kruimel{font-size:.82rem;color:var(--grijspaars)}
+.kruimel a{color:var(--grijspaars)}
+.tweekol{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.tweekol .tekst{display:grid;gap:16px}
+.tweekol .tekst p{color:var(--tekst-zacht)}
+@media (max-width:860px){.tweekol{grid-template-columns:1fr;gap:28px}}
+.donker{background:var(--aubergine);color:var(--creme)}
+.donker h2{color:var(--lavendel)}
+.donker p{color:#e9e1f0}
+.donker .label{color:var(--zand)}
+.stappen{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:stap}
+.stappen li{counter-increment:stap;display:grid;grid-template-columns:56px 1fr;gap:6px 18px;padding:22px 0;border-bottom:1px solid rgba(218,206,230,.2)}
+.stappen li::before{content:counter(stap,decimal-leading-zero);font-family:var(--display);font-style:italic;font-size:1.6rem;color:var(--goud);grid-row:span 2}
+.stappen h3{font-size:1.35rem;color:var(--creme)}
+.stappen p{font-size:.96rem}
+.licht .stappen li{border-color:rgba(61,37,71,.1)}
+.licht .stappen h3{color:var(--aubergine)}
+.licht .stappen p{color:var(--tekst-zacht)}
+.voorwie{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.voorwie div{background:var(--wit);border:1px solid rgba(61,37,71,.09);border-radius:14px;padding:24px;display:grid;gap:8px}
+.voorwie h3{font-size:1.3rem}
+.voorwie p{font-size:.95rem;color:var(--tekst-zacht)}
+@media (max-width:860px){.voorwie{grid-template-columns:1fr}}
+.losse-review{max-width:760px;margin:0 auto;text-align:center;display:grid;gap:16px}
+.losse-review blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.4;color:var(--aubergine)}
+.losse-review cite{font-style:normal;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paars)}
+.cta-band{background:var(--lavendel);padding:64px 0;text-align:center}
+.cta-band h2{margin-bottom:14px}
+.cta-band p{max-width:50ch;margin:0 auto 26px;color:#4b3a55}
+.cta-band .rij{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lees{display:inline-block;margin-top:6px;font-size:.9rem;color:var(--paars);text-decoration:underline;text-underline-offset:3px}
+.contactkaart{display:grid;gap:10px;background:var(--wit);border:1px solid rgba(61,37,71,.12);border-radius:16px;padding:32px}
+.contactkaart a{color:var(--aubergine)}
+.merken{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.merken div{border-top:1px solid var(--goud);padding-top:18px;display:grid;gap:8px}
+.merken p{font-size:.95rem;color:var(--tekst-zacht)}
+.artikel{max-width:68ch;margin:0 auto;display:grid;gap:18px;font-size:1.05rem}
+.artikel p,.artikel li{color:#4b3a55}
+.artikel h3{font-size:1.7rem;margin-top:18px}
+.artikel ol{margin:0;padding-left:1.3em;display:grid;gap:10px}
+.artikel strong{font-weight:500;color:var(--aubergine)}
+.artikelkop{max-width:68ch;margin:0 auto;display:grid;gap:14px;padding:56px 0 30px}
+.artikelkop h1{font-size:clamp(2.2rem,5vw,3.4rem)}
+.artikelfoto{max-width:900px;margin:0 auto 40px;aspect-ratio:16/9;border-radius:18px;overflow:hidden}
+.blogkaarten{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.blogkaart{background:var(--wit);border:1px solid rgba(61,37,71,.09);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none}
+.videoblok .wrap{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
+.reel{width:min(320px,80vw);aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:var(--aubergine);box-shadow:0 20px 50px rgba(61,37,71,.25)}
+.reel video{width:100%;height:100%;object-fit:cover;display:block}
+.videoblok .tekst{display:grid;gap:16px;max-width:52ch}
+.videoblok .tekst p{color:var(--tekst-zacht)}
+@media (max-width:760px){.videoblok .wrap{grid-template-columns:1fr;justify-items:center;gap:30px}}
+.formkaart form{display:grid;gap:16px;margin-top:6px}
+.formkaart .velden{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.formkaart label{display:grid;gap:6px;font-size:.92rem;color:var(--aubergine)}
+.formkaart input,.formkaart select,.formkaart textarea{font:inherit;font-size:1rem;padding:12px 14px;border:1px solid var(--grijspaars);border-radius:10px;background:var(--creme);color:var(--aubergine)}
+.formkaart input:focus,.formkaart select:focus,.formkaart textarea:focus{outline:2px solid var(--paars);outline-offset:1px}
+.formkaart .knop{justify-self:start}
+.verstopt{position:absolute;left:-9999px}
+.klein-privacy{font-size:.82rem;color:var(--grijspaars)}
+.formmelding{background:var(--lavendel);padding:12px 16px;border-radius:10px}
+@media (max-width:640px){.formkaart .velden{grid-template-columns:1fr}}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(218,206,230,.35);color:var(--creme);transition:background .2s}
+.socials a:hover{background:var(--paars)}
+.socials svg{width:22px;height:22px}
+.socials.licht a{border-color:var(--grijspaars);color:var(--aubergine)}
+.socials.licht a:hover{background:var(--lavendel)}
+.nav{border-bottom:1px solid rgba(184,151,90,.45)}
+.hero-beeld{overflow:visible}
+.hero-beeld img{border-radius:inherit}
+.hero-beeld::before{content:"";position:absolute;inset:-10px;border:1px solid rgba(184,151,90,.7);border-radius:230px 230px 24px 24px;pointer-events:none}
+.hero-beeld::after{border-radius:inherit}
+.nav::before{content:"";display:block;height:3px;background:linear-gradient(90deg,transparent,var(--goud),transparent)}
+.label{display:inline-flex;align-items:center;gap:12px}
+.label::before{content:"";width:22px;height:1px;background:var(--goud);flex:none}
+.score .label::before{display:none}
+.knop:not(.licht):not(.goud){box-shadow:inset 0 0 0 1px rgba(184,151,90,.55)}
+.reel{box-shadow:0 0 0 1px rgba(184,151,90,.7),0 20px 50px rgba(61,37,71,.25)}
+.pakket.uitgelicht{box-shadow:inset 0 0 0 1px rgba(184,151,90,.6)}
+.handtekening{color:var(--goud)}
+footer{border-top:3px solid transparent;border-image:linear-gradient(90deg,transparent,var(--goud),transparent) 1}
+.socials a{border-color:rgba(184,151,90,.55)}
+.item .prijs{color:var(--aubergine)}
+.score .cijfer{color:var(--goud)}
+.kaart{position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--lavendel);margin-top:8px;border:1px solid rgba(184,151,90,.5)}
+.kaart iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+.kaart-reserve{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:4px;color:var(--aubergine);font-size:.92rem}
+.kaart-reserve span:first-child{font-family:var(--display);font-style:italic;font-size:1.3rem}
+.opleiding{max-width:760px;display:grid;gap:12px;background:var(--wit);border:1px solid rgba(184,151,90,.55);border-radius:16px;padding:28px 32px}
+.opleiding p{color:var(--tekst-zacht)}
+.opleiding a{color:var(--paars)}
+.partnerlogo{display:block;margin-top:6px;max-width:340px}
+.partnerlogo img{width:100%;height:auto;display:block}
+.blogkaart .bf{aspect-ratio:4/3;overflow:hidden}
+.menu a{white-space:nowrap}
+.merk span{white-space:nowrap}
+@media (max-width:1400px){.merk small{display:none}}
+.blogkaart .bt{padding:22px 24px 26px;display:grid;gap:10px}
+.blogkaart h3{font-size:1.4rem}
+.blogkaart p{font-size:.95rem;color:var(--tekst-zacht)}
+@media (max-width:900px){.blogkaarten{grid-template-columns:1fr}}
+.score{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;background:var(--aubergine);color:var(--creme);border-radius:18px;padding:30px 34px;margin-bottom:34px}
+.score .cijfer{font-family:var(--display);font-style:italic;font-size:3.4rem;line-height:1;color:var(--creme)}
+.score .sterren{color:var(--goud);font-size:1.3rem;letter-spacing:.15em}
+.score p{color:#e9e1f0}
+.reviewgrid{columns:3 280px;column-gap:20px}
+.reviewgrid figure{break-inside:avoid;margin:0 0 20px;background:var(--creme);border:1px solid rgba(61,37,71,.09);border-radius:16px;padding:26px;display:grid;gap:14px}
+.reviewgrid blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:1.22rem;line-height:1.45;color:var(--aubergine)}
+.reviewgrid cite{font-style:normal;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paars)}
+@media (max-width:760px){.merken{grid-template-columns:1fr}}
+#rustcheck .rcwrap{max-width:620px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+#rustcheck .progress{height:3px;background:var(--lavendel);border-radius:3px;overflow:hidden}
+#rustcheck .progress span{display:block;height:100%;background:var(--paars);transition:width .3s}
+#rustcheck .card{background:var(--wit);border:1px solid rgba(61,37,71,.1);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:16px}
+#rustcheck h2{font-size:1.8rem}
+#rustcheck h3{font-size:1.5rem}
+#rustcheck .hint{font-size:.94rem;color:var(--tekst-zacht)}
+#rustcheck .opts{display:flex;flex-direction:column;gap:10px}
+#rustcheck .opt{display:flex;align-items:flex-start;gap:12px;text-align:left;font:inherit;color:var(--aubergine);background:var(--creme);border:1.5px solid rgba(61,37,71,.14);border-radius:14px;padding:13px 14px;cursor:pointer}
+#rustcheck .opt:focus-visible,#rustcheck .btn:focus-visible{outline:2px solid var(--goud);outline-offset:2px}
+#rustcheck .opt[aria-pressed="true"]{border-color:var(--paars);background:var(--lavendel)}
+#rustcheck .dot{flex:none;width:18px;height:18px;margin-top:2px;border:1.5px solid var(--paars);border-radius:50%;display:grid;place-items:center}
+#rustcheck .opt[aria-pressed="true"] .dot::after{content:"";width:10px;height:10px;background:var(--paars);border-radius:50%}
+#rustcheck .opt small{display:block;color:var(--tekst-zacht);font-size:.86rem}
+#rustcheck .scale{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#rustcheck .scale .opt{justify-content:center;text-align:center;padding:16px 10px}
+#rustcheck .scale .dot{display:none}
+#rustcheck .rcnav{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+#rustcheck .btn{font:inherit;font-weight:400;border-radius:999px;padding:12px 24px;cursor:pointer;border:1px solid var(--aubergine);background:var(--aubergine);color:var(--creme);text-decoration:none;display:inline-block}
+#rustcheck .btn.ghost{background:transparent;color:var(--aubergine)}
+#rustcheck .btn:disabled{opacity:.4;cursor:default}
+#rustcheck .count{font-size:.85rem;color:var(--grijspaars);font-variant-numeric:tabular-nums}
+#rustcheck .area,#rustcheck .eyebrow{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paars)}
+#rustcheck .match{background:var(--lavendel);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px}
+#rustcheck .match .name{font-family:var(--display);font-style:italic;font-size:2rem;line-height:1.1}
+#rustcheck .meta{display:flex;flex-wrap:wrap;gap:8px}
+#rustcheck .rcchip{font-size:.8rem;padding:4px 10px;border-radius:999px;background:var(--zand);color:var(--aubergine);font-variant-numeric:tabular-nums}
+#rustcheck .why{display:flex;flex-direction:column;gap:8px;padding:0;margin:0;list-style:none}
+#rustcheck .why li{padding-left:18px;position:relative;color:var(--tekst-zacht)}
+#rustcheck .why li::before{content:"";position:absolute;left:0;top:.65em;width:7px;height:7px;border-radius:50%;background:var(--goud)}
+#rustcheck .alt{display:flex;flex-direction:column;gap:6px;padding-top:14px;border-top:1px solid rgba(61,37,71,.1)}
+#rustcheck .alt:first-of-type{border-top:0;padding-top:0}
+#rustcheck .sign{font-family:var(--display);font-style:italic;font-size:1.4rem;color:var(--goud)}
+#rustcheck .contact{font-weight:500}
+#rustcheck .bars{display:flex;flex-direction:column;gap:12px}
+#rustcheck .barrow{display:grid;grid-template-columns:112px 1fr;gap:12px;align-items:center;font-size:.92rem}
+#rustcheck .track{height:10px;border-radius:10px;background:var(--lavendel);overflow:hidden}
+#rustcheck .fill{height:100%;border-radius:10px;background:var(--paars)}
+#rustcheck .fill.low{background:var(--grijspaars)}
+#rustcheck .moment{background:var(--wit);border:1px solid var(--goud);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px}
+#rustcheck .steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;list-style:decimal}
+#rustcheck .steps li{display:list-item;border:0;padding:0}
+#rustcheck .steps li::before{content:none}
+#rustcheck .legend{font-size:.82rem;color:var(--grijspaars)}
+#rcmailblok{max-width:620px;margin:20px auto 0}
+.gtwrap{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--lavendel,#dacee6);border-radius:24px;padding:clamp(24px,5vw,48px);text-align:center}
+.gt-progress{height:4px;background:#efe8f4;border-radius:4px;overflow:hidden;margin:0 auto 28px;max-width:760px}
+.gt-progress span{display:block;height:100%;background:#b8975a;transition:width .3s}
+.gt-opties{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.gt-optie{font:inherit;padding:18px 20px;border:1px solid #dacee6;border-radius:16px;background:#fefbf4;color:#3d2547;cursor:pointer;transition:all .2s}
+.gt-optie:hover,.gt-optie:focus{border-color:#7f649d;background:#f5effa}
+.gt-terug{font:inherit;background:none;border:0;color:#7f649d;text-decoration:underline;cursor:pointer}
+.gt-bol{display:block;width:90px;height:90px;border-radius:50%;margin:0 auto 18px;box-shadow:0 0 0 8px rgba(218,206,230,.5)}
+.wa-zweef{position:fixed;right:18px;bottom:96px;z-index:60;width:58px;height:58px;border-radius:50%;background:#3d2547;color:#fefbf4;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(61,37,71,.35);border:2px solid #b8975a}
+.wa-zweef svg{width:28px;height:28px}
+.nbform{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.nbform input[type=email],.nbform input[type=text]{flex:1 1 160px;padding:12px 14px;border-radius:999px;border:1px solid rgba(254,251,244,.35);background:rgba(254,251,244,.08);color:#fefbf4;font:inherit}
+.nbform input::placeholder{color:#cfc3dc}
+.nbform button{padding:12px 20px;border-radius:999px;border:1px solid #b8975a;background:#b8975a;color:#3d2547;font:inherit;cursor:pointer}
+.filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 40px}.filter button{font:inherit;padding:10px 20px;border-radius:999px;border:1px solid #dacee6;background:#fff;color:#3d2547;cursor:pointer}.filter button[aria-pressed=true]{background:#3d2547;color:#fefbf4;border-color:#3d2547}
+.bg{margin-bottom:64px}.bg-kop{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center;margin-bottom:24px}.bg-foto{border-radius:20px;overflow:hidden;aspect-ratio:1/1}.bg-foto img{width:100%;height:100%;object-fit:cover}.bg-kop h2{margin:0 0 8px}.bg-kop p{color:var(--tekst-zacht);margin:0 0 10px}
+.bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}.bk{background:#fff;border:1px solid #ece4f2;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px}.bk[hidden]{display:none}.bk-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.bk-top h3{font-size:1.3rem;margin:0}.bk .prijs{font-family:var(--display);font-size:1.5rem;color:#3d2547;white-space:nowrap}.bk-tijd{margin:0;color:var(--tekst-zacht);font-size:.92rem}.bk-tekst{margin:4px 0 12px;flex:1}.bk .knop{align-self:flex-start}
+@media(max-width:640px){.bg-kop{grid-template-columns:1fr}.bg-foto{aspect-ratio:16/9}}
+/* Webshop */
+.shop-feiten{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:28px;font-size:.92rem;color:var(--tekst-zacht)}
+.shop-feiten span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--goud);margin-right:10px;vertical-align:middle}
+.shopfilter{position:sticky;top:68px;z-index:5;background:rgba(254,251,244,.96);backdrop-filter:blur(6px);padding:14px 0;border-bottom:1px solid rgba(61,37,71,.06)}
+.shopfilter .wrap{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.shopfilter .wrap::-webkit-scrollbar{display:none}
+.shopfilter button{flex:0 0 auto;font:inherit;font-size:.9rem;padding:9px 18px;border-radius:999px;border:1px solid var(--lavendel);background:#fff;color:var(--aubergine);cursor:pointer}
+.shopfilter button[aria-pressed="true"]{background:var(--aubergine);color:var(--creme);border-color:var(--aubergine)}
+.cat{padding:56px 0 8px;scroll-margin-top:140px}
+.cat[hidden]{display:none}
+.cat-kop{display:grid;gap:10px;margin-bottom:28px;max-width:62ch}
+.cat-kop p{color:var(--tekst-zacht)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.prod{background:#fff;border:1px solid #ece4f2;border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.prod-beeld{aspect-ratio:1/1;background:#f6f2f8;display:grid;place-items:center;overflow:hidden}
+.prod-beeld img{width:100%;height:100%;object-fit:contain;padding:14px}
+.prod-beeld.vol img{object-fit:cover;padding:0}
+.prod-beeld.leeg{background:radial-gradient(120% 90% at 50% 0%,var(--paars) 0%,var(--aubergine) 75%);color:var(--creme);text-align:center;padding:24px}
+.prod-beeld.leeg span{font-family:var(--display);font-style:italic;font-size:1.5rem;line-height:1.2}
+.prod-beeld.leeg small{display:block;margin-top:10px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--zand);font-style:normal;font-family:var(--body)}
+.prod-tekst{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prod h3{font-size:1.3rem}
+.prod p{font-size:.94rem;color:var(--tekst-zacht)}
+.prod .status{font-size:.8rem;color:var(--paars)}
+.prod .status.voorraad{color:#4f7a52}
+.prod-onder{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--lavendel)}
+.prod .prijs{font-family:var(--display);font-size:1.5rem;color:var(--aubergine);white-space:nowrap}
+.prod .knop{padding:10px 20px;font-size:.88rem}
+.prod.uitgelicht{border-color:var(--goud)}
+.notitie{margin-top:22px;padding:18px 22px;border-radius:14px;background:var(--lavendel);color:#4b3a55;font-size:.95rem}
+.notitie a{color:var(--aubergine)}
+@media (max-width:600px){.prod-beeld.leeg{aspect-ratio:16/9}.prod-beeld{aspect-ratio:4/3}}
+</style>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://salonpurpledream.nl/"}, {"@type": "ListItem", "position": 2, "name": "Webshop", "item": "https://salonpurpledream.nl/webshop"}]}, {"@context": "https://schema.org", "@type": "ItemList", "name": "Webshop Salon Purple Dream", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Product", "name": "Een moment", "description": "Een roller met Altearah massageolie in een fluwelen zakje en een Yon-Ka sample. Een klein gebaar dat zegt: neem even tijd voor jezelf.", "brand": {"@type": "Brand", "name": "Salon Purple Dream"}, "offers": {"@type": "Offer", "price": "9.95", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/tasje-een-moment.jpg"}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Product", "name": "Even van jou", "description": "Een roller met Altearah olie in de geur die jij kiest, een Yon-Ka sample en een cadeaubon van €15 voor een behandeling. In een paars tasje met gouden lint.", "brand": {"@type": "Brand", "name": "Salon Purple Dream"}, "offers": {"@type": "Offer", "price": "25.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/tasje-even-van-jou.jpg"}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Product", "name": "Helemaal van jou", "description": "Een Haarspin, een roller met Altearah olie, een Altearah parfum du soin, een Yon-Ka sample en een cadeaubon van €15. Alles om thuis tot rust te komen.", "brand": {"@type": "Brand", "name": "Salon Purple Dream"}, "offers": {"@type": "Offer", "price": "49.95", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/tasje-helemaal-van-jou.jpg"}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Product", "name": "Absolute Relaxation", "description": "Phyto Bain voor een heerlijk ontspannend bad, samen met een geurkaars. In een feestelijke geschenkverpakking.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "64.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/kerstset-absolute-relaxation.jpg"}}, {"@type": "ListItem", "position": 5, "item": {"@type": "Product", "name": "Intense Hydration Ritual", "description": "Lait Nettoyant, Gommage Yon-Ka en Hydra N°1 Crème. Reinigen, scrubben en verzorgen voor een zachte, gehydrateerde huid.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "100.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/kerstset-intense-hydration.jpg"}}, {"@type": "ListItem", "position": 6, "item": {"@type": "Product", "name": "Nourish & Repair", "description": "Nutri Contour, Nutri Defense Crème en Omega Serum. Voedende verzorging voor een huid die wel wat extra aandacht kan gebruiken.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "140.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/kerstset-nourish-repair.jpg"}}, {"@type": "ListItem", "position": 7, "item": {"@type": "Product", "name": "Day & Night Youth Ritual", "description": "Retinol-Like Serum met Time Resist Crème Jour en Time Resist Crème Nuit. Dag en nacht verzorging uit de Time Resist lijn.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "180.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/kerstset-day-night.jpg"}}, {"@type": "ListItem", "position": 8, "item": {"@type": "Product", "name": "Trykit Nutri", "description": "Lait Nettoyant, Lotion Yon-Ka PS en Nutri Defense. Voor de droge huid.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "19.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}}}, {"@type": "ListItem", "position": 9, "item": {"@type": "Product", "name": "Trykit Vital", "description": "Gel Nettoyant, Lotion Yon-Ka PNG en Vital Defense. Voor de normale tot vette huid.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "19.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}}}, {"@type": "ListItem", "position": 10, "item": {"@type": "Product", "name": "Trykit Hydra", "description": "Eau Micellaire, Lotion Yon-Ka PS en Hydra N°1 Crème. Voor een huid die dorst heeft.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "19.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/trykit-hydra.jpg"}}, {"@type": "ListItem", "position": 11, "item": {"@type": "Product", "name": "Lotion Yon-Ka PS", "description": "De beroemde lotion van Yon-Ka met vijf essentiële oliën: lavendel, geranium, rozemarijn, cipres en tijm. Voor de droge huid. 200 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "37.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/lotion-yonka-ps.jpg"}}, {"@type": "ListItem", "position": 12, "item": {"@type": "Product", "name": "Lotion Yon-Ka PNG", "description": "Dezelfde heerlijke lotion met vijf essentiële oliën, voor de normale tot vette huid. 200 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "37.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/lotion-yonka-png.jpg"}}, {"@type": "ListItem", "position": 13, "item": {"@type": "Product", "name": "Lait Nettoyant", "description": "Een zachte reinigingsmelk die make-up en vuil wegneemt, voor gezicht en ogen. 200 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "32.50", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/lait-nettoyant.jpg"}}, {"@type": "ListItem", "position": 14, "item": {"@type": "Product", "name": "Gel Nettoyant", "description": "Een frisse reinigingsgel die zacht schuimt met water. 200 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "32.50", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/gel-nettoyant.jpg"}}, {"@type": "ListItem", "position": 15, "item": {"@type": "Product", "name": "Eau Micellaire", "description": "Reinigen en afschminken in één, voor gezicht, ogen en lippen. Zonder naspoelen. 200 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "32.50", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/eau-micellaire.jpg"}}, {"@type": "ListItem", "position": 16, "item": {"@type": "Product", "name": "Guarana Scrub", "description": "De scrub die ik zelf gebruik in mijn behandelingen. Voor een gladde huid met een mooie glow. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "41.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/guarana-scrub.jpg"}}, {"@type": "ListItem", "position": 17, "item": {"@type": "Product", "name": "Duo Lotion PS en Lait Nettoyant", "description": "Lotion Yon-Ka PS en Lait Nettoyant samen, 2 x 200 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "62.56", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/duo-lotion-ps-lait.jpg"}}, {"@type": "ListItem", "position": 18, "item": {"@type": "Product", "name": "Serum Vitamine C, 5 ml", "description": "Mijn serum voor glow, voor een frisse en stralende huid.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "47.50", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/serum-vitamine-c-5.jpg"}}, {"@type": "ListItem", "position": 19, "item": {"@type": "Product", "name": "Serum Vitamine C, 30 ml", "description": "Mijn serum voor glow, voor een frisse en stralende huid.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "135.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/serum-vitamine-c-30.jpg"}}, {"@type": "ListItem", "position": 20, "item": {"@type": "Product", "name": "Serum CBD, 5 ml", "description": "Een kalmerend serum dat je huid tot rust brengt en gladder laat aanvoelen.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "32.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/serum-cbd-5.jpg"}}, {"@type": "ListItem", "position": 21, "item": {"@type": "Product", "name": "Serum CBD, 30 ml", "description": "Een kalmerend serum dat je huid tot rust brengt en gladder laat aanvoelen.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "110.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/serum-cbd-30.jpg"}}, {"@type": "ListItem", "position": 22, "item": {"@type": "Product", "name": "Serum Omega, 5 ml", "description": "Voedend, herstellend en beschermend, voor een droge huid.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "27.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/serum-omega-5.jpg"}}, {"@type": "ListItem", "position": 23, "item": {"@type": "Product", "name": "Serum Omega, 30 ml", "description": "Voedend, herstellend en beschermend, voor een droge huid.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "85.70", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/serum-omega-30.jpg"}}, {"@type": "ListItem", "position": 24, "item": {"@type": "Product", "name": "Bi-Serum Retinol-Like, 4 ml", "description": "Een bi-serum met een retinol-achtige werking, voor een gladdere huid.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "36.20", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/retinol-like-4.jpg"}}, {"@type": "ListItem", "position": 25, "item": {"@type": "Product", "name": "Bi-Serum Retinol-Like, 30 ml", "description": "Een bi-serum met een retinol-achtige werking, voor een gladdere huid.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "122.50", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/retinol-like-30.jpg"}}, {"@type": "ListItem", "position": 26, "item": {"@type": "Product", "name": "Time Resist Crème Jour", "description": "Dagcrème uit de Time Resist lijn, voor de huid die wat meer aandacht verdient. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "91.80", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/time-resist-jour.jpg"}}, {"@type": "ListItem", "position": 27, "item": {"@type": "Product", "name": "Time Resist Crème Nuit", "description": "Nachtcrème uit de Time Resist lijn. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "91.80", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/time-resist-nuit.jpg"}}, {"@type": "ListItem", "position": 28, "item": {"@type": "Product", "name": "Duo Time Resist Jour en Nuit", "description": "Time Resist Crème Jour en Nuit samen, 2 x 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "165.24", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/duo-time-resist.jpg"}}, {"@type": "ListItem", "position": 29, "item": {"@type": "Product", "name": "Hydra N°1 Crème", "description": "Hydraterend en herstellend, voor de droge of gevoelige huid. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "56.30", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/hydra-n1-creme.jpg"}}, {"@type": "ListItem", "position": 30, "item": {"@type": "Product", "name": "Nutri Defense Crème", "description": "Intens verzorgend en herstellend, voor de droge tot zeer droge huid. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "57.70", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/nutri-defense.jpg"}}, {"@type": "ListItem", "position": 31, "item": {"@type": "Product", "name": "Sensitive Crème Peaux Sensibles", "description": "Kalmerend en verzachtend, voor de gevoelige huid. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "57.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/sensitive.jpg"}}, {"@type": "ListItem", "position": 32, "item": {"@type": "Product", "name": "Phyto 58 PS", "description": "Revitaliserend en energiek, voor de droge huid. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "60.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/phyto-58-ps.jpg"}}, {"@type": "ListItem", "position": 33, "item": {"@type": "Product", "name": "Phyto 58 PNG", "description": "Revitaliserend en energiek, voor de normale tot vette huid. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "60.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/phyto-58-png.jpg"}}, {"@type": "ListItem", "position": 34, "item": {"@type": "Product", "name": "Pamplemousse PS", "description": "Revitaliserend en beschermend, met een frisse geur van grapefruit. Voor de droge huid. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "45.80", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/pamplemousse-ps.jpg"}}, {"@type": "ListItem", "position": 35, "item": {"@type": "Product", "name": "Pamplemousse PNG", "description": "Revitaliserend en beschermend, met een frisse geur van grapefruit. Voor de normale tot vette huid. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "45.80", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/pamplemousse-png.jpg"}}, {"@type": "ListItem", "position": 36, "item": {"@type": "Product", "name": "La Crème Excellence Code", "description": "Een fluweelzachte crème uit de Excellence Code lijn. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "168.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/excellence-code-creme.jpg"}}, {"@type": "ListItem", "position": 37, "item": {"@type": "Product", "name": "Le Masque Excellence Code", "description": "Een masker uit de Excellence Code lijn, met absolue van jasmijn. 50 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "79.50", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/excellence-code-masque.jpg"}}, {"@type": "ListItem", "position": 38, "item": {"@type": "Product", "name": "Le Contour Excellence Code", "description": "Een rijke verzorging voor rond je ogen en lippen. 15 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "86.40", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/excellence-code-contour.jpg"}}, {"@type": "ListItem", "position": 39, "item": {"@type": "Product", "name": "Le Sérum Excellence Code", "description": "Het serum uit de luxe Excellence Code lijn. 30 ml.", "brand": {"@type": "Brand", "name": "Yon-Ka Paris"}, "offers": {"@type": "Offer", "price": "123.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://salonpurpledream.nl/webshop", "seller": {"@type": "Organization", "name": "Salon Purple Dream"}, "availableDeliveryMethod": "https://schema.org/OnSitePickup"}, "image": "https://salonpurpledream.nl/img/shop/excellence-code-serum.jpg"}}]}]</script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="merk" href="index.html" aria-label="Salon Purple Dream, naar de homepagina">
+      <img src="img/logo-monogram.png" alt="" style="height:40px;width:auto">
+      <span>Purple Dream<small>de salon voor ontspanning</small></span>
+    </a>
+    <nav class="menu" aria-label="Hoofdmenu"><a href="asmr-hoofdmassage.html" data-nav="asmr-hoofdmassage">ASMR</a><a href="headspa.html" data-nav="headspa">HeadSpa</a><a href="gezichtsbehandeling.html" data-nav="gezichtsbehandeling">Gezicht</a><a href="lichaam-asmr.html" data-nav="lichaam-asmr">Ontspanningsmassage</a><a href="over-mij.html" data-nav="over-mij">Over mij</a><a href="reviews.html" data-nav="reviews">Reviews</a><a href="blog.html" data-nav="blog">Blog</a><a href="roelofarendsveen.html" data-nav="roelofarendsveen">Roelofarendsveen</a><a href="cadeaubon.html" data-nav="cadeaubon">Cadeaubon</a><a href="contact.html" data-nav="contact">Contact</a></nav>
+    <div class="navrechts">
+      <button class="menuknop" id="menuknop" aria-expanded="false" aria-controls="mobielmenu">Menu</button>
+      <a class="knop" href="#bookings-link">Boek nu</a>
+    </div>
+  </div>
+  <nav class="mobielmenu" id="mobielmenu" aria-label="Menu voor mobiel"><a href="index.html">Home</a><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><a href="headspa.html">HeadSpa</a><a href="gezichtsbehandeling.html">Gezicht</a><a href="lichaam-asmr.html">Ontspanningsmassage</a><a href="over-mij.html">Over mij</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="roelofarendsveen.html">Roelofarendsveen</a><a href="cadeaubon.html">Cadeaubon</a><a href="webshop.html">Webshop</a><a href="contact.html">Contact</a></nav>
+</header>
+<main><section class="pagehero">
+  <div class="wrap">
+    <div>
+      <p class="kruimel"><a href="index.html">Home</a> / Webshop</p>
+      <p class="label" style="margin-top:18px">Webshop</p>
+      <h1>Iets moois voor jezelf of voor een ander</h1>
+      <p class="intro">Hier vind je mijn cadeautasjes, cadeaubonnen en de Yon-Ka producten die ik zelf elke dag in de salon gebruik. Je bestelt en betaalt online, en haalt je bestelling bij mij op.</p>
+      <div class="shop-feiten"><span>Vooraf betalen met iDEAL</span><span>Ophalen in Nieuw-Vennep of Roelofarendsveen</span><span>Geen verzendkosten</span></div>
+    </div>
+    <div class="beeld"><img class="foto" src="img/cadeau-ideeen.jpg" alt="Yon-Ka kerstsets, cadeautasjes en een cadeaubon van Salon Purple Dream"></div>
+  </div>
+</section>
+<section class="blok licht" style="padding:40px 0 24px"><div class="wrap"><div class="kop" style="margin-bottom:12px"><p class="label">Zo werkt het</p><h2>Bestellen in drie stappen</h2></div><ol class="stappen"><li><h3>Kies wat je wilt</h3><p>Klik bij het product op Bestellen. Je kunt meteen aangeven hoeveel je er wilt.</p></li><li><h3>Betaal veilig online</h3><p>Je vult je naam, telefoonnummer en ophaalplek in en betaalt met iDEAL of je pas.</p></li><li><h3>Haal het bij mij op</h3><p>Zodra alles klaarstaat, stuur ik je een appje en spreken we een moment af. In Roelofarendsveen ben ik op maandag en dinsdag.</p></li></ol></div></section>
+<nav class="shopfilter" aria-label="Kies een categorie"><div class="wrap"><button type="button" data-f="alles" aria-pressed="true">Alles</button><button type="button" data-f="cadeautasjes" aria-pressed="false">Cadeautasjes</button><button type="button" data-f="cadeaubon" aria-pressed="false">Cadeaubon</button><button type="button" data-f="rustkaarten" aria-pressed="false">Rustkaarten</button><button type="button" data-f="kerstsets" aria-pressed="false">Kerstsets</button><button type="button" data-f="trykits" aria-pressed="false">Trykits</button><button type="button" data-f="reinigen" aria-pressed="false">Reinigen</button><button type="button" data-f="serums" aria-pressed="false">Serums</button><button type="button" data-f="cremes" aria-pressed="false">Crèmes</button><button type="button" data-f="excellence-code" aria-pressed="false">Excellence Code</button></div></nav>
+<section class="cat" id="cadeautasjes" data-cat="cadeautasjes"><div class="wrap"><div class="cat-kop"><p class="label">Cadeautasjes</p><h2>Iets moois om uit te pakken</h2><p>Mijn paarse cadeautasjes stel ik zelf met liefde samen. Fijn voor een vriendin, je moeder, een collega of gewoon voor jezelf.</p></div><div class="pgrid"><article class="prod"><div><div class="prod-beeld vol"><img src="img/shop/tasje-een-moment.jpg" alt="Een moment" loading="lazy"></div></div><div class="prod-tekst"><h3>Een moment</h3><p>Een roller met Altearah massageolie in een fluwelen zakje en een Yon-Ka sample. Een klein gebaar dat zegt: neem even tijd voor jezelf.</p><p class="status voorraad">Op voorraad, binnen 1 werkdag klaar</p><div class="prod-onder"><span class="prijs">€9,95</span><a class="knop" href="https://buy.stripe.com/9B65kv8dIbOl3M70cYe3e01">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld vol"><img src="img/shop/tasje-even-van-jou.jpg" alt="Even van jou" loading="lazy"></div></div><div class="prod-tekst"><h3>Even van jou</h3><p>Een roller met Altearah olie in de geur die jij kiest, een Yon-Ka sample en een cadeaubon van €15 voor een behandeling. In een paars tasje met gouden lint.</p><p class="status voorraad">Op voorraad, binnen 1 werkdag klaar</p><div class="prod-onder"><span class="prijs">€25</span><a class="knop" href="https://buy.stripe.com/fZu8wHfGa8C9ciDf7Se3e02">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld vol"><img src="img/shop/tasje-helemaal-van-jou.jpg" alt="Helemaal van jou" loading="lazy"></div></div><div class="prod-tekst"><h3>Helemaal van jou</h3><p>Een Haarspin, een roller met Altearah olie, een Altearah parfum du soin, een Yon-Ka sample en een cadeaubon van €15. Alles om thuis tot rust te komen.</p><p class="status">Maar 4 stuks, op is op</p><div class="prod-onder"><span class="prijs">€49,95</span><a class="knop" href="https://buy.stripe.com/3cI28jalQ8C9bez2l6e3e03">Bestellen</a></div></div></article></div><p class="notitie">Liever zelf een tasje samenstellen? <a href="https://wa.me/31638248785">Stuur me een appje</a>, dan maken we er samen iets moois van.</p></div></section><section class="cat" id="cadeaubon" data-cat="cadeaubon"><div class="wrap"><div class="cat-kop"><p class="label">Cadeaubon</p><h2>Geef een moment van rust</h2><p>Jij kiest het bedrag, zij kiest haar moment. Je ontvangt de bon per mail om zelf te printen of door te sturen, of je haalt hem mooi verpakt bij mij op.</p></div><div class="pgrid"><article class="prod"><div><div class="prod-beeld vol"><img src="img/cadeaubon.jpg" alt="Cadeaubon naar keuze" loading="lazy"></div></div><div class="prod-tekst"><h3>Cadeaubon naar keuze</h3><p>Een cadeaubon in het bedrag dat jij kiest, vanaf €15. Te besteden aan een behandeling of producten en een jaar geldig.</p><p class="status voorraad">Per mail binnen 1 werkdag, of ophalen</p><div class="prod-onder"><span class="prijs">vanaf €15</span><a class="knop" href="https://buy.stripe.com/6oU3cn1Pk5pX82nf7Se3e04">Bestellen</a></div></div></article></div></div></section><section class="cat" id="rustkaarten" data-cat="rustkaarten"><div class="wrap"><div class="cat-kop"><p class="label">Rustkaarten</p><h2>Elke dag een moment van rust</h2><p>Mijn eigen Purple Dream Rustkaarten. Elke dag trek je gratis een kaart met een kleine boodschap en een ritueel om even tot rust te komen.</p></div><div class="pgrid"><article class="prod"><div><div class="prod-beeld leeg" aria-hidden="true"><div><span>Purple Dream Rustkaarten</span><small>Rustkaarten</small></div></div></div><div class="prod-tekst"><h3>Purple Dream Rustkaarten</h3><p>Elke dag gratis een rustkaart. Word je rustlid, dan krijg je een jaar lang alle extra&#x27;s: leggingen, extra stapels, je rustboekje en de Rustwandeling XL.</p><p class="status voorraad">Elke dag gratis een kaart trekken</p><div class="prod-onder"><span class="prijs">€29 per jaar</span><a class="knop" href="rustkaarten.html">Bekijk</a></div></div></article></div></div></section><section class="cat" id="kerstsets" data-cat="kerstsets"><div class="wrap"><div class="cat-kop"><p class="label">Kerstsets</p><h2>De Yon-Ka kerstsets</h2><p>Prachtig verpakt in een geschenkdoos in de vorm van een boek. Een cadeau dat je met een gerust hart onder de kerstboom legt.</p></div><div class="pgrid"><article class="prod"><div><div class="prod-beeld vol"><img src="img/shop/kerstset-absolute-relaxation.jpg" alt="Absolute Relaxation" loading="lazy"></div></div><div class="prod-tekst"><h3>Absolute Relaxation</h3><p>Phyto Bain voor een heerlijk ontspannend bad, samen met een geurkaars. In een feestelijke geschenkverpakking.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€64</span><a class="knop" href="https://buy.stripe.com/28E3cngKe2dL82n7Fqe3e05">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld vol"><img src="img/shop/kerstset-intense-hydration.jpg" alt="Intense Hydration Ritual" loading="lazy"></div></div><div class="prod-tekst"><h3>Intense Hydration Ritual</h3><p>Lait Nettoyant, Gommage Yon-Ka en Hydra N°1 Crème. Reinigen, scrubben en verzorgen voor een zachte, gehydrateerde huid.</p><p class="status voorraad">Op voorraad, binnen 1 werkdag klaar</p><div class="prod-onder"><span class="prijs">€100</span><a class="knop" href="https://buy.stripe.com/14A4grfGa05DbezbVGe3e06">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld vol"><img src="img/shop/kerstset-nourish-repair.jpg" alt="Nourish &amp; Repair" loading="lazy"></div></div><div class="prod-tekst"><h3>Nourish &amp; Repair</h3><p>Nutri Contour, Nutri Defense Crème en Omega Serum. Voedende verzorging voor een huid die wel wat extra aandacht kan gebruiken.</p><p class="status voorraad">Op voorraad, binnen 1 werkdag klaar</p><div class="prod-onder"><span class="prijs">€140</span><a class="knop" href="https://buy.stripe.com/3cI6ozalQ7y51DZ9Nye3e07">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld vol"><img src="img/shop/kerstset-day-night.jpg" alt="Day &amp; Night Youth Ritual" loading="lazy"></div></div><div class="prod-tekst"><h3>Day &amp; Night Youth Ritual</h3><p>Retinol-Like Serum met Time Resist Crème Jour en Time Resist Crème Nuit. Dag en nacht verzorging uit de Time Resist lijn.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€180</span><a class="knop" href="https://buy.stripe.com/5kQ14ffGaf0x1DZf7Se3e08">Bestellen</a></div></div></article></div><p class="notitie">De kerstsets zijn er zolang de voorraad strekt.</p></div></section><section class="cat" id="trykits" data-cat="trykits"><div class="wrap"><div class="cat-kop"><p class="label">Trykits</p><h2>Yon-Ka leren kennen</h2><p>Drie minis in een setje: een reiniger, de Lotion Yon-Ka en een crème. Ideaal om te proberen, om mee te nemen of als klein cadeautje.</p></div><div class="pgrid"><article class="prod"><div><div class="prod-beeld leeg" aria-hidden="true"><div><span>Trykit Nutri</span><small>Yon-Ka trykit</small></div></div></div><div class="prod-tekst"><h3>Trykit Nutri</h3><p>Lait Nettoyant, Lotion Yon-Ka PS en Nutri Defense. Voor de droge huid.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€19,90</span><a class="knop" href="https://buy.stripe.com/cNi00b79E4lTbez9Nye3e09">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld leeg" aria-hidden="true"><div><span>Trykit Vital</span><small>Yon-Ka trykit</small></div></div></div><div class="prod-tekst"><h3>Trykit Vital</h3><p>Gel Nettoyant, Lotion Yon-Ka PNG en Vital Defense. Voor de normale tot vette huid.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€19,90</span><a class="knop" href="https://buy.stripe.com/8x26ozalQ8C91DZ9Nye3e0a">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld vol"><img src="img/shop/trykit-hydra.jpg" alt="Trykit Hydra" loading="lazy"></div></div><div class="prod-tekst"><h3>Trykit Hydra</h3><p>Eau Micellaire, Lotion Yon-Ka PS en Hydra N°1 Crème. Voor een huid die dorst heeft.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€19,90</span><a class="knop" href="https://buy.stripe.com/3cI28j51w6u13M76Bme3e0b">Bestellen</a></div></div></article></div></div></section><section class="cat" id="reinigen" data-cat="reinigen"><div class="wrap"><div class="cat-kop"><p class="label">Reinigen</p><h2>Elke dag een frisse start</h2><p>Een goede reiniging is de basis. Deze producten gebruik ik zelf elke dag in de salon.</p></div><div class="pgrid"><article class="prod"><div><div class="prod-beeld"><img src="img/shop/lotion-yonka-ps.jpg" alt="Lotion Yon-Ka PS" loading="lazy"></div></div><div class="prod-tekst"><h3>Lotion Yon-Ka PS</h3><p>De beroemde lotion van Yon-Ka met vijf essentiële oliën: lavendel, geranium, rozemarijn, cipres en tijm. Voor de droge huid. 200 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€37</span><a class="knop" href="https://buy.stripe.com/6oU9ALdy25pX6Yj9Nye3e0c">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/lotion-yonka-png.jpg" alt="Lotion Yon-Ka PNG" loading="lazy"></div></div><div class="prod-tekst"><h3>Lotion Yon-Ka PNG</h3><p>Dezelfde heerlijke lotion met vijf essentiële oliën, voor de normale tot vette huid. 200 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€37</span><a class="knop" href="https://buy.stripe.com/dRm00bdy2bOleqL9Nye3e0d">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/lait-nettoyant.jpg" alt="Lait Nettoyant" loading="lazy"></div></div><div class="prod-tekst"><h3>Lait Nettoyant</h3><p>Een zachte reinigingsmelk die make-up en vuil wegneemt, voor gezicht en ogen. 200 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€32,50</span><a class="knop" href="https://buy.stripe.com/6oU3cn3Xs6u16Yj3pae3e0e">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/gel-nettoyant.jpg" alt="Gel Nettoyant" loading="lazy"></div></div><div class="prod-tekst"><h3>Gel Nettoyant</h3><p>Een frisse reinigingsgel die zacht schuimt met water. 200 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€32,50</span><a class="knop" href="https://buy.stripe.com/6oUaEPalQaKhbez9Nye3e0f">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/eau-micellaire.jpg" alt="Eau Micellaire" loading="lazy"></div></div><div class="prod-tekst"><h3>Eau Micellaire</h3><p>Reinigen en afschminken in één, voor gezicht, ogen en lippen. Zonder naspoelen. 200 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€32,50</span><a class="knop" href="https://buy.stripe.com/6oU8wH79EcSpfuPe3Oe3e0g">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/guarana-scrub.jpg" alt="Guarana Scrub" loading="lazy"></div></div><div class="prod-tekst"><h3>Guarana Scrub</h3><p>De scrub die ik zelf gebruik in mijn behandelingen. Voor een gladde huid met een mooie glow. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€41</span><a class="knop" href="https://buy.stripe.com/8x2fZ965A8C9fuP6Bme3e0h">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/duo-lotion-ps-lait.jpg" alt="Duo Lotion PS en Lait Nettoyant" loading="lazy"></div></div><div class="prod-tekst"><h3>Duo Lotion PS en Lait Nettoyant</h3><p>Lotion Yon-Ka PS en Lait Nettoyant samen, 2 x 200 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€62,56</span><a class="knop" href="https://buy.stripe.com/28E9ALbpU8C91DZ8Jue3e0E">Bestellen</a></div></div></article></div></div></section><section class="cat" id="serums" data-cat="serums"><div class="wrap"><div class="cat-kop"><p class="label">Serums</p><h2>Een boost voor je huid</h2><p>Een serum breng je aan onder je crème. Twijfel je welke bij jou past? Stuur me een appje, dan denk ik graag met je mee. De kleine flesjes van 5 ml zijn fijn om eerst te proberen.</p></div><div class="pgrid"><article class="prod"><div><div class="prod-beeld"><img src="img/shop/serum-vitamine-c-5.jpg" alt="Serum Vitamine C, 5 ml" loading="lazy"></div></div><div class="prod-tekst"><h3>Serum Vitamine C, 5 ml</h3><p>Mijn serum voor glow, voor een frisse en stralende huid.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€47,50</span><a class="knop" href="https://buy.stripe.com/4gM5kvalQ8C92I3gbWe3e0l">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/serum-vitamine-c-30.jpg" alt="Serum Vitamine C, 30 ml" loading="lazy"></div></div><div class="prod-tekst"><h3>Serum Vitamine C, 30 ml</h3><p>Mijn serum voor glow, voor een frisse en stralende huid.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€135</span><a class="knop" href="https://buy.stripe.com/bJeaEPalQ05D6Yjf7Se3e0m">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/serum-cbd-5.jpg" alt="Serum CBD, 5 ml" loading="lazy"></div></div><div class="prod-tekst"><h3>Serum CBD, 5 ml</h3><p>Een kalmerend serum dat je huid tot rust brengt en gladder laat aanvoelen.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€32</span><a class="knop" href="https://buy.stripe.com/5kQeV5ctY9GdciD7Fqe3e0n">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/serum-cbd-30.jpg" alt="Serum CBD, 30 ml" loading="lazy"></div></div><div class="prod-tekst"><h3>Serum CBD, 30 ml</h3><p>Een kalmerend serum dat je huid tot rust brengt en gladder laat aanvoelen.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€110</span><a class="knop" href="https://buy.stripe.com/5kQ6oz8dI6u1gyTgbWe3e0o">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/serum-omega-5.jpg" alt="Serum Omega, 5 ml" loading="lazy"></div></div><div class="prod-tekst"><h3>Serum Omega, 5 ml</h3><p>Voedend, herstellend en beschermend, voor een droge huid.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€27,90</span><a class="knop" href="https://buy.stripe.com/fZu8wH79EdWt3M76Bme3e0p">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/serum-omega-30.jpg" alt="Serum Omega, 30 ml" loading="lazy"></div></div><div class="prod-tekst"><h3>Serum Omega, 30 ml</h3><p>Voedend, herstellend en beschermend, voor een droge huid.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€85,70</span><a class="knop" href="https://buy.stripe.com/9B68wH9hMaKh4QbcZKe3e0q">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/retinol-like-4.jpg" alt="Bi-Serum Retinol-Like, 4 ml" loading="lazy"></div></div><div class="prod-tekst"><h3>Bi-Serum Retinol-Like, 4 ml</h3><p>Een bi-serum met een retinol-achtige werking, voor een gladdere huid.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€36,20</span><a class="knop" href="https://buy.stripe.com/4gMeV59hMcSp2I39Nye3e0r">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/retinol-like-30.jpg" alt="Bi-Serum Retinol-Like, 30 ml" loading="lazy"></div></div><div class="prod-tekst"><h3>Bi-Serum Retinol-Like, 30 ml</h3><p>Een bi-serum met een retinol-achtige werking, voor een gladdere huid.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€122,50</span><a class="knop" href="https://buy.stripe.com/cNi7sDdy29Gd0zV7Fqe3e0s">Bestellen</a></div></div></article></div></div></section><section class="cat" id="cremes" data-cat="cremes"><div class="wrap"><div class="cat-kop"><p class="label">Crèmes</p><h2>De crème die bij jouw huid past</h2><p>Bij veel crèmes kies je tussen PS, voor de droge huid, en PNG, voor de normale tot vette huid.</p></div><div class="pgrid"><article class="prod"><div><div class="prod-beeld"><img src="img/shop/time-resist-jour.jpg" alt="Time Resist Crème Jour" loading="lazy"></div></div><div class="prod-tekst"><h3>Time Resist Crème Jour</h3><p>Dagcrème uit de Time Resist lijn, voor de huid die wat meer aandacht verdient. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€91,80</span><a class="knop" href="https://buy.stripe.com/bJe6oz9hM3hP3M78Jue3e0t">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/time-resist-nuit.jpg" alt="Time Resist Crème Nuit" loading="lazy"></div></div><div class="prod-tekst"><h3>Time Resist Crème Nuit</h3><p>Nachtcrème uit de Time Resist lijn. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€91,80</span><a class="knop" href="https://buy.stripe.com/14A7sD51w9GdciD8Jue3e0u">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/duo-time-resist.jpg" alt="Duo Time Resist Jour en Nuit" loading="lazy"></div></div><div class="prod-tekst"><h3>Duo Time Resist Jour en Nuit</h3><p>Time Resist Crème Jour en Nuit samen, 2 x 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€165,24</span><a class="knop" href="https://buy.stripe.com/cNi4grgKebOl4Qb7Fqe3e0D">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/hydra-n1-creme.jpg" alt="Hydra N°1 Crème" loading="lazy"></div></div><div class="prod-tekst"><h3>Hydra N°1 Crème</h3><p>Hydraterend en herstellend, voor de droge of gevoelige huid. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€56,30</span><a class="knop" href="https://buy.stripe.com/6oU28j2To3hP82ncZKe3e0H">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/nutri-defense.jpg" alt="Nutri Defense Crème" loading="lazy"></div></div><div class="prod-tekst"><h3>Nutri Defense Crème</h3><p>Intens verzorgend en herstellend, voor de droge tot zeer droge huid. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€57,70</span><a class="knop" href="https://buy.stripe.com/5kQcMXdy26u11DZ3pae3e0w">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/sensitive.jpg" alt="Sensitive Crème Peaux Sensibles" loading="lazy"></div></div><div class="prod-tekst"><h3>Sensitive Crème Peaux Sensibles</h3><p>Kalmerend en verzachtend, voor de gevoelige huid. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€57</span><a class="knop" href="https://buy.stripe.com/14A28jgKe3hP3M78Jue3e0v">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/phyto-58-ps.jpg" alt="Phyto 58 PS" loading="lazy"></div></div><div class="prod-tekst"><h3>Phyto 58 PS</h3><p>Revitaliserend en energiek, voor de droge huid. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€60,90</span><a class="knop" href="https://buy.stripe.com/aFa3cneC68C982nbVGe3e0x">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/phyto-58-png.jpg" alt="Phyto 58 PNG" loading="lazy"></div></div><div class="prod-tekst"><h3>Phyto 58 PNG</h3><p>Revitaliserend en energiek, voor de normale tot vette huid. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€60,90</span><a class="knop" href="https://buy.stripe.com/28EeV50LgbOl96r5xie3e0F">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/pamplemousse-ps.jpg" alt="Pamplemousse PS" loading="lazy"></div></div><div class="prod-tekst"><h3>Pamplemousse PS</h3><p>Revitaliserend en beschermend, met een frisse geur van grapefruit. Voor de droge huid. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€45,80</span><a class="knop" href="https://buy.stripe.com/cNi9AL65A2dL1DZf7Se3e0y">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/pamplemousse-png.jpg" alt="Pamplemousse PNG" loading="lazy"></div></div><div class="prod-tekst"><h3>Pamplemousse PNG</h3><p>Revitaliserend en beschermend, met een frisse geur van grapefruit. Voor de normale tot vette huid. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€45,80</span><a class="knop" href="https://buy.stripe.com/8x214fgKe7y5ciD8Jue3e0G">Bestellen</a></div></div></article></div></div></section><section class="cat" id="excellence-code" data-cat="excellence-code"><div class="wrap"><div class="cat-kop"><p class="label">Excellence Code</p><h2>Het allermooiste van Yon-Ka</h2><p>De luxe lijn van Yon-Ka, met absolue van jasmijn. Voor wie haar huid echt wil verwennen.</p></div><div class="pgrid"><article class="prod"><div><div class="prod-beeld"><img src="img/shop/excellence-code-creme.jpg" alt="La Crème Excellence Code" loading="lazy"></div></div><div class="prod-tekst"><h3>La Crème Excellence Code</h3><p>Een fluweelzachte crème uit de Excellence Code lijn. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€168</span><a class="knop" href="https://buy.stripe.com/aFa5kv51w3hP3M7cZKe3e0B">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/excellence-code-masque.jpg" alt="Le Masque Excellence Code" loading="lazy"></div></div><div class="prod-tekst"><h3>Le Masque Excellence Code</h3><p>Een masker uit de Excellence Code lijn, met absolue van jasmijn. 50 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€79,50</span><a class="knop" href="https://buy.stripe.com/14A6ozeC6f0xgyTe3Oe3e0A">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/excellence-code-contour.jpg" alt="Le Contour Excellence Code" loading="lazy"></div></div><div class="prod-tekst"><h3>Le Contour Excellence Code</h3><p>Een rijke verzorging voor rond je ogen en lippen. 15 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€86,40</span><a class="knop" href="https://buy.stripe.com/9B600b0Lg6u1dmHbVGe3e0z">Bestellen</a></div></div></article><article class="prod"><div><div class="prod-beeld"><img src="img/shop/excellence-code-serum.jpg" alt="Le Sérum Excellence Code" loading="lazy"></div></div><div class="prod-tekst"><h3>Le Sérum Excellence Code</h3><p>Het serum uit de luxe Excellence Code lijn. 30 ml.</p><p class="status">Klaar binnen 1 tot 3 werkdagen</p><div class="prod-onder"><span class="prijs">€123,90</span><a class="knop" href="https://buy.stripe.com/9B6fZ9gKe05D0zV0cYe3e0C">Bestellen</a></div></div></article></div></div></section>
+<section class="blok" style="padding-top:72px"><div class="wrap"><div class="kop"><p class="label">Goed om te weten</p><h2>Veelgestelde vragen</h2></div><div class="faq">
+<details><summary>Kan ik meerdere producten tegelijk bestellen?</summary><p>Je rekent per product af. Van hetzelfde product kun je er meteen meer bestellen. Wil je verschillende producten? Dan bestel je ze na elkaar, of je stuurt me een appje en ik maak één betaalverzoek voor je klaar.</p></details>
+<details><summary>Wanneer kan ik mijn bestelling ophalen?</summary><p>Wat ik op voorraad heb, ligt meestal binnen een werkdag voor je klaar. Andere Yon-Ka producten haal ik voor je op, dan duurt het hooguit drie werkdagen. Ik stuur je altijd een appje zodra het klaarstaat.</p></details>
+<details><summary>Waar haal ik mijn bestelling op?</summary><p>Bij Salon Purple Dream, Vronen 180 in Nieuw-Vennep, of bij Business Sisters, De Lasso-Zuid 3F in Roelofarendsveen. In Roelofarendsveen ben ik op maandag en dinsdag. Je kiest de ophaalplek bij het afrekenen.</p></details>
+<details><summary>Hoe lang is een cadeaubon geldig?</summary><p>Een cadeaubon is een jaar geldig. Je kunt hem besteden aan een behandeling of aan producten.</p></details>
+<details><summary>Weet je niet welk product bij jouw huid past?</summary><p>Stuur me gerust een appje op 06 38248785. Ik denk graag met je mee, of we kijken samen tijdens je behandeling wat jouw huid nodig heeft.</p></details>
+</div></div></section>
+<section class="cta-band"><div class="wrap"><h2>Twijfel je nog?</h2><p>Stuur me gerust een berichtje, dan help ik je kiezen. Voor jezelf of voor iemand die het verdient.</p><div class="rij"><a class="knop" href="https://wa.me/31638248785">WhatsApp 06 38248785</a><a class="knop licht" href="cadeaubon.html">Meer over cadeaubonnen</a></div></div></section></main>
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="img/logo-wit.png" alt="Salon Purple Dream" style="width:150px;height:auto;display:block;margin-bottom:16px">
+      <p>Waar je niets hoeft, alleen maar mag genieten.</p>
+      <div class="socials"><a href="https://www.instagram.com/salon_purple_dream/" target="_blank" rel="noopener" aria-label="Instagram van Salon Purple Dream" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/share/19iHY3zDQq/" target="_blank" rel="noopener" aria-label="Facebook van Salon Purple Dream" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M15.5 8H14a2 2 0 0 0-2 2v11M9.5 13h5.5"/></svg></a><a href="https://www.tiktok.com/@salonpurpledream" target="_blank" rel="noopener" aria-label="TikTok van Salon Purple Dream" title="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 4c.4 2.4 2 4 4.5 4.3"/></svg></a><a href="https://wa.me/31638248785" target="_blank" rel="noopener" aria-label="WhatsApp van Salon Purple Dream" title="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/><path d="M9.2 8.6c.2 2.6 2.4 4.9 5 5.2l.9-1.1 1.7.8-.4 1.5c-3.8.2-7-3-6.8-6.8l1.5-.4.8 1.7z" fill="currentColor" stroke="none"/></svg></a><a href="https://www.linkedin.com/company/salon-purple-dream/" target="_blank" rel="noopener" aria-label="LinkedIn van Salon Purple Dream" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16"/><circle cx="8" cy="7.6" r=".9" fill="currentColor" stroke="none"/><path d="M11.5 16v-5.5M11.5 13c0-1.6 1-2.6 2.3-2.6s2.2.9 2.2 2.6V16"/></svg></a></div>
+      <p style="margin-top:14px"><a href="https://whatsapp.com/channel/0029VaDBzeiCXC3MtQ2nJg1h" target="_blank" rel="noopener">Volg mijn WhatsApp kanaal</a> voor tips en nieuws 💜</p>
+    </div>
+    <div>
+      <h3>Behandelingen</h3>
+      <p><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><br><a href="headspa.html">HeadSpa</a><br><a href="gezichtsbehandeling.html">Gezichtsbehandeling</a><br><a href="lichaam-asmr.html">Ontspanningsmassage</a><br><a href="cadeaubon.html">Cadeaubon</a><br><a href="behandelingen.html">Alle behandelingen en prijzen</a><br><a href="rustcheck.html">Gratis Rustcheck</a><br><a href="geurtest.html">Geurtest</a><br><a href="veelgestelde-vragen.html">Veelgestelde vragen</a><br><a href="webshop.html">Webshop</a></p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>WhatsApp 06 38248785<br>info@salonpurpledream.nl<br><a href="https://www.instagram.com/salon_purple_dream/">Instagram @salon_purple_dream</a><br>Vronen 180, Nieuw-Vennep<br>De Lasso-Zuid 3F, Roelofarendsveen</p>
+    </div>
+    <div style="grid-column:1/-1;border-top:1px solid rgba(254,251,244,.15);padding-top:26px;margin-top:6px">
+      <h3>Rust in je mailbox</h3>
+      <p>Af en toe een lief berichtje van mij, met tips voor een rustig hoofd en als eerste weten wanneer er iets nieuws is.</p>
+      <form class="nbform" name="nieuwsbrief" method="POST" action="https://api.web3forms.com/submit"><input type="hidden" name="access_key" value="6b077518-5fc7-4c91-995f-234cbd226ec8"><input type="hidden" name="subject" value="Nieuwe aanmelding nieuwsbrief"><input type="hidden" name="from_name" value="Website Salon Purple Dream"><input type="hidden" name="redirect" value="https://salonpurpledream.nl/bedankt.html"><input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="form-name" value="nieuwsbrief">
+        <p class="verstopt" style="display:none"><label>Niet invullen <input name="bot-veld"></label></p>
+        <input type="text" name="naam" placeholder="Je voornaam" aria-label="Je voornaam" autocomplete="given-name">
+        <input type="email" name="email" placeholder="Je e-mailadres" aria-label="Je e-mailadres" autocomplete="email" required>
+        <button type="submit">Aanmelden</button>
+      </form>
+      <p class="nbmelding" hidden></p>
+    </div>
+    <p class="klein">© 2026 Salon Purple Dream, Celina van der Aar. Alle rechten voorbehouden. De teksten, foto's, filmpjes en het logo op deze website zijn van mij en mogen niet zonder mijn toestemming worden gebruikt.<br>KvK 86768964 · btw NL004305985B36 · <a href="algemene-voorwaarden.html">Algemene voorwaarden</a> · <a href="privacy.html">Privacybeleid</a></p>
+  </div>
+</footer>
+<a class="wa-zweef" href="https://wa.me/31638248785" target="_blank" rel="noopener" aria-label="Stuur Celina een berichtje via WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/><path d="M9.2 8.6c.2 2.6 2.4 4.9 5 5.2l.9-1.1 1.7.8-.4 1.5c-3.8.2-7-3-6.8-6.8l1.5-.4.8 1.7z" fill="currentColor" stroke="none"/></svg></a>
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function kies(tab){
+    tabs.forEach(function(t){
+      var aan = t === tab;
+      t.setAttribute('aria-selected', aan ? 'true' : 'false');
+      t.tabIndex = aan ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !aan;
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ kies(t); });
+    t.addEventListener('keydown', function(e){
+      var n = null;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (n){ e.preventDefault(); kies(n); n.focus(); }
+    });
+  });
+  var knop = document.getElementById('menuknop'), mm = document.getElementById('mobielmenu');
+  knop.addEventListener('click', function(){ var o = mm.classList.toggle('open'); knop.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+  })();</script>
+<script src="https://salonround.com/embed.js" data-id="salon-purple-dream" data-hide="true"></script>
+<script>
+(function(){
+  var knoppen=[].slice.call(document.querySelectorAll('.shopfilter button'));
+  var cats=[].slice.call(document.querySelectorAll('.cat'));
+  knoppen.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.getAttribute('data-f');
+    knoppen.forEach(function(k){k.setAttribute('aria-pressed',k===b?'true':'false')});
+    cats.forEach(function(c){c.hidden=!(f==='alles'||c.getAttribute('data-cat')===f)});
+    var doel=f==='alles'?cats[0]:document.getElementById(f);
+    if(doel){doel.scrollIntoView({behavior:'smooth',block:'start'})}
+  })});
+})();
+</script>
+</body>
+</html>
