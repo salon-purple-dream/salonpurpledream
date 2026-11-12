@@ -406,7 +406,10 @@ footer{border-top:3px solid transparent;border-image:linear-gradient(90deg,trans
 .filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 40px}.filter button{font:inherit;padding:10px 20px;border-radius:999px;border:1px solid #dacee6;background:#fff;color:#3d2547;cursor:pointer}.filter button[aria-pressed=true]{background:#3d2547;color:#fefbf4;border-color:#3d2547}
 .bg{margin-bottom:64px}.bg-kop{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center;margin-bottom:24px}.bg-foto{border-radius:20px;overflow:hidden;aspect-ratio:1/1}.bg-foto img{width:100%;height:100%;object-fit:cover}.bg-kop h2{margin:0 0 8px}.bg-kop p{color:var(--tekst-zacht);margin:0 0 10px}
 .bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}.bk{background:#fff;border:1px solid #ece4f2;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px}.bk[hidden]{display:none}.bk-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.bk-top h3{font-size:1.3rem;margin:0}.bk .prijs{font-family:var(--display);font-size:1.5rem;color:#3d2547;white-space:nowrap}.bk-tijd{margin:0;color:var(--tekst-zacht);font-size:.92rem}.bk-tekst{margin:4px 0 12px;flex:1}.bk .knop{align-self:flex-start}
-@media(max-width:640px){.bg-kop{grid-template-columns:1fr}.bg-foto{aspect-ratio:16/9}}</style>
+@media(max-width:640px){.bg-kop{grid-template-columns:1fr}.bg-foto{aspect-ratio:16/9}}
+/* Menu met Webshop: compacter op laptops */
+@media (max-width:1440px) and (min-width:1181px){.menu{gap:13px!important;font-size:.84rem!important}.merk small{display:none}.merk span{font-size:1.2rem}.nav .knop{padding:9px 16px}}
+</style>
 </head>
 <body>
 <header class="nav">
@@ -415,13 +418,13 @@ footer{border-top:3px solid transparent;border-image:linear-gradient(90deg,trans
       <img src="img/logo-monogram.png" alt="" style="height:40px;width:auto">
       <span>Purple Dream<small>de salon voor ontspanning</small></span>
     </a>
-    <nav class="menu" aria-label="Hoofdmenu"><a href="asmr-hoofdmassage.html" data-nav="asmr-hoofdmassage">ASMR</a><a href="headspa.html" data-nav="headspa">HeadSpa</a><a href="gezichtsbehandeling.html" data-nav="gezichtsbehandeling">Gezicht</a><a href="lichaam-asmr.html" data-nav="lichaam-asmr">Ontspanningsmassage</a><a href="over-mij.html" data-nav="over-mij">Over mij</a><a href="reviews.html" data-nav="reviews">Reviews</a><a href="blog.html" data-nav="blog">Blog</a><a href="roelofarendsveen.html" data-nav="roelofarendsveen">Roelofarendsveen</a><a href="cadeaubon.html" data-nav="cadeaubon">Cadeaubon</a><a href="contact.html" data-nav="contact">Contact</a></nav>
+    <nav class="menu" aria-label="Hoofdmenu"><a href="asmr-hoofdmassage.html" data-nav="asmr-hoofdmassage">ASMR</a><a href="headspa.html" data-nav="headspa">HeadSpa</a><a href="gezichtsbehandeling.html" data-nav="gezichtsbehandeling">Gezicht</a><a href="lichaam-asmr.html" data-nav="lichaam-asmr">Ontspanningsmassage</a><a href="over-mij.html" data-nav="over-mij">Over mij</a><a href="reviews.html" data-nav="reviews">Reviews</a><a href="blog.html" data-nav="blog">Blog</a><a href="roelofarendsveen.html" data-nav="roelofarendsveen">Roelofarendsveen</a><a href="cadeaubon.html" data-nav="cadeaubon">Cadeaubon</a><a href="webshop.html" data-nav="webshop">Webshop</a><a href="contact.html" data-nav="contact">Contact</a></nav>
     <div class="navrechts">
       <button class="menuknop" id="menuknop" aria-expanded="false" aria-controls="mobielmenu">Menu</button>
       <a class="knop" href="#bookings-link">Boek nu</a>
     </div>
   </div>
-  <nav class="mobielmenu" id="mobielmenu" aria-label="Menu voor mobiel"><a href="index.html">Home</a><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><a href="headspa.html">HeadSpa</a><a href="gezichtsbehandeling.html">Gezicht</a><a href="lichaam-asmr.html">Ontspanningsmassage</a><a href="over-mij.html">Over mij</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="roelofarendsveen.html">Roelofarendsveen</a><a href="cadeaubon.html">Cadeaubon</a><a href="contact.html">Contact</a></nav>
+  <nav class="mobielmenu" id="mobielmenu" aria-label="Menu voor mobiel"><a href="index.html">Home</a><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><a href="headspa.html">HeadSpa</a><a href="gezichtsbehandeling.html">Gezicht</a><a href="lichaam-asmr.html">Ontspanningsmassage</a><a href="over-mij.html">Over mij</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="roelofarendsveen.html">Roelofarendsveen</a><a href="cadeaubon.html">Cadeaubon</a><a href="webshop.html">Webshop</a><a href="contact.html">Contact</a></nav>
 </header>
 <main><section class="pagehero"><div class="wrap" style="grid-template-columns:1fr">
   <div><p class="kruimel"><a href="index.html">Home</a> / Veelgestelde vragen</p><p class="label" style="margin-top:18px">Goed om te weten</p><h1>Veelgestelde vragen</h1>
