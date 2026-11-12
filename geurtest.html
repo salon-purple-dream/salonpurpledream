@@ -438,7 +438,7 @@ footer{border-top:3px solid transparent;border-image:linear-gradient(90deg,trans
     </div>
     <div>
       <h3>Behandelingen</h3>
-      <p><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><br><a href="headspa.html">HeadSpa</a><br><a href="gezichtsbehandeling.html">Gezichtsbehandeling</a><br><a href="lichaam-asmr.html">Ontspanningsmassage</a><br><a href="cadeaubon.html">Cadeaubon</a><br><a href="behandelingen.html">Alle behandelingen en prijzen</a><br><a href="rustcheck.html">Gratis Rustcheck</a><br><a href="geurtest.html">Geurtest</a><br><a href="veelgestelde-vragen.html">Veelgestelde vragen</a><br><a href="#webstore-link">Webshop</a></p>
+      <p><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><br><a href="headspa.html">HeadSpa</a><br><a href="gezichtsbehandeling.html">Gezichtsbehandeling</a><br><a href="lichaam-asmr.html">Ontspanningsmassage</a><br><a href="cadeaubon.html">Cadeaubon</a><br><a href="behandelingen.html">Alle behandelingen en prijzen</a><br><a href="rustcheck.html">Gratis Rustcheck</a><br><a href="geurtest.html">Geurtest</a><br><a href="veelgestelde-vragen.html">Veelgestelde vragen</a><br><a href="webshop.html">Webshop</a></p>
     </div>
     <div>
       <h3>Contact</h3>
@@ -499,7 +499,7 @@ function vraag(){bar.style.width=(i/Q.length*100)+"%";var q=Q[i];
  var t=app.querySelector(".gt-terug");if(t)t.onclick=function(){i--;var s=Q[i].gekozen;if(s){sc[s[0]]-=2;sc[s[1]]-=1;}vraag();};
  app.scrollIntoView({block:"nearest"});}
 function uitslag(){bar.style.width="100%";var r=Object.keys(sc).sort(function(a,b){return sc[b]-sc[a]});var w=r[0],t=r[1];
- app.innerHTML='<div class="gt-uitslag"><span class="gt-bol" style="background:'+KLEUR[w]+'"></span><p class="label">Jouw geur van dit moment</p><h2 style="margin:8px 0 10px">'+G[w][0]+'</h2><p class="intro" style="margin:0 auto 18px;max-width:520px">'+G[w][1]+'</p><p style="color:var(--tekst-zacht);max-width:560px;margin:0 auto 24px">Bij elke behandeling kies je zelf je geur uit de veertien geuren van Altearah. Deze geur begeleidt je dan de hele behandeling. Ook mooi voor jou: <strong>'+G[t][0]+'</strong>.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="knop" href="#bookings-link">Boek je moment</a><a class="knop licht" href="#webstore-link">Bekijk Altearah in de webshop</a></div><p style="margin-top:20px"><button type="button" class="gt-terug" id="gt-opnieuw">Doe de test opnieuw</button></p></div>';
+ app.innerHTML='<div class="gt-uitslag"><span class="gt-bol" style="background:'+KLEUR[w]+'"></span><p class="label">Jouw geur van dit moment</p><h2 style="margin:8px 0 10px">'+G[w][0]+'</h2><p class="intro" style="margin:0 auto 18px;max-width:520px">'+G[w][1]+'</p><p style="color:var(--tekst-zacht);max-width:560px;margin:0 auto 24px">Bij elke behandeling kies je zelf je geur uit de veertien geuren van Altearah. Deze geur begeleidt je dan de hele behandeling. Ook mooi voor jou: <strong>'+G[t][0]+'</strong>.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="knop" href="#bookings-link">Boek je moment</a><a class="knop licht" href="webshop.html">Bekijk Altearah in de webshop</a></div><p style="margin-top:20px"><button type="button" class="gt-terug" id="gt-opnieuw">Doe de test opnieuw</button></p></div>';
  document.getElementById("gt-opnieuw").onclick=function(){i=0;sc={};Q.forEach(function(q){q.gekozen=null});vraag();};}
 vraag();
 })();
