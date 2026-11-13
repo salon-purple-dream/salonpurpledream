@@ -412,6 +412,20 @@ footer{border-top:3px solid transparent;border-image:linear-gradient(90deg,trans
 .mobielmenu.open{max-height:calc(100vh - 70px);max-height:calc(100dvh - 70px);overflow-y:auto;-webkit-overflow-scrolling:touch}.mobielmenu a{padding:9px 20px;font-size:1.12rem}
 @media (max-width:1640px) and (min-width:1181px){.menu{gap:13px!important;font-size:.84rem!important}.merk small{display:none}.merk span{font-size:1.2rem}.nav .knop{padding:9px 16px}}
 </style>
+<!-- Google Analytics met cookietoestemming -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+var pdKeuze=null;try{pdKeuze=localStorage.getItem('pd_cookies');}catch(e){}
+var pdJa=pdKeuze==='ja'?'granted':'denied';gtag('consent','default',{analytics_storage:pdJa,ad_storage:pdJa,ad_user_data:pdJa,ad_personalization:pdJa});
+gtag('js',new Date());gtag('config','G-5CRXLGV4NL');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5CRXLGV4NL"></script>
+<script defer src="/cookiebanner.js"></script>
+<!-- Meta Pixel met cookietoestemming -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fbq('track','PageView');
+</script>
 </head>
 <body>
 <header class="nav">
