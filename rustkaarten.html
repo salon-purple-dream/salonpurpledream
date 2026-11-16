@@ -167,23 +167,43 @@ nav .inner { max-width: 460px; margin: 0 auto; display: grid; grid-template-colu
 .toggle .small { display: block; }
 .walkcard .tfront .ttl { font-size: 1.5rem; }
 .walkcard .tback .lbl { font-style: normal; font-family: var(--body); font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.evening { background: linear-gradient(160deg, var(--deep), var(--mid)); color: var(--cream); border: none; }
+.evening p { color: var(--lav); }
+.evecard .tback { background: radial-gradient(circle at 70% 20%, #4b3460, #1f1428 75%); }
+.evecard .tfront .ttl { font-size: 1.4rem; }
+.evecard .tback .lbl { font-style: normal; font-family: var(--body); font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.notebox { background: var(--cream); border-left: 4px solid var(--gold); border-radius: 12px; padding: 12px 14px; font-family: var(--display); font-style: italic; font-size: 1.15rem; line-height: 1.35; white-space: pre-line; }
+.advent-teaser, .advent-intro { background: linear-gradient(160deg, #2a1833, var(--deep) 55%, #5a3f74); color: var(--cream); border: none; }
+.advent-teaser p, .advent-intro p { color: var(--lav); }
+.advgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.door { appearance: none; position: relative; aspect-ratio: 1; border-radius: 12px; border: 1.5px solid var(--gold); background: radial-gradient(circle at 70% 20%, var(--mid), var(--deep) 75%); color: var(--cream); font: 600 1.5rem var(--display); cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; font-variant-numeric: tabular-nums; }
+.door.big { grid-column: span 2; aspect-ratio: auto; }
+.door.open { background: var(--cream); color: var(--mid); border-color: var(--lav); }
+.door.open::after { content: attr(data-sym); position: absolute; top: 4px; right: 7px; font-size: .9rem; color: var(--gold); }
+.door.surprise.open { background: var(--lav); }
+.door.locked { opacity: .45; }
+.door.today { box-shadow: 0 0 0 3px var(--gold); }
+.door.sel { outline: 3px solid var(--mid); outline-offset: 2px; }
+.door:focus-visible { outline: 3px solid var(--mid); outline-offset: 2px; }
+.surprise-box { background: var(--deep); color: var(--cream); border-radius: 16px; padding: 18px 16px; display: flex; flex-direction: column; gap: 8px; text-align: center; }
+.surprise-box .bigmoon { font-family: var(--display); font-size: 2.6rem; color: var(--gold); line-height: 1; }
+.surprise-box p { color: var(--lav); }
+.surprise-box .rcode { font-family: var(--display); font-size: 1.5rem; font-weight: 600; letter-spacing: .08em; }
+.masfig { background: var(--cream); border: 1.5px solid var(--lav); border-radius: 18px; padding: 10px; display: flex; justify-content: center; }
+.masfig svg { width: 100%; max-width: 260px; height: auto; display: block; }
+.masstep { font-family: var(--display); font-size: 1rem; color: var(--gold); }
+.sndgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.snd { appearance: none; border: 1.5px solid var(--lav); background: var(--white); border-radius: 18px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; font: 700 .95rem var(--body); color: var(--deep); }
+.snd .ico { font-family: var(--display); font-size: 2rem; color: var(--mid); line-height: 1; }
+.snd .st { font-size: .75rem; font-weight: 600; color: var(--grey); }
+.snd.on { background: var(--deep); color: var(--cream); border-color: var(--deep); }
+.snd.on .ico { color: var(--gold); }
+.snd.on .st { color: var(--lav); }
+.snd:focus-visible { outline: 3px solid var(--mid); outline-offset: 2px; }
+.vol { width: 100%; accent-color: var(--mid); padding: 0; border: none; background: none; }
 .hidden { display: none !important; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
-<!-- Google Analytics met cookietoestemming -->
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-var pdKeuze=null;try{pdKeuze=localStorage.getItem('pd_cookies');}catch(e){}
-var pdJa=pdKeuze==='ja'?'granted':'denied';gtag('consent','default',{analytics_storage:pdJa,ad_storage:pdJa,ad_user_data:pdJa,ad_personalization:pdJa});
-gtag('js',new Date());gtag('config','G-5CRXLGV4NL');
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5CRXLGV4NL"></script>
-<script defer src="/cookiebanner.js"></script>
-<!-- Meta Pixel met cookietoestemming -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fbq('track','PageView');
-</script>
 </head>
 <body>
 <div class="app">
@@ -203,6 +223,12 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
       <p class="small">Purple Dream</p>
       <a class="save" id="quoteShare" target="_blank" rel="noopener" href="#">Deel deze quote</a>
     </div>
+    <div class="card advent-teaser hidden" id="adventTeaser">
+      <p class="kicker" style="color:var(--gold)">Adventskalender</p>
+      <h3 id="advTeaserTitle">24 deurtjes vol rust</h3>
+      <p id="advTeaserText"></p>
+      <button class="btn light" data-go="advent" type="button">Open de adventskalender</button>
+    </div>
     <div class="card intro">
       <p class="kicker" style="color:var(--lav)" id="today"></p>
       <h1>Jouw rustkaart van vandaag</h1>
@@ -220,6 +246,18 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
       <p>Elke dag staat er in de rustkalender een ochtendkaart om mee te beginnen en een avondkaart om mee af te sluiten.</p>
       <button class="btn light" data-cal="ochtend" type="button">Bekijk je ochtendkaart</button>
       <button class="btn ghost" data-cal="avond" type="button">Bekijk je avondkaart</button>
+    </div>
+    <div class="card evening">
+      <p class="kicker" style="color:var(--lav)">Voor het slapengaan</p>
+      <h3>Jouw avondritueel</h3>
+      <p>Drie kleine stappen om je dag af te sluiten: even landen, iets liefs voor je huid en een vraag om de dag los te laten. Elke avond net een beetje anders.</p>
+      <button class="btn light" data-go="avond" type="button">Begin je avondritueel</button>
+    </div>
+    <div class="card">
+      <p class="kicker">Zomaar een kaartje</p>
+      <h3>Een rustkaart voor een vriendin</h3>
+      <p>Ken je iemand die wel wat rust kan gebruiken? Kies een kaart voor haar, schrijf er iets liefs bij en stuur hem via WhatsApp.</p>
+      <button class="btn light" data-go="vriendin" type="button">Maak een kaartje</button>
     </div>
     <div class="card">
       <p class="kicker">Herinnering</p>
@@ -241,6 +279,18 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
       <div class="msgs" id="sosMsg"></div>
       <button class="btn" id="sosBtn" type="button">Ik heb nu even rust nodig</button>
       <button class="linkbtn" id="heavyBtn" type="button" style="align-self:center;">Is het meer dan druk? Kaarten voor als het even te veel is</button>
+    </div>
+    <div class="card">
+      <p class="kicker">Zelf doen</p>
+      <h3>Mini hoofdmassage voor thuis</h3>
+      <p>In zes kleine stappen masseer je je eigen hoofd, slapen en nek. Met tekeningetjes, zodat je precies ziet waar je je handen zet.</p>
+      <button class="btn light" data-go="massage" type="button">Begin de hoofdmassage</button>
+    </div>
+    <div class="card">
+      <p class="kicker">Luisteren</p>
+      <h3>Rustgeluiden</h3>
+      <p>Regen op het raam, de zee, een knisperend haardvuur of een klankschaal. Zet een timer en val rustig in slaap.</p>
+      <button class="btn light" data-go="geluiden" type="button">Naar de rustgeluiden</button>
     </div>
     <div class="card">
       <p class="kicker">Naar buiten</p>
@@ -382,6 +432,92 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
     <button class="btn light" data-go="vandaag" type="button">Terug naar vandaag</button>
   </section>
 
+  <!-- ADVENT -->
+  <section data-view="advent" class="view hidden">
+    <div class="card intro advent-intro">
+      <p class="kicker" style="color:var(--gold)">Adventskalender</p>
+      <h1>24 deurtjes vol rust</h1>
+      <p>Van 1 tot en met 24 december gaat er elke dag een deurtje open. Achter de meeste zit een kaart met een klein ritueel, en af en toe een verrassing van de salon.</p>
+    </div>
+    <div class="card">
+      <p class="small" id="advNote"></p>
+      <div class="advgrid" id="advGrid"></div>
+    </div>
+    <div class="card hidden" id="advOpen">
+      <p class="kicker" id="advDay"></p>
+      <div class="spread one" id="advSpread"></div>
+      <div class="msgs" id="advMsg"></div>
+      <div class="feedback" id="advLock"></div>
+      <button class="btn hidden" id="advJoin" data-open-join type="button">Word rustlid</button>
+    </div>
+    <button class="btn light" data-go="vandaag" type="button">Terug naar vandaag</button>
+  </section>
+
+  <!-- RUSTGELUIDEN -->
+  <section data-view="geluiden" class="view hidden">
+    <div class="card intro">
+      <p class="kicker" style="color:var(--lav)">Luisteren</p>
+      <h1>Rustgeluiden</h1>
+      <p>Kies een of meer geluiden en zet ze zacht aan. Met de timer gaan ze vanzelf langzaam uit, zodat je erbij in slaap kunt vallen.</p>
+    </div>
+    <div class="card" id="sndBody"></div>
+    <button class="btn light" data-go="vandaag" type="button">Terug naar vandaag</button>
+  </section>
+
+  <!-- MINI HOOFDMASSAGE -->
+  <section data-view="massage" class="view hidden">
+    <div class="card intro">
+      <p class="kicker" style="color:var(--lav)">Zelf doen</p>
+      <h1>Mini hoofdmassage</h1>
+      <p>Zes kleine stappen, zo'n tien minuten. Ga lekker zitten, met je ellebogen op een tafel of kussen. Doe alles zacht en langzaam. Doet iets pijn, stop dan.</p>
+    </div>
+    <div class="card" id="masBody"></div>
+    <button class="btn light" data-go="vandaag" type="button">Terug naar vandaag</button>
+  </section>
+
+  <!-- AVONDRITUEEL -->
+  <section data-view="avond" class="view hidden">
+    <div class="card intro">
+      <p class="kicker" style="color:var(--lav)" id="eveDate">Avondritueel</p>
+      <h1>Je dag zacht afsluiten</h1>
+      <p>Drie kaarten, drie kleine stappen. Draai de volgende pas om als je er klaar voor bent. Er is geen haast.</p>
+    </div>
+    <div class="card" id="eveBody"></div>
+    <button class="btn light" data-go="vandaag" type="button">Terug naar vandaag</button>
+  </section>
+
+  <!-- KAART VOOR EEN VRIENDIN -->
+  <section data-view="vriendin" class="view hidden">
+    <div class="card intro">
+      <p class="kicker" style="color:var(--lav)">Zomaar een kaartje</p>
+      <h1>Een rustkaart voor haar</h1>
+      <p>Kies een kaart, schrijf er iets liefs bij en stuur hem via WhatsApp. Zij krijgt jouw berichtje en de kaart, en kan hem in de app omdraaien.</p>
+    </div>
+    <div class="card">
+      <p class="kicker">1. Kies een kaart</p>
+      <div class="chips" id="frThemes"></div>
+      <div class="spread one" id="frCard"></div>
+      <div class="msg" id="frText"></div>
+      <button class="btn ghost" id="frOther" type="button">Andere kaart</button>
+    </div>
+    <div class="card">
+      <p class="kicker">2. Schrijf er iets bij</p>
+      <div><label for="frTo">Voor wie is het?</label><input id="frTo" type="text" maxlength="40" placeholder="Bijvoorbeeld Sanne"></div>
+      <div>
+        <label for="frNote">Jouw berichtje</label>
+        <div class="chips" id="frIdeas" style="margin-bottom:8px;"></div>
+        <textarea id="frNote" maxlength="300" placeholder="Schrijf iets liefs, of kies hierboven een zinnetje."></textarea>
+      </div>
+      <div><label for="frFrom">Van</label><input id="frFrom" type="text" maxlength="40" placeholder="Jouw naam"></div>
+    </div>
+    <div class="card">
+      <p class="kicker">3. Versturen</p>
+      <a class="btn" id="frSend" href="#" target="_blank" rel="noopener">Stuur via WhatsApp</a>
+      <p class="small">Je kiest zelf naar wie je het stuurt. Er wordt niets bewaard of met mij gedeeld.</p>
+    </div>
+    <button class="btn light" data-go="vandaag" type="button">Terug naar vandaag</button>
+  </section>
+
   <!-- OVER CELINA -->
   <section data-view="over" class="view hidden">
     <div class="card intro">
@@ -429,6 +565,7 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
       <p>De app bewaart een paar dingen, alleen op jouw eigen telefoon of computer, in je browser:</p>
       <ul class="steps">
         <li>welke kaart je vandaag hebt getrokken;</li>
+        <li>welke deurtjes van de adventskalender je hebt geopend;</li>
         <li>je rustreeks, dus hoeveel dagen op rij je een kaart trok;</li>
         <li>de kaarten en notities in je rustboekje;</li>
         <li>of je rustlid bent, en tot wanneer;</li>
@@ -470,10 +607,13 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
       <p class="kicker">Dit krijg je</p>
       <div class="msgs">
         <div class="msg"><strong>Rustlegging en avondlegging</strong><p>Drie of twee kaarten die samen een verhaal vertellen.</p></div>
-        <div class="msg"><strong>Zes extra stapels</strong><p>Slaap, Voor moeders, Voor ondernemers, Vrouw in verandering, Huid en zelfzorg en De kleuren.</p></div>
+        <div class="msg"><strong>Zeven extra stapels</strong><p>Slaap, Voor moeders, Samen met je kind, Voor ondernemers, Vrouw in verandering, Huid en zelfzorg en De kleuren.</p></div>
+        <div class="msg"><strong>Rustgeluiden</strong><p>Regen, zee, haardvuur en klankschaal, met een timer om bij in slaap te vallen.</p></div>
         <div class="msg"><strong>Meer rustmemory</strong><p>Een groot bord, symbolen, kleur en gevoel, lachmemory en een feestelijke versie voor Sint en kerst.</p></div>
         <div class="msg"><strong>Terugkijken in de rustkalender</strong><p>Lees alle ochtendkaarten en avondkaarten van de maand terug.</p></div>
         <div class="msg"><strong>Rustwandeling XL</strong><p>Drie kwartier naar buiten, met tien kaartjes om onderweg om te draaien.</p></div>
+        <div class="msg"><strong>Adventskalender</strong><p>24 deurtjes in december, met rituelen en verrassingen van de salon.</p></div>
+        <div class="msg"><strong>Mini hoofdmassage voor thuis</strong><p>Zes stappen met tekeningetjes om je eigen hoofd en nek te masseren.</p></div>
         <div class="msg"><strong>Mijn rustboekje</strong><p>Bewaar je kaarten met je eigen gedachten erbij.</p></div>
         <div class="msg"><strong>Zo vaak trekken als je wilt</strong><p>Niet alleen een kaart per dag.</p></div>
       </div>
@@ -519,6 +659,18 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
       <ol class="steps" id="installSteps"></ol>
     </div>
     <button class="btn" id="wStart" type="button">Trek mijn eerste kaart</button>
+  </div>
+</div>
+
+<div class="overlay hidden" id="gift" role="dialog" aria-modal="true" aria-labelledby="gTitle">
+  <div class="sheet">
+    <div class="bigmoon">♡</div>
+    <h2 id="gTitle">Er is een rustkaart voor jou</h2>
+    <p id="gFrom"></p>
+    <div class="hidden" id="gNote"></div>
+    <div class="spread one" id="giftSpread"></div>
+    <div class="msgs" id="giftMsg"></div>
+    <button class="btn" id="gClose" type="button">Trek zelf ook een kaart</button>
   </div>
 </div>
 
@@ -680,6 +832,20 @@ const DECKS = {
     ["✕", "Het Rebelse Rommeltje", "Een huis hoeft niet altijd perfect opgeruimd te zijn. Daar wordt niemand gelukkiger van.", "Laat vandaag bewust een klein rommeltje liggen en voel je er heerlijk rebels bij."],
     ["♡", "De Slappe Lach", "Lachen is gratis, maakt je hoofd lichter en je hoeft er niet eens voor te sporten.", "App iemand met wie je altijd moet lachen en haal samen een grappige herinnering op."]
   ]},
+  kind: { name: "Samen met je kind", ico: "❦", sub: "12 rustmomentjes om samen te doen", cards: [
+    ["∴", "Het Ruggetje Kriebelen", "Een zachte aanraking zegt soms meer dan woorden.", "Kriebel om de beurt elkaars rug, twee minuten lang. Wie het lekkerst kriebelt, mag kiezen wat jullie daarna doen."],
+    ["○", "De Ballonbuik", "Kinderen leren rust het best als jij het samen met ze doet.", "Ga allebei liggen met een knuffel op je buik. Adem rustig in en uit en kijk hoe de knuffel omhoog en omlaag gaat."],
+    ["✦", "De Sterrenkijkers", "Samen naar de lucht kijken maakt alles even groot en stil.", "Ga vanavond samen bij het raam of buiten staan, zoek de eerste ster en doe allebei een stille wens."],
+    ["♪", "Het Fluisterliedje", "Zachter worden is een spel dat je hele huis rustiger maakt.", "Zing of neurie samen een liedje en word bij elk couplet zachter, tot het helemaal stil is."],
+    ["◎", "De Stiltewedstrijd", "Stil zijn is lastig. Als spelletje lukt het ineens wel.", "Wie kan het langst helemaal stil zijn en luisteren? Tel daarna samen hoeveel geluiden jullie hoorden."],
+    ["♡", "De Handjesmassage", "Handen insmeren is een klein moment van zorg, voor jullie allebei.", "Smeer om de beurt elkaars handen in en masseer elke vinger. Vertel bij elke vinger iets fijns van vandaag."],
+    ["☁", "De Wolkenkijkers", "Een kinderhoofd en een moederhoofd mogen allebei even leeg.", "Ga samen liggen en kijk naar de wolken, buiten of door het raam. Wat zien jullie erin?"],
+    ["✎", "Het Fijne Rondje", "Aandacht voor wat goed ging, maakt de avond zachter.", "Noem aan tafel of in bed om de beurt drie dingen die vandaag fijn waren."],
+    ["☕", "Het Warme Afspraakje", "Even samen zitten, zonder haast en zonder schermen.", "Maak samen chocolademelk of thee en ga tien minuten zitten. Telefoons blijven in de andere kamer."],
+    ["❀", "De Geurproef", "Ruiken brengt je meteen in het nu, ook als je klein bent.", "Laat je kind met de ogen dicht ruiken aan kaneel, citroen of vanille, en raad om de beurt wat het is."],
+    ["▭", "De Dekenhut", "In een hut is de wereld even heel klein en veilig.", "Bouw samen een hut van dekens en kussens en lees of praat er een kwartiertje in."],
+    ["◡", "De Zachte Borstel", "Haren borstelen is een van de oudste manieren om elkaar te verzorgen.", "Borstel heel rustig het haar van je kind, of laat je kind jouw haar borstelen. Langzaam en zacht."]
+  ]},
   huid: { name: "Huid en zelfzorg", ico: "✺", sub: "14 kaarten voor je huid en jezelf", cards: [
     ["◯", "De Zachte Reiniging", "Je huid draagt de hele dag met je mee. Ze verdient een zacht einde van de dag.", "Reinig je gezicht vanavond met zachte, ronde bewegingen, een hele minuut lang."],
     ["≈", "Het Lauwe Water", "Heet water voelt fijn, maar droogt je huid uit. Lauw is lief voor je huid.", "Was je gezicht vandaag met lauw water en voel hoe zacht dat is."],
@@ -703,33 +869,33 @@ const VOORBEELD = location.hash === "#voorbeeld";
 const KALENDER = {
   11: { thema: "Zacht naar binnen", intro: "November wordt donkerder en stiller. Elke dag een kaart om zacht naar binnen te keren en goed voor jezelf te zorgen.", cards: [
     ["❦", "Het Vallende Blad", "Ook bomen laten in de herfst los wat ze niet meer nodig hebben. Jij mag dat ook.", "Schrijf op wat je deze maand wilt laten vallen, en leg het papiertje weg."],
-    ["☕", "De Warme Mok", "Een warme mok in je handen is een kleine omhelzing van binnen.", "Drink je thee vandaag met beide handen om de mok en voel de warmte in je handen."],
+    ["☕", "De Warme Mok", "Een warme mok in je handen is een kleine omhelzing van binnen.", "Drink vanavond een kop thee met beide handen om de mok en voel de warmte in je handen."],
     ["◐", "Het Vroege Donker", "Het wordt eerder donker. Dat is een uitnodiging om het rustiger aan te doen.", "Doe vanavond bewust een zacht lampje aan als het donker wordt, en zeg tegen jezelf: nu begint de avond."],
-    ["∴", "De Regendruppels", "Regen maakt alles even stiller.", "Kijk een paar minuten naar de druppels op het raam en volg er een met je ogen tot beneden."],
-    ["❧", "De Bladerwandeling", "Herfstbladeren onder je voeten brengen je in een tel naar het nu.", "Maak een korte wandeling en loop expres door de bladeren. Voel en hoor ze onder je voeten."],
-    ["∽", "De Zachte Sjaal", "Iets zachts om je hals geeft je meteen een gevoel van geborgenheid.", "Wikkel vandaag een zachte sjaal om je nek, ook binnen, en voel hoe fijn dat is."],
-    ["☀", "Het Langzame Ontbijt", "Hoe je de dag begint, neem je de hele dag mee.", "Neem morgen tien minuten extra voor je ontbijt, aan tafel en zonder telefoon."],
-    ["Ⅱ", "De Trage Dag", "Niet elke dag hoeft vol te staan.", "Kies een dag deze week waarop je zo weinig mogelijk plant, en laat hem gewoon gebeuren."],
+    ["∴", "Het Regengeluid", "Regen maakt alles even stiller, zeker als je er in het donker naar luistert.", "Doe vanavond het licht wat zachter en luister een paar minuten naar de regen op het raam. Regent het niet? Luister dan naar de stilte."],
+    ["❧", "Het Avondrondje", "Even naar buiten in het donker maakt je hoofd stil.", "Loop na het eten tien minuten een rondje door je straat en kijk naar de verlichte ramen."],
+    ["∽", "Het Thuiskomen", "Als je thuiskomt, mag de dag van je afglijden.", "Trek vanavond meteen iets zachts aan als je thuis bent en wikkel een sjaal of deken om je schouders."],
+    ["☕", "De Klaargezette Tafel", "Een rustige ochtend begint de avond ervoor.", "Zet vanavond alvast je mok en je ontbijtbord klaar, zodat je morgen zonder haast kunt beginnen."],
+    ["Ⅱ", "De Trage Dag", "Niet elke dag hoeft vol te staan.", "Kijk vanavond in je agenda en kies een dag deze week waarop je zo weinig mogelijk plant."],
     ["▤", "Het Boek", "Een goed boek neemt je even mee naar een andere wereld.", "Lees vanavond tien bladzijden, op een fijne plek en met een warme deken."],
-    ["◡", "De Warme Soep", "Soep is herfst in een kom. Warm, eenvoudig en voedend.", "Eet vandaag een kom soep, langzaam, en proef elke lepel."],
-    ["✧", "Het Lampionnetje", "Het is Sint Maarten. Een klein lichtje is genoeg om het donker zachter te maken.", "Doe vandaag iets kleins en liefs voor een buurvrouw, vriendin of collega."],
+    ["◡", "De Warme Soep", "Soep is herfst in een kom. Warm, eenvoudig en voedend.", "Eet vanavond een kom soep, langzaam, en proef elke lepel."],
+    ["✧", "Het Lampionnetje", "Het is Sint Maarten. Een klein lichtje is genoeg om het donker zachter te maken.", "Zet vanavond een lichtje voor het raam, voor iedereen die voorbijloopt, en stuur iemand een lief berichtje."],
     ["✋", "De Zachte Handen", "In de herfst worden je handen sneller droog. Ze verdienen extra zorg.", "Smeer vanavond je handen in en masseer elke vinger rustig, een voor een."],
-    ["❀", "De Herfstkleuren", "De herfst schildert de wereld in warme kleuren.", "Zoek vandaag buiten vijf verschillende herfstkleuren en kijk er bewust naar."],
+    ["❀", "De Warme Kleuren", "Buiten is de herfst warm gekleurd. Die warmte mag je ook binnen halen.", "Doe vanavond het grote licht uit en alleen een paar lampjes of kaarsen aan. Kijk hoe je kamer verandert."],
     ["○", "Het Stille Huis", "Stilte is zeldzaam geworden. Gun het jezelf.", "Zet vanavond een kwartier alles uit: tv, muziek en telefoon. Luister naar de stilte."],
     ["½", "Het Midden", "De helft van november zit erop. Even stilstaan bij hoe het met je gaat.", "Vraag jezelf af: wat heb ik de afgelopen weken nodig gehad, en heb ik dat gekregen?"],
     ["≈", "De Warme Voeten", "Warme voeten zijn de snelste weg naar een rustig hoofd.", "Neem vanavond een voetenbad met warm water, tien minuten lang."],
-    ["☁", "De Grijze Lucht", "Ook een grijze dag heeft zijn eigen rust.", "Kijk een paar minuten naar de lucht en zoek wat er mooi is aan al dat grijs."],
-    ["▢", "De Opgeruimde Hoek", "Een opgeruimd plekje geeft ruimte in je hoofd.", "Ruim vandaag een klein hoekje op, een la of een plank, en geniet ervan."],
+    ["☁", "De Avondlucht", "Ook in het donker is de lucht er nog, groot en stil.", "Kijk voor het slapen een minuut naar buiten. Zie je sterren, wolken of alleen het donker? Alles is goed."],
+    ["▢", "De Opgeruimde Hoek", "Een opgeruimd plekje geeft ruimte in je hoofd.", "Ruim vanavond je nachtkastje of de keukentafel op, zodat je morgen wakker wordt in een opgeruimd plekje."],
     ["♡", "Het Dankbare Hart", "Dankbaarheid maakt je hart warm, ook als het buiten koud is.", "Schrijf vanavond drie dingen op waar je vandaag dankbaar voor bent."],
-    ["~", "De Wind", "Wind blaast je hoofd leeg, als je hem laat.", "Ga even naar buiten als het waait, draai je gezicht naar de wind en adem diep in."],
+    ["~", "De Koele Avondlucht", "Frisse lucht in je slaapkamer helpt je lijf om tot rust te komen.", "Zet vanavond voor het slapen tien minuten het raam open en adem een paar keer diep de koele lucht in."],
     ["☾", "Het Vroege Bed", "Je lijf vraagt in de herfst om meer rust. Luister ernaar.", "Ga vanavond een half uur eerder naar bed."],
     ["✉", "Het Lieve Briefje", "Je zegt zo vaak iets liefs tegen een ander. Nu ben jij aan de beurt.", "Schrijf een kort, lief briefje aan jezelf en leg het ergens waar je het morgen vindt."],
     ["♪", "Het Neuriën", "Neuriën laat je lijf zacht trillen en brengt je tot rust.", "Neurie een paar minuten een liedje dat je fijn vindt, en voel de trilling in je borst."],
     ["✺", "De Glow", "Ook je huid verdient in de herfst extra aandacht. Een stralende huid begint met een rustig moment.", "Smeer vanavond je gezicht in met rustige, opwaartse bewegingen en neem er echt de tijd voor."],
     ["♨", "De Warme Kruik", "Een kruik is ouderwets fijn. Warmte die je de hele avond meeneemt.", "Neem vanavond een warme kruik mee op de bank of in bed."],
-    ["●", "De Herfstappel", "Eenvoudige dingen kunnen heel lekker zijn als je er aandacht aan geeft.", "Eet langzaam een appel en proef hoe zoet en fris hij is."],
+    ["●", "De Herfstappel", "Eenvoudige dingen kunnen heel lekker zijn als je er aandacht aan geeft.", "Eet vanavond langzaam een appel of een mandarijn en proef hoe zoet en fris hij is."],
     ["✕", "De Decemberkeuze", "December komt eraan, en dat is vaak druk. Je mag nu al kiezen.", "Kies een ding dat je in december niet gaat doen, en schrijf het op."],
-    ["Ⅱ", "De Pauze Tussendoor", "Ook op een volle dag passen kleine pauzes.", "Neem vandaag tussen twee dingen in vijf minuten voor jezelf, zonder telefoon."],
+    ["Ⅱ", "De Pauze Na Het Eten", "Na het eten wil je vaak meteen door: opruimen, appen, de volgende klus.", "Blijf vanavond na het eten nog vijf minuten zitten, zonder telefoon, voordat je opstaat."],
     ["→", "De Zachte Overgang", "De laatste dagen van november. Langzaam richting een nieuwe maand.", "Maak een plekje in huis klaar voor december, met een kaarsje of iets warms."],
     ["✶", "De Laatste Novemberdag", "November was donker en stil. Misschien heeft het je ook iets gegeven.", "Bedank november vanavond voor iets wat hij je gebracht heeft, hoe klein ook."]
   ]},
@@ -738,20 +904,20 @@ const KALENDER = {
     ["▭", "Het Dekentje", "Warmte begint bij jezelf. Je hoeft niet te wachten tot iemand anders je verwarmt.", "Sla een warme deken om je schouders terwijl je iets warms drinkt."],
     ["✎", "De Lijst Van Niets", "December zit vol lijstjes. Deze lijst maakt juist ruimte.", "Schrijf een lijstje met dingen die je deze maand niet hoeft te doen."],
     ["✋", "De Warme Handen", "Je eigen handen kunnen je meer rust geven dan je denkt.", "Wrijf je handen warm, leg ze op je gezicht en adem drie keer rustig in en uit."],
-    ["✿", "Het Cadeautje", "Het is pakjesavond. Ook jij verdient een cadeautje, en dat mag je jezelf geven.", "Geef jezelf vandaag iets kleins: een bloemetje, een warme chocolademelk of een half uur voor jezelf."],
-    ["☀", "De Ochtend Zonder Haast", "Hoe je je ochtend begint, kleurt je hele dag.", "Zet morgen je wekker tien minuten eerder en gebruik die tijd voor helemaal niets."],
+    ["✿", "Het Cadeautje", "Het is pakjesavond. Ook jij verdient een cadeautje, en dat mag je jezelf geven.", "Geef jezelf vanavond ook iets kleins: een stukje chocola, een warme chocolademelk of een half uur voor jezelf."],
+    ["◷", "De Wekker Iets Eerder", "Hoe je je ochtend begint, kleurt je hele dag. Dat begint vanavond al.", "Zet vanavond je wekker tien minuten eerder en spreek met jezelf af: die tijd is morgen voor helemaal niets."],
     ["∪", "De Wollen Sokken", "Warme voeten, rustig hoofd. Zo simpel kan het zijn.", "Trek vanavond warme sokken aan en leg je voeten een kwartier omhoog."],
-    ["▢", "Het Raamlicht", "In december is er weinig daglicht, dus elk beetje telt.", "Ga vandaag even bij het raam of buiten zitten, ook al is het grijs."],
+    ["⌇", "De Moeie Voeten", "Je voeten hebben je de hele dag gedragen, door alle drukte heen.", "Smeer vanavond je voeten in en masseer met je duimen kleine rondjes over je voetzool."],
     ["♡", "De Zachte Stem", "Hoe praat jij eigenlijk tegen jezelf als het druk is?", "Kijk jezelf in de spiegel aan en zeg iets liefs, net zoals je tegen een vriendin zou doen."],
     ["✺", "De Geur Van December", "Kaneel, sinaasappel en kruidnagel. Geur brengt je meteen naar een warm gevoel.", "Ruik aan een sinaasappel of een kaneelstokje en adem het drie keer diep in."],
     ["✕", "Het Nee Tegen Een Afspraak", "Niet elk feestje hoeft. Jouw rust is ook een afspraak.", "Zeg een afspraak af waar je eigenlijk geen zin in hebt, zonder schuldgevoel."],
-    ["◡", "De Warme Kom", "Langzaam eten is ook een vorm van rust.", "Eet vandaag iets warms en proef elke hap, zonder telefoon erbij."],
+    ["◡", "De Warme Kom", "Langzaam eten is ook een vorm van rust.", "Eet vanavond iets warms en proef elke hap, zonder telefoon erbij."],
     ["✦", "De Lichtjes", "Overal hangen lichtjes. Ze zijn er ook voor jou.", "Maak vanavond een korte wandeling langs de kerstverlichting in je buurt."],
     ["◐", "Het Stille Uur", "Je hoofd heeft tijd nodig om de dag los te laten.", "Leg een uur voor het slapengaan alle schermen weg."],
     ["½", "De Halve Maand", "De helft van december zit erop. Tijd om even stil te staan.", "Denk terug aan de afgelopen twee weken. Wat ging er goed, hoe klein ook?"],
     ["≈", "Het Warme Bad", "Warm water maakt zacht wat de hele dag hard was.", "Neem een warm bad of voetenbad met een paar druppels van je lievelingsolie."],
     ["✉", "De Kaart Voor Een Ander", "Iets geven maakt je zelf ook warm van binnen.", "Stuur iemand een lief berichtje of kaartje, zomaar, zonder reden."],
-    ["❄", "De Winterwandeling", "Kou op je wangen maakt je hoofd helder.", "Wandel twintig minuten buiten en voel de koude lucht op je gezicht."],
+    ["❄", "De Koude Wangen", "Juist als het buiten koud is, voelt binnen extra warm.", "Stap vanavond even naar buiten, voel tien tellen de koude lucht op je gezicht en ga dan terug naar je warme plekje."],
     ["☁", "Het Lege Hoofd", "De drukte voor de feestdagen hoeft niet mee je bed in.", "Schrijf voor het slapen alles op wat nog moet, en leg het papiertje weg."],
     ["−", "Het Eenvoudige Feest", "Kerst hoeft niet perfect te zijn om fijn te zijn.", "Schrap een ding van je kerstlijstje. Niemand gaat het missen."],
     ["☾", "De Kortste Dag", "Vandaag is de donkerste dag van het jaar. Vanaf morgen wordt het weer lichter.", "Steek als het donker is een kaars aan en denk aan wat je volgend jaar wilt laten groeien."],
@@ -759,8 +925,8 @@ const KALENDER = {
     ["○", "De Adem Voor Het Feest", "Voor de drukte begint, mag jij eerst even landen.", "Neem vijf minuten voor jezelf, ga zitten en adem vier tellen in en zes tellen uit."],
     ["✧", "De Stille Nacht", "Het is kerstavond. Even mag alles stil zijn.", "Doe vanavond het grote licht uit, laat alleen kaarsjes branden en luister naar de stilte."],
     ["♥", "De Warmte Van Samen", "Het is kerst. Kijk eens om je heen naar wie er bij je zijn.", "Kijk bewust naar de mensen om je heen en voel waar je dankbaar voor bent."],
-    ["☕", "De Luie Dag", "Na de drukte mag je helemaal niets.", "Blijf vandaag lekker langer in je pyjama. Er hoeft niets."],
-    ["▤", "Het Restje Rust", "Restjes eten betekent tijd over voor jezelf.", "Kook vandaag niet, eet wat er nog is, en gebruik de tijd voor iets fijns."],
+    ["☕", "De Luie Avond", "Na de drukte mag je helemaal niets.", "Trek vanavond vroeg je pyjama aan, kruip op de bank en doe helemaal niets. Er hoeft niets."],
+    ["▤", "Het Restje Rust", "Restjes eten betekent tijd over voor jezelf.", "Kook vanavond niet, eet wat er nog is, en gebruik de tijd voor iets fijns."],
     ["★", "De Terugblik", "Je hebt dit jaar meer gedaan dan je denkt.", "Schrijf drie momenten op uit dit jaar waar je trots op bent."],
     ["✂", "Het Loslaten", "Niet alles hoeft mee naar het nieuwe jaar.", "Schrijf op wat je wilt achterlaten en scheur het papiertje daarna door."],
     ["✶", "De Wens", "Geen goed voornemen dit keer, maar een wens. Iets wat je jezelf echt gunt.", "Schrijf een wens voor jezelf op voor het nieuwe jaar en bewaar hem goed."],
@@ -829,6 +995,7 @@ OCHTEND_TXT.split("\n").forEach(l => {
 let calMoment = new Date().getHours() < 15 ? "ochtend" : "avond";
 function getDeck(k) {
   if (DECKS[k]) return DECKS[k];
+  if (k === "advent") return ADVENT;
   if (k.startsWith("och")) return OCHTEND_KAL[+k.slice(3)];
   return KALENDER[+k.replace("kal", "")];
 }
@@ -895,7 +1062,7 @@ function showCalDay(d) {
     else { $("calLock").textContent = "Eerdere dagen terugkijken kan als rustlid."; $("calJoin").classList.remove("hidden"); }
   }
 }
-window.addEventListener("hashchange", () => location.reload());
+window.addEventListener("hashchange", () => { if (location.hash.startsWith("#voorjou=")) showGift(); else if (location.hash === "#voorbeeld" || VOORBEELD) location.reload(); });
 
 const HELP_HTML = `<strong>Zijn de kaarten nu niet genoeg?</strong>
 <p>Je hoeft het niet alleen te doen. Hier kun je terecht:</p>
@@ -954,11 +1121,10 @@ function spread(spreadId, msgId, deckKey, indexes, positions, openAll) {
       if (col) box.style.borderLeft = `6px solid ${col.a}`;
       const acts = document.createElement("div");
       acts.className = "acts";
-      const wa = document.createElement("a");
-      wa.className = "save";
-      wa.target = "_blank"; wa.rel = "noopener";
-      wa.href = "https://wa.me/?text=" + encodeURIComponent(`Ik trok deze rustkaart voor jou 💜\n\n${ttl}\n${text}\n\nRitueel: ${rit}\n\nTrek zelf ook een kaart: ${APP_LINK}`);
+      const wa = document.createElement("button");
+      wa.type = "button"; wa.className = "save";
       wa.textContent = "Stuur naar een vriendin";
+      wa.addEventListener("click", () => openFriend(deckKey, ci));
       acts.appendChild(wa);
       if (member) {
         const s = document.createElement("button");
@@ -1108,6 +1274,7 @@ function renderBook() {
   const el = $("book");
   if (!book.length) { el.innerHTML = '<p class="small">Je boekje is nog leeg. Trek een kaart en bewaar hem hier.</p>'; return; }
   el.innerHTML = book.map(e => {
+    if (e.kind === "avond") return `<div class="entry"><span class="date">${niceDate(new Date(e.t))} · Avondritueel</span><strong>☾ ${esc(e.q)}</strong>${e.note ? `<p>${esc(e.note)}</p>` : ""}</div>`;
     const c = getDeck(e.deck).cards[e.ci];
     return `<div class="entry"><span class="date">${niceDate(new Date(e.t))}</span><strong>${c[0]} ${c[1]}</strong>${e.note ? `<p>${esc(e.note)}</p>` : ""}</div>`;
   }).join("");
@@ -1162,12 +1329,17 @@ function applyMember() {
   s.textContent = !member ? "Word rustlid" : until ? `Rustlid tot ${niceDate(new Date(until))}` : "Rustlid";
   s.classList.toggle("member", member);
   if (member) { drawThree(); drawTwo(); renderBook(); }
-  renderStacks(); drawStack(); updateDayNote(); renderCal();
+  renderStacks(); drawStack(); updateDayNote(); renderCal(); renderAdventTeaser();
 }
 
 /* ===== Navigatie ===== */
 function go(view) {
   if (view === "wandeling") renderWalk(); else setBell(false);
+  if (view === "avond") { eveStep = -1; renderEvening(); }
+  if (view === "advent") { const n = advNow(); advSel = (n.m === 12 && n.d <= 24) ? n.d : null; renderAdvent(); if (!advSel) $("advOpen").classList.add("hidden"); }
+  if (view === "massage") { masStep = -1; renderMassage(); }
+  if (view === "geluiden") renderSounds();
+  if (view === "vriendin" && !$("frCard").innerHTML) renderFriend();
   document.querySelectorAll(".view").forEach(v => v.classList.toggle("hidden", v.dataset.view !== view));
   document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.tab === view));
   window.scrollTo({ top: 0 });
@@ -1185,7 +1357,7 @@ $("wipeBtn").addEventListener("click", () => {
     $("wipeMsg").textContent = "Weet je het zeker? Je boekje, je reeks en je lidmaatschap worden gewist.";
     return;
   }
-  ["pd-day", "pd-streak", "pd-book", "pd-member", "pd-welcome"].forEach(k => { delete mem[k]; try { localStorage.removeItem(k); } catch (e) {} });
+  ["pd-day", "pd-streak", "pd-book", "pd-member", "pd-welcome", "pd-advent", "pd-masbell", "pd-vol"].forEach(k => { delete mem[k]; try { localStorage.removeItem(k); } catch (e) {} });
   member = false; wipeArmed = false;
   $("wipeBtn").textContent = "Wis mijn gegevens";
   $("wipeMsg").textContent = "Je gegevens zijn gewist.";
@@ -1433,6 +1605,437 @@ function renderWalk() {
   }
 }
 
+/* ===== Adventskalender ===== */
+// Verrassingen van de salon. Pas de teksten hier aan als je iets anders wilt geven.
+const ADVENT_GELDIG = "Laat dit scherm zien bij je volgende behandeling, uiterlijk 31 januari 2027. Een keer te gebruiken.";
+const ADVENT_VERRASSING = {
+  5: { titel: "Een extra geurritueel", tekst: "Het is pakjesavond, dus ook voor jou een cadeautje. Bij je volgende behandeling krijg je een extra geurritueel.", code: "ADVENT5" },
+  12: { titel: "Doe mee aan de loting", tekst: "Maak kans op een gratis Purple Dream ASMR Intro. Stuur me een berichtje via WhatsApp en je doet mee. De winnaar hoort het op 20 december.", code: "LOTING", loting: true },
+  19: { titel: "Tien minuten langer", tekst: "Bij je volgende behandeling krijg je tien minuten extra ASMR hoofdmassage, omdat je het verdient.", code: "ADVENT19" },
+  24: { titel: "Een kerstcadeautje van mij", tekst: "Fijne kerst, lieverd. Bij je volgende behandeling ligt er een klein kerstcadeautje voor je klaar.", code: "KERST24" }
+};
+const ADVENT = { name: "Adventskalender", cards: [
+  ["✦", "Het Eerste Deurtje", "December mag ook zacht beginnen. Elke dag een klein deurtje, alleen voor jou.", "Maak vandaag een plekje in huis dat van jou is: een stoel, een kussen en een kaarsje erbij."],
+  ["☕", "De Chocolademelk", "Warm, zoet en een beetje zoals vroeger.", "Maak vanavond een kop chocolademelk en drink hem langzaam, met beide handen om de mok."],
+  ["♪", "Het Kerstliedje", "Muziek brengt je in een tel in een ander gevoel.", "Zet je lievelingskerstliedje op en zing of neurie mee, ook al hoort niemand het."],
+  ["✿", "De Kruidnagelsinaasappel", "Geur is de snelste weg naar een warm gevoel.", "Steek kruidnagels in een sinaasappel en leg hem in een schaaltje. Je huis ruikt dagen naar december."],
+  null,
+  ["✎", "Het Verlanglijstje Voor Jezelf", "Iedereen maakt nu een verlanglijstje. Deze gaat niet over dingen, maar over gevoel.", "Schrijf drie dingen op die je deze maand graag wilt voelen, zoals rust, warmte of lachen."],
+  ["▭", "De Plaid", "Je hoeft niet altijd iets nieuws. Bekend is ook fijn.", "Kruip vanavond onder een plaid op de bank en kijk een film die je al tien keer zag."],
+  ["❋", "De Winterhanden", "Kou buiten en verwarming binnen maken je handen droog.", "Smeer je handen vanavond dik in en trek er een half uurtje zachte handschoenen of sokken overheen."],
+  ["✂", "Het Inpakmoment", "Cadeautjes inpakken kan ook een rustmoment zijn.", "Pak een cadeautje in met muziek op en zonder haast. Geniet van het papier en het lint."],
+  ["◡", "Het Ene Koekje", "Bewust genieten maakt iets kleins heel lekker.", "Eet een kerstkoekje heel langzaam. Ruik eraan, proef het en neem er de tijd voor."],
+  ["▢", "De Lege Avond", "In december staat je agenda vaak vol. Een lege avond is goud waard.", "Kies een avond deze week, schrijf er van mij bij in je agenda en plan er niets."],
+  null,
+  ["☾", "Het Frisse Bed", "Een fris bed voelt als een klein hotel thuis.", "Verschoon vandaag je bed en doe een druppel van je lievelingsolie op je kussen."],
+  ["✺", "Het Wintermasker", "Je huid heeft het in de winter zwaar door kou, wind en droge lucht.", "Neem vanavond tijd voor een gezichtsmasker en ga liggen terwijl het inwerkt."],
+  ["♡", "Een Kaartje Sturen", "Iemand om je heen heeft het vast ook druk.", "Stuur iemand een rustkaart via deze app, met een lief berichtje erbij."],
+  ["◇", "De Puzzel", "Een puzzel of kleurplaat maakt je hoofd vanzelf stil.", "Leg een stukje van een legpuzzel of kleur een plaatje, alleen voor de rust in je hoofd."],
+  ["★", "Het Bedankje", "Je hebt dit jaar zoveel voor anderen gedaan.", "Bedank jezelf voor drie dingen die je dit jaar voor een ander hebt gedaan."],
+  ["↟", "De Dennengeur", "De geur van dennen brengt het bos even naar binnen.", "Ruik aan de kerstboom, een takje den of een dennenappel, en adem drie keer diep in."],
+  null,
+  ["▤", "Het Fotoalbum", "Mooie herinneringen geven je een warm gevoel van binnen.", "Blader door oude foto's en zoek een moment waarop je echt gelukkig was."],
+  ["✶", "Het Licht Komt Terug", "Vanaf morgen worden de dagen weer langer.", "Schrijf op waar jij volgend jaar meer licht in wilt brengen."],
+  ["∴", "De Mini Hoofdmassage", "Je hoofd heeft deze weken veel gedragen.", "Doe vanavond de mini hoofdmassage in deze app, rustig en met je ogen dicht."],
+  ["○", "De Vijf Minuten", "Voor de drukte van de feestdagen begint, plan je eerst iets voor jezelf.", "Zet voor elke feestdag vijf minuten alleen voor jou in je agenda."],
+  null
+]};
+function advNow() { const d = new Date(); return { m: d.getMonth() + 1, d: d.getDate() }; }
+function advState(day) {
+  if (VOORBEELD) return "open";
+  const n = advNow();
+  if (n.m !== 12 || day > n.d) return "future";
+  if (day === 1 || member) return "open";
+  return "member";
+}
+function renderAdventTeaser() {
+  const n = advNow(), show = VOORBEELD || n.m === 11 || (n.m === 12 && n.d <= 26);
+  $("adventTeaser").classList.toggle("hidden", !show);
+  if (!show) return;
+  if (n.m === 11) {
+    const left = new Date(new Date().getFullYear(), 11, 1) - new Date(new Date().getFullYear(), n.m - 1, n.d);
+    const days = Math.round(left / 86400000);
+    $("advTeaserTitle").textContent = "24 deurtjes vol rust";
+    $("advTeaserText").textContent = `Nog ${days} ${days === 1 ? "nachtje" : "nachtjes"} slapen. Op 1 december gaat het eerste deurtje open, met kaarten, rituelen en verrassingen van de salon.`;
+  } else if (n.d <= 24) {
+    $("advTeaserTitle").textContent = `Deurtje ${n.d} staat voor je klaar`;
+    $("advTeaserText").textContent = member ? "Tik om het deurtje van vandaag te openen." : "Het eerste deurtje is gratis. Als rustlid open je ze allemaal.";
+  } else {
+    $("advTeaserTitle").textContent = "Fijne kerstdagen";
+    $("advTeaserText").textContent = "Alle 24 deurtjes zijn open. Je kunt ze nog rustig teruglezen.";
+  }
+}
+const ADV_ORDER = [7, 15, 2, 21, 11, 18, 4, 24, 9, 13, 1, 20, 16, 6, 22, 10, 3, 19, 12, 23, 5, 14, 17, 8];
+let advSel = null;
+function renderAdvent() {
+  const n = advNow(), opened = load("pd-advent", []);
+  $("advNote").textContent = VOORBEELD ? "Voorbeeldstand: alle deurtjes staan open." :
+    n.m !== 12 ? "Op 1 december gaat het eerste deurtje open. Kom dan terug." :
+    member ? "Je kunt elk deurtje tot en met vandaag openen. Ook de dagen die je gemist hebt." :
+    "Het eerste deurtje is gratis. Als rustlid open je ze allemaal, ook de dagen die je gemist hebt.";
+  $("advGrid").innerHTML = ADV_ORDER.map(d => {
+    const st = advState(d), isOpen = opened.includes(d) && st === "open";
+    const surprise = !ADVENT.cards[d - 1];
+    const sym = surprise ? "♡" : ADVENT.cards[d - 1][0];
+    const cls = ["door", d === 24 ? "big" : "", isOpen ? "open" : "", surprise ? "surprise" : "", st === "future" ? "locked" : "", n.m === 12 && n.d === d ? "today" : "", advSel === d ? "sel" : ""].join(" ");
+    return `<button type="button" class="${cls}" data-d="${d}" data-sym="${sym}" aria-label="Deurtje ${d}">${d}</button>`;
+  }).join("");
+  $("advGrid").querySelectorAll(".door").forEach(b => b.addEventListener("click", () => openDoor(+b.dataset.d)));
+  if (advSel) openDoor(advSel, true);
+}
+function openDoor(day, quiet) {
+  advSel = day;
+  const st = advState(day), box = $("advOpen");
+  box.classList.remove("hidden");
+  $("advDay").textContent = `Deurtje ${day} · ${day} december`;
+  $("advSpread").innerHTML = ""; $("advMsg").innerHTML = ""; $("advLock").textContent = "";
+  $("advJoin").classList.add("hidden");
+  document.querySelectorAll(".door").forEach(b => b.classList.toggle("sel", +b.dataset.d === day));
+  if (st === "future") { $("advLock").textContent = `Nog even geduld. Dit deurtje gaat open op ${day} december.`; }
+  else if (st === "member") { $("advLock").textContent = "Dit deurtje is voor rustleden. Ben je klant van de salon? Vraag dan naar je kerstcode, daarmee open je alle deurtjes gratis."; $("advJoin").classList.remove("hidden"); }
+  else {
+    const opened = load("pd-advent", []);
+    if (!opened.includes(day)) { opened.push(day); save("pd-advent", opened); }
+    const v = ADVENT_VERRASSING[day];
+    if (v) {
+      $("advMsg").innerHTML = `<div class="surprise-box"><div class="bigmoon">♡</div><strong>${v.titel}</strong><p>${v.tekst}</p>${v.loting ? "" : `<span class="rcode">${v.code}</span><p class="small" style="color:var(--lav)">${ADVENT_GELDIG}</p>`}</div>` +
+        (v.loting ? `<a class="btn" target="_blank" rel="noopener" href="https://wa.me/${SALON_WHATSAPP}?text=${encodeURIComponent("Hoi Celina! Ik doe graag mee aan de adventsloting voor een ASMR Intro 💜")}">Doe mee via WhatsApp</a>` : "");
+    } else {
+      spread("advSpread", "advMsg", "advent", [day - 1], null, false);
+    }
+    const doorBtn = document.querySelector(`.door[data-d="${day}"]`);
+    if (doorBtn) doorBtn.classList.add("open");
+  }
+  if (!quiet) box.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+/* ===== Rustgeluiden ===== */
+const SOUNDS = [["regen", "Regen", "∴"], ["zee", "Zee", "≈"], ["vuur", "Haardvuur", "♨"], ["schaal", "Klankschaal", "◯"]];
+const snd = { ctx: null, master: null, on: {}, timer: null, end: 0, tick: null, vol: load("pd-vol", 0.6) };
+function sndCtx() {
+  if (!snd.ctx) {
+    snd.ctx = new (window.AudioContext || window.webkitAudioContext)();
+    snd.master = snd.ctx.createGain(); snd.master.gain.value = snd.vol; snd.master.connect(snd.ctx.destination);
+  }
+  if (snd.ctx.state === "suspended") snd.ctx.resume();
+  return snd.ctx;
+}
+function noiseBuf(brown) {
+  const c = snd.ctx, n = c.sampleRate * 4, b = c.createBuffer(1, n, c.sampleRate), d = b.getChannelData(0);
+  let last = 0;
+  for (let i = 0; i < n; i++) { const w = Math.random() * 2 - 1; if (brown) { last = (last + 0.02 * w) / 1.02; d[i] = last * 3.5; } else d[i] = w; }
+  return b;
+}
+function loopSrc(buf) { const s = snd.ctx.createBufferSource(); s.buffer = buf; s.loop = true; s.start(); return s; }
+function startSound(k) {
+  const c = sndCtx(), out = c.createGain(), nodes = [], timers = [];
+  out.gain.setValueAtTime(0, c.currentTime); out.gain.linearRampToValueAtTime(1, c.currentTime + 2); out.connect(snd.master);
+  if (k === "regen") {
+    const s = loopSrc(noiseBuf(false)), hp = c.createBiquadFilter(), lp = c.createBiquadFilter(), g = c.createGain();
+    hp.type = "highpass"; hp.frequency.value = 500; lp.type = "lowpass"; lp.frequency.value = 5000; g.gain.value = 0.18;
+    s.connect(hp).connect(lp).connect(g).connect(out); nodes.push(s);
+    const s2 = loopSrc(noiseBuf(true)), g2 = c.createGain(); g2.gain.value = 0.25; s2.connect(g2).connect(out); nodes.push(s2);
+  } else if (k === "zee") {
+    const s = loopSrc(noiseBuf(true)), lp = c.createBiquadFilter(), g = c.createGain(), lfo = c.createOscillator(), depth = c.createGain();
+    lp.type = "lowpass"; lp.frequency.value = 900; g.gain.value = 0.35; lfo.frequency.value = 0.09; depth.gain.value = 0.3;
+    lfo.connect(depth).connect(g.gain); lfo.start();
+    s.connect(lp).connect(g).connect(out); nodes.push(s, lfo);
+  } else if (k === "vuur") {
+    const s = loopSrc(noiseBuf(true)), lp = c.createBiquadFilter(), g = c.createGain();
+    lp.type = "lowpass"; lp.frequency.value = 450; g.gain.value = 0.45; s.connect(lp).connect(g).connect(out); nodes.push(s);
+    const click = noiseBuf(false), hp = c.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 1800; hp.connect(out);
+    const crackle = () => {
+      if (!snd.on[k]) return;
+      const b = c.createBufferSource(), cg = c.createGain(), t = c.currentTime, len = 0.01 + Math.random() * 0.03;
+      b.buffer = click; cg.gain.setValueAtTime(0.25 + Math.random() * 0.35, t); cg.gain.exponentialRampToValueAtTime(0.001, t + len);
+      b.connect(cg).connect(hp); b.start(t, Math.random() * 3, len + 0.02);
+      timers.push(setTimeout(crackle, 60 + Math.random() * (Math.random() < 0.2 ? 900 : 300)));
+    };
+    crackle();
+  } else if (k === "schaal") {
+    const ring = () => {
+      if (!snd.on[k]) return;
+      const t = c.currentTime;
+      [[196, 0.22], [392.5, 0.08], [588, 0.06], [826, 0.03]].forEach(([f, a]) => {
+        const o = c.createOscillator(), g = c.createGain();
+        o.type = "sine"; o.frequency.value = f; g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(a, t + 0.04);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + 9); o.connect(g).connect(out); o.start(t); o.stop(t + 9.2);
+      });
+      timers.push(setTimeout(ring, 12000));
+    };
+    snd.on[k] = { out, nodes, timers }; ring(); return;
+  }
+  snd.on[k] = { out, nodes, timers };
+}
+function stopSound(k, fade) {
+  const x = snd.on[k]; if (!x) return;
+  delete snd.on[k];
+  x.timers.forEach(clearTimeout);
+  const c = snd.ctx, f = fade || 1.5;
+  x.out.gain.cancelScheduledValues(c.currentTime); x.out.gain.setValueAtTime(x.out.gain.value, c.currentTime); x.out.gain.linearRampToValueAtTime(0, c.currentTime + f);
+  setTimeout(() => { x.nodes.forEach(n => { try { n.stop(); } catch (e) {} }); x.out.disconnect(); }, f * 1000 + 200);
+}
+function stopAll(fade) { Object.keys(snd.on).forEach(k => stopSound(k, fade)); clearTimeout(snd.timer); clearInterval(snd.tick); snd.timer = null; snd.end = 0; }
+function setSleep(min) {
+  clearTimeout(snd.timer); clearInterval(snd.tick); snd.timer = null; snd.end = 0;
+  if (min) {
+    snd.end = Date.now() + min * 60000;
+    snd.timer = setTimeout(() => { stopAll(30); renderSounds(); }, Math.max(0, min * 60000 - 30000));
+    snd.tick = setInterval(() => { const el = $("sndLeft"); if (el) el.textContent = leftText(); }, 20000);
+  }
+}
+function leftText() {
+  if (!snd.end) return "";
+  const m = Math.max(0, Math.ceil((snd.end - Date.now()) / 60000));
+  return `Nog ${m} ${m === 1 ? "minuut" : "minuten"}, daarna gaan de geluiden langzaam uit.`;
+}
+let sndTimerSel = 0;
+function renderSounds() {
+  const body = $("sndBody");
+  if (!member) {
+    body.innerHTML = `<div class="sndgrid">${SOUNDS.map(([k, l, i]) => `<div class="snd" aria-hidden="true"><span class="ico">${i}</span>${l}<span class="st">Voor rustleden</span></div>`).join("")}</div>
+      <p>De rustgeluiden zijn voor rustleden. Ben je klant van de salon? Vraag dan naar je kerstcode, daarmee krijg je ze gratis.</p>
+      <button class="btn" type="button" id="sndJoin">Word rustlid</button>`;
+    $("sndJoin").addEventListener("click", () => go("lid"));
+    return;
+  }
+  const playing = Object.keys(snd.on).length > 0;
+  body.innerHTML = `<div class="sndgrid">${SOUNDS.map(([k, l, i]) => `<button type="button" class="snd${snd.on[k] ? " on" : ""}" data-snd="${k}" aria-pressed="${!!snd.on[k]}"><span class="ico">${i}</span>${l}<span class="st">${snd.on[k] ? "Speelt" : "Tik om aan te zetten"}</span></button>`).join("")}</div>
+    <p class="small">Je kunt geluiden combineren, bijvoorbeeld regen met een haardvuur.</p>
+    <div><label for="sndVol">Volume</label><input class="vol" id="sndVol" type="range" min="0.05" max="1" step="0.05" value="${snd.vol}"></div>
+    <div><p class="kicker" style="margin-bottom:8px;">Timer</p><div class="chips" id="sndTimers">${[[0, "Geen"], [15, "15 min"], [30, "30 min"], [60, "1 uur"]].map(([m, l]) => `<button type="button" class="chip${m === sndTimerSel ? " on" : ""}" data-min="${m}">${l}</button>`).join("")}</div></div>
+    <p class="small" id="sndLeft">${playing ? leftText() : ""}</p>
+    <button class="btn ghost${playing ? "" : " hidden"}" id="sndStop" type="button">Alles uit</button>
+    <p class="small">Tip: leg je telefoon naast je neer en laat het scherm aan. Op sommige telefoons stopt het geluid als het scherm op slot gaat.</p>`;
+  body.querySelectorAll("[data-snd]").forEach(b => b.addEventListener("click", () => {
+    const k = b.dataset.snd;
+    if (snd.on[k]) stopSound(k); else { startSound(k); if (sndTimerSel && !snd.end) setSleep(sndTimerSel); }
+    if (!Object.keys(snd.on).length) setSleep(0);
+    renderSounds();
+  }));
+  $("sndVol").addEventListener("input", e => { snd.vol = +e.target.value; save("pd-vol", snd.vol); if (snd.master) snd.master.gain.value = snd.vol; });
+  $("sndTimers").querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+    sndTimerSel = +b.dataset.min; if (Object.keys(snd.on).length) setSleep(sndTimerSel); renderSounds();
+  }));
+  $("sndStop").addEventListener("click", () => { stopAll(1.5); renderSounds(); });
+}
+
+/* ===== Mini hoofdmassage ===== */
+const SVG_DEFS = `<defs><marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#c8a96a"/></marker></defs>`;
+const G = 'stroke="#c8a96a" stroke-width="3.5" fill="none" stroke-linecap="round"';
+function headFront(extra) {
+  return `<svg viewBox="0 0 200 200" role="img" aria-hidden="true">${SVG_DEFS}
+  <path d="M30 200 Q40 168 84 164 L116 164 Q160 168 170 200Z" fill="#dacee6"/>
+  <path d="M86 140 L86 168 Q100 176 114 168 L114 140Z" fill="#f3e6d8" stroke="#3d2547" stroke-width="2"/>
+  <ellipse cx="57" cy="104" rx="6" ry="11" fill="#f3e6d8" stroke="#3d2547" stroke-width="2"/>
+  <ellipse cx="143" cy="104" rx="6" ry="11" fill="#f3e6d8" stroke="#3d2547" stroke-width="2"/>
+  <ellipse cx="100" cy="100" rx="43" ry="52" fill="#fbf2e8" stroke="#3d2547" stroke-width="2"/>
+  <path d="M56 98 Q50 42 100 38 Q150 42 144 98 Q138 66 100 62 Q62 66 56 98Z" fill="#7f649d"/>
+  <path d="M80 104 q7 5 14 0 M106 104 q7 5 14 0" stroke="#3d2547" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M92 130 q8 5 16 0" stroke="#3d2547" stroke-width="2" fill="none" stroke-linecap="round"/>${extra}</svg>`;
+}
+function headBack(extra) {
+  return `<svg viewBox="0 0 200 200" role="img" aria-hidden="true">${SVG_DEFS}
+  <path d="M30 200 Q40 168 84 164 L116 164 Q160 168 170 200Z" fill="#dacee6"/>
+  <path d="M84 132 L84 168 Q100 176 116 168 L116 132Z" fill="#f3e6d8" stroke="#3d2547" stroke-width="2"/>
+  <ellipse cx="56" cy="102" rx="6" ry="11" fill="#f3e6d8" stroke="#3d2547" stroke-width="2"/>
+  <ellipse cx="144" cy="102" rx="6" ry="11" fill="#f3e6d8" stroke="#3d2547" stroke-width="2"/>
+  <ellipse cx="100" cy="94" rx="44" ry="50" fill="#7f649d" stroke="#3d2547" stroke-width="2"/>
+  <path d="M70 70 Q100 56 130 70 M66 92 Q100 80 134 92" stroke="#9486a4" stroke-width="2" fill="none"/>${extra}</svg>`;
+}
+const HANDS = `<svg viewBox="0 0 200 200" role="img" aria-hidden="true">
+  <g fill="#fbf2e8" stroke="#3d2547" stroke-width="2">
+    <rect x="44" y="92" width="44" height="60" rx="18"/><rect x="46" y="58" width="10" height="42" rx="5"/><rect x="58" y="50" width="10" height="48" rx="5"/><rect x="70" y="52" width="10" height="46" rx="5"/><rect x="82" y="62" width="9" height="38" rx="4.5"/>
+    <rect x="112" y="92" width="44" height="60" rx="18"/><rect x="144" y="58" width="10" height="42" rx="5"/><rect x="132" y="50" width="10" height="48" rx="5"/><rect x="120" y="52" width="10" height="46" rx="5"/><rect x="109" y="62" width="9" height="38" rx="4.5"/>
+  </g>
+  <path d="M100 40 q-8 8 0 16 q8 8 0 16 M100 84 q-8 8 0 16 q8 8 0 16" ${G}/>
+  <path d="M60 168 q10 -6 20 0 q10 6 20 0 q10 -6 20 0 q10 6 20 0" ${G}/></svg>`;
+const MASSAGE = [
+  { t: "Warme handen", fig: HANDS, d: "Wrijf je handpalmen tegen elkaar tot ze warm worden. Leg ze daarna een moment over je ogen en adem drie keer langzaam uit. Laat je schouders zakken." },
+  { t: "Je voorhoofd", fig: headFront(`<path d="M98 78 L70 82" ${G} marker-end="url(#ah)"/><path d="M102 78 L130 82" ${G} marker-end="url(#ah)"/>`), d: "Zet je vingertoppen in het midden van je voorhoofd. Strijk heel langzaam naar buiten, naar je slapen. Doe dit vijf keer, alsof je de dag van je voorhoofd veegt." },
+  { t: "Je slapen", fig: headFront(`<circle cx="62" cy="88" r="9" ${G} stroke-dasharray="5 4"/><circle cx="138" cy="88" r="9" ${G} stroke-dasharray="5 4"/><path d="M62 79 l5 -2" ${G} marker-end="url(#ah)"/><path d="M138 79 l-5 -2" ${G} marker-end="url(#ah)"/>`), d: "Leg je vingertoppen op je slapen en maak tien kleine, langzame rondjes. Druk heel licht. Hier zit vaak meer spanning dan je denkt." },
+  { t: "Je hoofdhuid", fig: headFront(`<g fill="#c8a96a"><circle cx="78" cy="56" r="4"/><circle cx="92" cy="48" r="4"/><circle cx="108" cy="48" r="4"/><circle cx="122" cy="56" r="4"/><circle cx="100" cy="62" r="4"/></g><path d="M64 34 Q100 14 136 34" ${G} marker-end="url(#ah)"/>`), d: "Spreid je vingers en zet je vingertoppen op je hoofd, bij je haargrens. Beweeg je hoofdhuid zachtjes heen en weer, zonder over je haar te wrijven. Schuif zo stukje voor stukje naar achteren." },
+  { t: "Achter je hoofd en nek", fig: headBack(`<circle cx="84" cy="132" r="7" ${G} stroke-dasharray="4 3"/><circle cx="116" cy="132" r="7" ${G} stroke-dasharray="4 3"/><path d="M88 146 L88 170" ${G} marker-end="url(#ah)"/><path d="M112 146 L112 170" ${G} marker-end="url(#ah)"/>`), d: "Zoek met je duimen het randje onderaan je schedel, waar je nek begint. Maak daar kleine rondjes. Strijk daarna met je hele hand langzaam langs je nek naar beneden." },
+  { t: "Zacht afsluiten", fig: headFront(`<path d="M72 50 q10 -14 22 -6 M90 42 q10 -14 22 -6 M108 46 q10 -12 20 -2" ${G}/><path d="M60 26 q3 -6 6 0 M140 26 q3 -6 6 0 M100 16 q3 -6 6 0" stroke="#c8a96a" stroke-width="2.5" fill="none" stroke-linecap="round"/>`), d: "Kriebel met je vingertoppen heel licht over je hele hoofd, van voren naar achteren. Hoe zachter, hoe fijner. Leg daarna je handen in je schoot en blijf nog even zitten met je ogen dicht." }
+];
+let masStep = -1;
+function renderMassage() {
+  const body = $("masBody"), st = masStep, n = MASSAGE.length;
+  if (!member) {
+    body.innerHTML = `<p class="kicker">Dit leer je</p>
+      <div class="masfig">${MASSAGE[1].fig}</div>
+      <div class="msgs">${MASSAGE.map((m, i) => `<div class="msg"><strong>${i + 1}. ${m.t}</strong></div>`).join("")}</div>
+      <p>De mini hoofdmassage is voor rustleden. Ben je klant van de salon? Vraag dan naar je kerstcode, daarmee krijg je hem gratis.</p>
+      <button class="btn" data-open-join type="button">Word rustlid</button>`;
+    body.querySelector("[data-open-join]").addEventListener("click", () => go("lid"));
+    return;
+  }
+  if (st < 0) {
+    body.innerHTML = `<div class="msgs">${MASSAGE.map((m, i) => `<div class="msg"><strong>${i + 1}. ${m.t}</strong></div>`).join("")}</div>
+      <label class="toggle" for="masBell"><span><strong>Zacht belletje</strong><span class="small">Een klankschaaltje als je naar de volgende stap gaat.</span></span><input type="checkbox" id="masBell"${load("pd-masbell", false) ? " checked" : ""}></label>
+      <button class="btn" id="masStart" type="button">Begin</button>`;
+    $("masBell").addEventListener("change", e => save("pd-masbell", e.target.checked));
+    $("masStart").addEventListener("click", () => { masStep = 0; renderMassage(); });
+  } else if (st < n) {
+    const m = MASSAGE[st];
+    body.innerHTML = `<div class="progress" aria-hidden="true">${MASSAGE.map((_, i) => `<i class="${i <= st ? "on" : ""}"></i>`).join("")}</div>
+      <span class="masstep">Stap ${st + 1} van ${n}</span>
+      <h2>${m.t}</h2>
+      <div class="masfig">${m.fig}</div>
+      <p>${m.d}</p>
+      <button class="btn" id="masNext" type="button">${st === n - 1 ? "Afronden" : "Volgende stap"}</button>
+      <button class="btn ghost" id="masStop" type="button">Stoppen</button>`;
+    $("masNext").addEventListener("click", () => { masStep++; if (load("pd-masbell", false)) chime(); renderMassage(); window.scrollTo({ top: 0 }); });
+    $("masStop").addEventListener("click", () => { masStep = -1; renderMassage(); });
+  } else {
+    body.innerHTML = `<div class="reward"><strong>Wat fijn dat je dit voor jezelf deed 💜</strong><p>Voel je hoe je hoofd wat lichter is? Blijf nog even zitten voordat je verdergaat. Wil je een keer helemaal verwend worden? Dan masseer ik je hoofd graag in de salon.</p></div>
+      <a class="btn" href="https://salonpurpledream.nl" target="_blank" rel="noopener">Boek een ASMR hoofdmassage</a>
+      <button class="btn ghost" id="masAgain" type="button">Nog een keer</button>`;
+    $("masAgain").addEventListener("click", () => { masStep = -1; renderMassage(); });
+  }
+}
+
+/* ===== Avondritueel ===== */
+const AVOND_STAPPEN = [
+  { k: "Landen", sym: "☾", kaarten: [
+    ["Het Zachte Licht", "Doe het grote licht uit en laat alleen een lampje of kaarsje branden. Ga zitten en adem drie keer langzaam uit."],
+    ["De Telefoon Weg", "Leg je telefoon in een andere kamer, of met het scherm naar beneden. De komende tien minuten ben je er even niet."],
+    ["De Zware Schouders", "Trek je schouders op naar je oren, houd ze even vast en laat ze zwaar zakken. Doe dat drie keer."],
+    ["De Lange Uitademing", "Adem in door je neus en heel lang uit door je mond, alsof je door een rietje blaast. Vijf keer."],
+    ["Iets Zachts Aan", "Trek je pyjama of een fijne trui aan en voel hoe de dag van je afglijdt."],
+    ["De Warme Handen", "Wrijf je handen warm en leg ze een minuut over je gesloten ogen."],
+    ["De Geur Van De Avond", "Doe een druppel van je lievelingsolie in je handen, wrijf ze warm en adem de geur drie keer diep in."]
+  ]},
+  { k: "Je huid", sym: "✺", kaarten: [
+    ["De Zachte Reiniging", "Je huid heeft de hele dag alles opgevangen: kou, wind en droge lucht van de verwarming. Reinig je gezicht een hele minuut met zachte, ronde bewegingen en spoel af met lauw water."],
+    ["De Lotion", "Na het reinigen heeft je huid zin in frisheid en vocht. Druk je lotion met je handpalmen zachtjes in je huid en adem de geur rustig in."],
+    ["De Nachtcrème", "In de nacht herstelt je huid. Smeer je crème in met rustige, opwaartse bewegingen, van je kin naar je slapen. Neem er echt de tijd voor."],
+    ["De Losse Frons", "Tussen je wenkbrauwen zit vaak de spanning van de hele dag. Strijk met je duimen vijf keer van het midden van je voorhoofd naar je slapen."],
+    ["De Hals", "Je hals hoort bij je gezicht, maar wordt vaak vergeten. Smeer hem in met rustige streken van onder naar boven."],
+    ["De Droge Handen", "Kou en verwarming maken je handen droog. Smeer ze in en masseer elke vinger rustig, een voor een."],
+    ["De Zachte Lippen", "In de winter drogen je lippen snel uit. Smeer ze in met lippenbalsem en laat daarna je kaak helemaal los."]
+  ]},
+  { k: "Afsluiten", sym: "✧", vragen: [
+    "Wat gaf je vandaag een warm gevoel?",
+    "Welk moment van vandaag wil je onthouden?",
+    "Wat heb je vandaag voor jezelf gedaan?",
+    "Wat mag je vanavond loslaten?",
+    "Waar werd je vandaag rustig van?",
+    "Wie of wat maakte je vandaag blij?",
+    "Wat had je vandaag nodig, en heb je dat gekregen?",
+    "Waar ben je trots op, hoe klein ook?"
+  ]}
+];
+let eveStep = -1, eveNudge = 0;
+function eveIdx(n, extra) {
+  const d = new Date(), start = new Date(d.getFullYear(), 0, 0);
+  return (Math.floor((d - start) / 86400000) + extra + eveNudge) % n;
+}
+function eveCards() {
+  const [a, b, c] = AVOND_STAPPEN;
+  const ka = a.kaarten[eveIdx(a.kaarten.length, 0)], kb = b.kaarten[eveIdx(b.kaarten.length, 3)];
+  const q = c.vragen[eveIdx(c.vragen.length, 5)];
+  return [[a.k, a.sym, ka[0], ka[1]], [b.k, b.sym, kb[0], kb[1]], [c.k, c.sym, "De Laatste Vraag", q]];
+}
+function renderEvening() {
+  $("eveDate").textContent = "Avondritueel · " + niceDate(new Date());
+  const body = $("eveBody"), cards = eveCards(), st = eveStep;
+  if (st < 0) {
+    body.innerHTML = `<p class="kicker">Vanavond</p>
+      <div class="msgs">${cards.map((c, i) => `<div class="msg"><strong>${i + 1}. ${c[0]}</strong></div>`).join("")}</div>
+      <p class="small">Neem er tien minuten voor. Je kunt het op de bank doen, in de badkamer of al in bed.</p>
+      <button class="btn" id="eveStart" type="button">Begin</button>`;
+    $("eveStart").addEventListener("click", () => { eveStep = 0; renderEvening(); });
+  } else if (st < 3) {
+    const c = cards[st], last = st === 2;
+    body.innerHTML = `<div class="progress" aria-hidden="true">${[0, 1, 2].map(i => `<i class="${i <= st ? "on" : ""}"></i>`).join("")}</div>
+      <div class="spread one evecard"><div class="tslot"><button type="button" class="tcard" id="eveCard" aria-label="Draai kaart om"><div class="tinner"><div class="tface tback"><div class="moon">${st + 1}</div><div class="lbl">${c[0]}</div></div><div class="tface tfront"><div class="sym">${c[1]}</div><div class="ttl">${c[2]}</div></div></div></button></div></div>
+      <div id="eveMsg" style="display:flex;flex-direction:column;gap:12px;"></div>
+      <button class="btn" id="eveNext" type="button">${last ? "Afronden" : "Volgende stap"}</button>
+      <button class="btn ghost" id="eveStop" type="button">Stoppen</button>`;
+    $("eveCard").addEventListener("click", () => {
+      const b = $("eveCard"); if (b.classList.contains("open")) return;
+      b.classList.add("open"); b.setAttribute("aria-label", c[2]);
+      if (!last) { $("eveMsg").innerHTML = `<div class="msg"><strong>${c[0]}: ${c[2]}</strong><p>${c[3]}</p></div>`; return; }
+      $("eveMsg").innerHTML = `<div class="msg"><strong>${c[3]}</strong><p>Denk er rustig over na. Je hoeft geen groot antwoord te hebben, een klein ding is genoeg.</p></div>` + (member
+        ? `<div><label for="eveNote">Wil je het opschrijven?</label><textarea id="eveNote" placeholder="Een zin is genoeg."></textarea></div><button class="btn light" id="eveSave" type="button">Bewaar in mijn boekje</button><p class="small" id="eveSaved"></p>`
+        : `<p class="small">Schrijf het op in een boekje naast je bed, of houd het gewoon even in je hoofd. Als rustlid bewaar je je antwoorden in je rustboekje.</p>`);
+      if (member) $("eveSave").addEventListener("click", () => {
+        const note = $("eveNote").value.trim();
+        if (!note) { $("eveSaved").textContent = "Schrijf eerst een paar woorden."; return; }
+        const book = load("pd-book", []);
+        book.unshift({ t: Date.now(), kind: "avond", q: c[3], note });
+        save("pd-book", book.slice(0, 200)); renderBook();
+        $("eveSave").remove(); $("eveSaved").textContent = "Bewaard in je rustboekje 💜";
+      });
+    });
+    $("eveNext").addEventListener("click", () => { eveStep++; renderEvening(); window.scrollTo({ top: 0 }); });
+    $("eveStop").addEventListener("click", () => { eveStep = -1; renderEvening(); });
+  } else {
+    body.innerHTML = `<div class="reward"><strong>Slaap lekker 💜</strong><p>Je hebt je dag zacht afgesloten. Je hoofd mag nu stil worden. Er hoeft vandaag niets meer.</p></div>
+      <button class="btn ghost" id="eveAgain" type="button">Ander ritueel proberen</button>`;
+    $("eveAgain").addEventListener("click", () => { eveNudge++; eveStep = -1; renderEvening(); });
+  }
+}
+
+/* ===== Kaart voor een vriendin ===== */
+const FR_THEMES = [["basis", "Rust"], ["lachen", "Even lachen"], ["moeders", "Voor een moeder"], ["ondernemers", "Voor een ondernemer"], ["slaap", "Slaap lekker"]];
+const FR_IDEAS = ["Ik denk aan je", "Je verdient wat rust", "Zomaar, omdat je lief bent", "Je doet het zo goed"];
+let frDeck = "basis", frCi = 0;
+function b64e(o) { const b = new TextEncoder().encode(JSON.stringify(o)); let s = ""; b.forEach(x => s += String.fromCharCode(x)); return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""); }
+function b64d(t) { const s = atob(t.replace(/-/g, "+").replace(/_/g, "/")); return JSON.parse(new TextDecoder().decode(Uint8Array.from(s, c => c.charCodeAt(0)))); }
+function cardFront(c) {
+  return `<div class="tslot"><div class="tcard open" aria-hidden="true"><div class="tinner"><div class="tface tback"></div><div class="tface tfront"><div class="sym">${c[0]}</div><div class="ttl">${c[1]}</div></div></div></div></div>`;
+}
+function openFriend(deckKey, ci) {
+  if (deckKey !== undefined) { frDeck = deckKey; frCi = ci; }
+  renderFriend(); go("vriendin");
+}
+function renderFriend() {
+  $("frThemes").innerHTML = FR_THEMES.map(([k, l]) => `<button type="button" class="chip${k === frDeck ? " on" : ""}" data-fr="${k}">${l}</button>`).join("");
+  $("frThemes").querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => { frDeck = b.dataset.fr; frCi = pick(getDeck(frDeck), 1)[0]; renderFriend(); }));
+  const c = getDeck(frDeck).cards[frCi];
+  $("frCard").innerHTML = cardFront(c);
+  $("frText").innerHTML = `<strong>${c[1]}</strong><p>${c[2]}</p><p><em>Ritueel:</em> ${c[3]}</p>`;
+  updateFriendLink();
+}
+function updateFriendLink() {
+  const c = getDeck(frDeck).cards[frCi];
+  const to = $("frTo").value.trim(), note = $("frNote").value.trim(), from = $("frFrom").value.trim();
+  const code = b64e({ d: frDeck, c: frCi, v: from, n: note });
+  const lines = [to ? `Lieve ${to},` : "Hoi lieverd,", ""];
+  if (note) lines.push(note, "");
+  lines.push("Ik koos een rustkaart voor jou 💜 Tik op de link om hem om te draaien:", `${APP_LINK}#voorjou=${code}`);
+  if (from) lines.push("", `Liefs, ${from}`);
+  $("frSend").href = "https://wa.me/?text=" + encodeURIComponent(lines.join("\n"));
+}
+$("frIdeas").innerHTML = FR_IDEAS.map(t => `<button type="button" class="chip">${t}</button>`).join("");
+$("frIdeas").querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => { $("frNote").value = b.textContent; updateFriendLink(); }));
+["frTo", "frNote", "frFrom"].forEach(id => $(id).addEventListener("input", updateFriendLink));
+$("frOther").addEventListener("click", () => {
+  const n = getDeck(frDeck).cards.length; let i = frCi;
+  while (n > 1 && i === frCi) i = Math.floor(Math.random() * n);
+  frCi = i; renderFriend();
+});
+function showGift() {
+  if (!location.hash.startsWith("#voorjou=")) return false;
+  let g;
+  try { g = b64d(location.hash.slice(9)); } catch (e) { return false; }
+  const deck = g && getDeck(String(g.d));
+  if (!deck || !deck.cards[g.c]) return false;
+  $("gFrom").textContent = g.v ? `${String(g.v).slice(0, 40)} koos deze kaart voor jou. Neem een rustige adem en tik hem om.` : "Iemand koos deze kaart voor jou. Neem een rustige adem en tik hem om.";
+  if (g.n) { $("gNote").innerHTML = `<div class="notebox">${esc(String(g.n).slice(0, 300))}</div>`; $("gNote").classList.remove("hidden"); }
+  spread("giftSpread", "giftMsg", String(g.d), [g.c], null, false);
+  $("gift").classList.remove("hidden");
+  return true;
+}
+function closeGift() {
+  $("gift").classList.add("hidden");
+  try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
+  if (!load("pd-welcome", false)) openWelcome();
+}
+$("gClose").addEventListener("click", closeGift);
+
 /* ===== Dagelijkse herinnering ===== */
 function pad(n) { return String(n).padStart(2, "0"); }
 function remStamp() {
@@ -1504,13 +2107,15 @@ $("welcome").addEventListener("click", e => { if (e.target.id === "welcome") clo
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("welcome").classList.contains("hidden")) closeWelcome(); });
 $("showWelcome").addEventListener("click", openWelcome);
 
-// Op de website draait de app zonder service worker, zodat hij je andere pagina's niet beïnvloedt.
+
 
 renderToday();
 renderQuote();
 renderStreak();
 applyMember();
-if (!load("pd-welcome", false)) openWelcome();
+if (!showGift() && !load("pd-welcome", false)) openWelcome();
 </script>
 </body>
 </html>
+
+</body></html>
