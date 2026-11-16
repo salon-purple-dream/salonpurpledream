@@ -406,25 +406,7 @@ footer{border-top:3px solid transparent;border-image:linear-gradient(90deg,trans
 .filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 40px}.filter button{font:inherit;padding:10px 20px;border-radius:999px;border:1px solid #dacee6;background:#fff;color:#3d2547;cursor:pointer}.filter button[aria-pressed=true]{background:#3d2547;color:#fefbf4;border-color:#3d2547}
 .bg{margin-bottom:64px}.bg-kop{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center;margin-bottom:24px}.bg-foto{border-radius:20px;overflow:hidden;aspect-ratio:1/1}.bg-foto img{width:100%;height:100%;object-fit:cover}.bg-kop h2{margin:0 0 8px}.bg-kop p{color:var(--tekst-zacht);margin:0 0 10px}
 .bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}.bk{background:#fff;border:1px solid #ece4f2;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px}.bk[hidden]{display:none}.bk-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.bk-top h3{font-size:1.3rem;margin:0}.bk .prijs{font-family:var(--display);font-size:1.5rem;color:#3d2547;white-space:nowrap}.bk-tijd{margin:0;color:var(--tekst-zacht);font-size:.92rem}.bk-tekst{margin:4px 0 12px;flex:1}.bk .knop{align-self:flex-start}
-@media(max-width:640px){.bg-kop{grid-template-columns:1fr}.bg-foto{aspect-ratio:16/9}}
-/* Menu met Webshop: compacter op laptops */
-.mobielmenu.open{max-height:calc(100vh - 70px);max-height:calc(100dvh - 70px);overflow-y:auto;-webkit-overflow-scrolling:touch}.mobielmenu a{padding:9px 20px;font-size:1.12rem}
-@media (max-width:1640px) and (min-width:1181px){.menu{gap:13px!important;font-size:.84rem!important}.merk small{display:none}.merk span{font-size:1.2rem}.nav .knop{padding:9px 16px}}
-</style>
-<!-- Google Analytics met cookietoestemming -->
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-var pdKeuze=null;try{pdKeuze=localStorage.getItem('pd_cookies');}catch(e){}
-var pdJa=pdKeuze==='ja'?'granted':'denied';gtag('consent','default',{analytics_storage:pdJa,ad_storage:pdJa,ad_user_data:pdJa,ad_personalization:pdJa});
-gtag('js',new Date());gtag('config','G-5CRXLGV4NL');
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5CRXLGV4NL"></script>
-<script defer src="/cookiebanner.js"></script>
-<!-- Meta Pixel met cookietoestemming -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fbq('track','PageView');
-</script>
+@media(max-width:640px){.bg-kop{grid-template-columns:1fr}.bg-foto{aspect-ratio:16/9}}</style>
 </head>
 <body>
 <header class="nav">
@@ -433,13 +415,13 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
       <img src="img/logo-monogram.png" alt="" style="height:40px;width:auto">
       <span>Purple Dream<small>de salon voor ontspanning</small></span>
     </a>
-    <nav class="menu" aria-label="Hoofdmenu"><a href="asmr-hoofdmassage.html" data-nav="asmr-hoofdmassage">ASMR</a><a href="headspa.html" data-nav="headspa">HeadSpa</a><a href="gezichtsbehandeling.html" data-nav="gezichtsbehandeling">Gezicht</a><a href="lichaam-asmr.html" data-nav="lichaam-asmr">Ontspanningsmassage</a><a href="over-mij.html" data-nav="over-mij">Over mij</a><a href="reviews.html" data-nav="reviews">Reviews</a><a href="blog.html" data-nav="blog">Blog</a><a href="roelofarendsveen.html" data-nav="roelofarendsveen" aria-current="page">Roelofarendsveen</a><a href="cadeaubon.html" data-nav="cadeaubon">Cadeaubon</a><a href="webshop.html" data-nav="webshop">Webshop</a><a href="contact.html" data-nav="contact">Contact</a></nav>
+    <nav class="menu" aria-label="Hoofdmenu"><a href="asmr-hoofdmassage.html" data-nav="asmr-hoofdmassage">ASMR</a><a href="headspa.html" data-nav="headspa">HeadSpa</a><a href="gezichtsbehandeling.html" data-nav="gezichtsbehandeling">Gezicht</a><a href="lichaam-asmr.html" data-nav="lichaam-asmr">Ontspanningsmassage</a><a href="over-mij.html" data-nav="over-mij">Over mij</a><a href="reviews.html" data-nav="reviews">Reviews</a><a href="blog.html" data-nav="blog">Blog</a><a href="roelofarendsveen.html" data-nav="roelofarendsveen" aria-current="page">Roelofarendsveen</a><a href="cadeaubon.html" data-nav="cadeaubon">Cadeaubon</a><a href="contact.html" data-nav="contact">Contact</a></nav>
     <div class="navrechts">
       <button class="menuknop" id="menuknop" aria-expanded="false" aria-controls="mobielmenu">Menu</button>
       <a class="knop" href="#bookings-link">Boek nu</a>
     </div>
   </div>
-  <nav class="mobielmenu" id="mobielmenu" aria-label="Menu voor mobiel"><a href="index.html">Home</a><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><a href="headspa.html">HeadSpa</a><a href="gezichtsbehandeling.html">Gezicht</a><a href="lichaam-asmr.html">Ontspanningsmassage</a><a href="over-mij.html">Over mij</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="roelofarendsveen.html">Roelofarendsveen</a><a href="cadeaubon.html">Cadeaubon</a><a href="webshop.html">Webshop</a><a href="contact.html">Contact</a></nav>
+  <nav class="mobielmenu" id="mobielmenu" aria-label="Menu voor mobiel"><a href="index.html">Home</a><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><a href="headspa.html">HeadSpa</a><a href="gezichtsbehandeling.html">Gezicht</a><a href="lichaam-asmr.html">Ontspanningsmassage</a><a href="over-mij.html">Over mij</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="roelofarendsveen.html">Roelofarendsveen</a><a href="cadeaubon.html">Cadeaubon</a><a href="contact.html">Contact</a></nav>
 </header>
 <main><section class="pagehero">
   <div class="wrap">
@@ -449,7 +431,7 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
       <h1>Even helemaal van jou, in Roelofarendsveen</h1>
       <p class="intro">Op maandag en dinsdag vind je me bij Business Sisters in Roelofarendsveen. Ook hier mag je even helemaal niets. Kies voor een ontspanningsmassage of ASMR hoofdmassage voor een stil hoofd, of voor een gezichtsbehandeling of de CBD Anti Stress voor je huid.</p>
       <div class="acties">
-        <p style="margin:0 0 4px;font-weight:500">Waar heb je zin in? Kies en boek meteen:</p><div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px"><a class="knop" href="https://salon-purple-dream.salonround.com/a/bookings/services?n&amp;location=business-sisters-salon-purple-dream&amp;category=44809a5d-da30-49ad-87c8-4c2f58d94021">ASMR hoofdmassage</a><a class="knop" href="https://salon-purple-dream.salonround.com/a/bookings/services?n&amp;location=business-sisters-salon-purple-dream&amp;category=935ac4cf-74e1-4d90-a075-10f0da88d724">Gezichtsbehandeling</a><a class="knop" href="https://salon-purple-dream.salonround.com/a/bookings/services?n&amp;location=business-sisters-salon-purple-dream&amp;category=883113fe-66d7-4889-b55c-c466c04cff05">Ontspanningsmassage</a><a class="knop" href="https://salon-purple-dream.salonround.com/a/bookings/services?n&amp;location=business-sisters-salon-purple-dream&amp;category=df611af9-d84c-4cc3-a1af-9f13b4d565ab">Combinatie</a></div>
+        <a class="knop" href="#bookings-link">Boek je behandeling</a>
         <a class="knop licht" href="https://wa.me/31638248785">Stel je vraag via WhatsApp</a>
       </div>
     </div>
@@ -463,7 +445,7 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
 </section><section class="blok" style="padding-top:0">
   <div class="wrap">
     <div class="kop"><p class="label">Behandelingen in Roelofarendsveen</p><h2>Dit kun je hier boeken</h2></div>
-    <div class="menukaart" style="max-width:860px"><div class="item"><h3>Purple Dream CBD Anti Stress</h3><span class="prijs">€110</span><span class="tijd">90 min <span class="chip rv">Roelofarendsveen</span></span><p>Alleen hier: een kalmerende gezichtsbehandeling met rugmassage. Je neemt een CBD serum (waarde €34) mee naar huis.</p></div><div class="item"><h3>Purple Dream Yon-Ka Escale</h3><span class="prijs">€65</span><span class="tijd">60 min <span class="chip rv">Roelofarendsveen</span></span><p>Een frisse, stralende huid en een rustig hoofd, met ASMR hoofdmassage tijdens het masker.</p></div><div class="item"><h3>Purple Dream Gezicht &amp; ASMR Ritual</h3><span class="prijs">€115</span><span class="tijd">90 min <span class="chip rv">Roelofarendsveen</span></span><p>Een verzorgde huid en een volledige ASMR hoofdmassage in één.</p></div><div class="item"><h3>Purple Dream ASMR Intro</h3><span class="prijs">€55</span><span class="tijd">45 min <span class="chip rv">Roelofarendsveen</span></span><p>Een korte maar complete kennismaking met ASMR.</p></div><div class="item"><h3>Purple Dream ASMR Calm Ritual</h3><span class="prijs">€70</span><span class="tijd">60 min <span class="chip rv">Roelofarendsveen</span></span><p>Diepe rust met warme massageolie voor je nek, schouders en hoofd.</p></div><div class="item"><h3>Purple Dream Rug &amp; ASMR Ritual</h3><span class="prijs">€55</span><span class="tijd">45 min <span class="chip rv">Roelofarendsveen</span></span><p>Ontspanningsmassage met warme olie en zachte ASMR aanrakingen voor je rug en schouders.</p></div><div class="item"><h3>Purple Dream Lichaam &amp; ASMR Ritual</h3><span class="prijs">€70</span><span class="tijd">60 min <span class="chip rv">Roelofarendsveen</span></span><p>De hele achterkant van je lichaam verwend, van je schouders tot je benen.</p></div></div>
+    <div class="menukaart" style="max-width:860px"><div class="item"><h3>Purple Dream CBD Anti Stress</h3><span class="prijs">€110</span><span class="tijd">90 min <span class="chip rv">Roelofarendsveen</span></span><p>Alleen hier: een kalmerende gezichtsbehandeling met rugmassage. Je neemt een CBD serum (waarde €34) mee naar huis.</p></div><div class="item"><h3>Purple Dream Yon-Ka Escale</h3><span class="prijs">€65</span><span class="tijd">60 min <span class="chip rv">Roelofarendsveen</span></span><p>Een frisse, stralende huid en een rustig hoofd, met ASMR hoofdmassage tijdens het masker.</p></div><div class="item"><h3>Purple Dream Gezicht &amp; ASMR Ritual</h3><span class="prijs">€115</span><span class="tijd">90 min <span class="chip rv">Roelofarendsveen</span></span><p>Het beste van twee werelden in één verwenmoment. We beginnen met de Yon-Ka Escale. Samen kijken we wat jouw huid nu nodig heeft. Ik reinig je huid, geef je een heerlijke gezichtsmassage en kies een masker dat bij jouw huid past. De geur van Yon-Ka brengt je meteen tot rust. Daarna volgt een half uur ASMR hoofdmassage. Ik masseer met zachte, rustige aanrakingen je hoofdhuid, nek en schouders, zodat je hoofd helemaal stil kan worden. Je gaat naar huis met een huid die straalt en een hoofd dat weer ruimte heeft. 💜</p></div><div class="item"><h3>Purple Dream ASMR Intro</h3><span class="prijs">€55</span><span class="tijd">45 min <span class="chip rv">Roelofarendsveen</span></span><p>Een korte maar complete kennismaking met ASMR.</p></div><div class="item"><h3>Purple Dream ASMR Calm Ritual</h3><span class="prijs">€70</span><span class="tijd">60 min <span class="chip rv">Roelofarendsveen</span></span><p>Diepe rust met warme massageolie voor je nek, schouders en hoofd.</p></div><div class="item"><h3>Purple Dream Rug &amp; ASMR Ritual</h3><span class="prijs">€55</span><span class="tijd">45 min <span class="chip rv">Roelofarendsveen</span></span><p>Ontspanningsmassage met warme olie en zachte ASMR aanrakingen voor je rug en schouders.</p></div><div class="item"><h3>Purple Dream Lichaam &amp; ASMR Ritual</h3><span class="prijs">€70</span><span class="tijd">60 min <span class="chip rv">Roelofarendsveen</span></span><p>De hele achterkant van je lichaam verwend, van je schouders tot je benen.</p></div></div>
     <p style="margin-top:26px;font-size:.92rem;color:var(--tekst-zacht)">De HeadSpa en de Yon-Ka Grand Ritual geef ik alleen in Nieuw-Vennep.</p>
   </div>
 </section><section class="blok" style="padding-top:0"><div class="wrap"><div class="locaties">
@@ -471,8 +453,8 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
       <dl><dt>Adres</dt><dd>Business Sisters, De Lasso-Zuid 3F, 2371 EV Roelofarendsveen</dd><dt>Tijden</dt><dd>Maandag en dinsdag 15.00 tot 19.00, andere tijden in overleg</dd></dl><div class="kaart"><iframe src="https://www.google.com/maps?q=De+Lasso-Zuid+3F%2C+2371+EV+Roelofarendsveen&output=embed" title="Kaart van Business Sisters Roelofarendsveen" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><div class="kaart-reserve"><span>Business Sisters Roelofarendsveen</span><span>De Lasso-Zuid 3F, 2371 EV Roelofarendsveen</span></div></div><a class="lees" href="https://www.google.com/maps/dir/?api=1&destination=De+Lasso-Zuid+3F%2C+2371+EV+Roelofarendsveen">Plan je route</a></article>
     <article class="locatie"><h3>Liever in Nieuw-Vennep?</h3><p style="color:var(--tekst-zacht)">In mijn eigen salon aan Vronen 180 geef ik alle behandelingen, ook de HeadSpa.</p><a class="lees" href="contact.html">Bekijk beide locaties</a></article>
   </div></div></section><div class="wrap"><div class="strook" style="margin:0 0 20px"><figure><img class="foto" src="img/bs-praktijk.jpg" alt="Mijn praktijkruimte bij Business Sisters in Roelofarendsveen"></figure><figure><img class="foto" src="img/frisse-huid.jpg" alt="Ontspannen klant met een warme doek tijdens de gezichtsbehandeling" style="object-position:50% 35%"></figure><figure><img class="foto" src="img/rug-schouders.jpg" alt="Ontspanningsmassage voor rug en schouders" style="object-position:50% 30%"></figure></div></div><section class="blok workshop" style="background:#3d2547;color:#fefbf4"><div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:center">
-  <div><p class="label" style="color:#dacee6">Workshop, dinsdag 24 november</p>
-  <h2 style="color:#fefbf4;margin:12px 0 10px">November Glow</h2>
+  <div><p class="label" style="color:#dacee6">Workshop, januari 2027</p>
+  <h2 style="color:#fefbf4;margin:12px 0 10px">Winter Glow</h2>
   <p style="font-family:var(--display);font-style:italic;font-size:1.5rem;color:#e2d0be;margin-bottom:16px">Leer je eigen huid verwennen met Yon-Ka</p>
   <p style="color:#dacee6;line-height:1.7">Een gezellige avond bij Business Sisters in Roelofarendsveen. Onder mijn begeleiding ga je zelf aan de slag met Yon-Ka. Je ontdekt wat jouw huid nodig heeft en je neemt een stralende huid mee naar huis.</p>
   <p style="color:#fefbf4;margin:18px 0 8px;font-weight:500">Dit gaan we doen</p>
@@ -484,18 +466,18 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
     <li>Je krijgt mijn tips om je huid thuis goed te verzorgen</li>
   </ul>
   <dl style="display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:22px 0;color:#fefbf4">
-    <dt style="color:#b8975a">Wanneer</dt><dd style="margin:0">Dinsdag 24 november</dd>
+    <dt style="color:#b8975a">Wanneer</dt><dd style="margin:0">Derde week van januari, de precieze datum volgt</dd>
     <dt style="color:#b8975a">Waar</dt><dd style="margin:0">Business Sisters, De Lasso-Zuid 3F, Roelofarendsveen</dd>
     <dt style="color:#b8975a">Prijs</dt><dd style="margin:0">€50, inclusief try kit en een cadeaubon van €15</dd>
     <dt style="color:#b8975a">Plekken</dt><dd style="margin:0">Maximaal 12</dd>
   </dl>
-  <a class="knop goud" href="https://wa.me/31638248785?text=Hoi%20Celina%2C%20ik%20wil%20me%20graag%20aanmelden%20voor%20de%20workshop%20November%20Glow%20op%20dinsdag%2024%20november%20%F0%9F%92%9C" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" style="vertical-align:-4px;margin-right:8px" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/></svg>Meld je aan via WhatsApp</a><p style="margin:10px 0 0;color:#dacee6;font-size:.9rem">Voor de workshop van dinsdag 24 november</p></div>
-  <div style="border-radius:22px;overflow:hidden;border:1px solid #b8975a"><img class="foto" src="img/workshop-producten.jpg" alt="Yon-Ka producten en tools klaar voor de workshop November Glow"></div>
+  <a class="knop goud" href="https://wa.me/31638248785?text=Hoi%20Celina%2C%20ik%20wil%20me%20graag%20aanmelden%20voor%20de%20workshop%20Winter%20Glow%20in%20januari%20%F0%9F%92%9C" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" style="vertical-align:-4px;margin-right:8px" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/></svg>Meld je aan via WhatsApp</a><p style="margin:10px 0 0;color:#dacee6;font-size:.9rem">Meld je alvast aan, dan hoor je als eerste de datum</p></div>
+  <div style="border-radius:22px;overflow:hidden;border:1px solid #b8975a"><img class="foto" src="img/workshop-producten.jpg" alt="Yon-Ka producten en tools klaar voor de workshop Winter Glow"></div>
 </div></section><section class="cta-band">
   <div class="wrap">
     <h2>Plan je moment in Roelofarendsveen</h2>
-    <p>Je komt meteen in mijn agenda voor Roelofarendsveen. Liever eerst even overleggen? Stuur me gerust een appje.</p>
-    <div class="rij"><p style="margin:0 0 4px;font-weight:500">Waar heb je zin in? Kies en boek meteen:</p><div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;justify-content:center"><a class="knop" href="https://salon-purple-dream.salonround.com/a/bookings/services?n&amp;location=business-sisters-salon-purple-dream&amp;category=44809a5d-da30-49ad-87c8-4c2f58d94021">ASMR hoofdmassage</a><a class="knop" href="https://salon-purple-dream.salonround.com/a/bookings/services?n&amp;location=business-sisters-salon-purple-dream&amp;category=935ac4cf-74e1-4d90-a075-10f0da88d724">Gezichtsbehandeling</a><a class="knop" href="https://salon-purple-dream.salonround.com/a/bookings/services?n&amp;location=business-sisters-salon-purple-dream&amp;category=883113fe-66d7-4889-b55c-c466c04cff05">Ontspanningsmassage</a><a class="knop" href="https://salon-purple-dream.salonround.com/a/bookings/services?n&amp;location=business-sisters-salon-purple-dream&amp;category=df611af9-d84c-4cc3-a1af-9f13b4d565ab">Combinatie</a></div><a class="knop licht" href="https://wa.me/31638248785">WhatsApp 06 38248785</a></div>
+    <p>Kies bij het boeken voor de locatie Roelofarendsveen. Liever eerst even overleggen? Stuur me gerust een appje.</p>
+    <div class="rij"><a class="knop" href="#bookings-link">Boek je behandeling</a><a class="knop licht" href="https://wa.me/31638248785">WhatsApp 06 38248785</a></div>
   </div>
 </section></main>
 <footer>
@@ -508,11 +490,11 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
     </div>
     <div>
       <h3>Behandelingen</h3>
-      <p><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><br><a href="headspa.html">HeadSpa</a><br><a href="gezichtsbehandeling.html">Gezichtsbehandeling</a><br><a href="lichaam-asmr.html">Ontspanningsmassage</a><br><a href="cadeaubon.html">Cadeaubon</a><br><a href="behandelingen.html">Alle behandelingen en prijzen</a><br><a href="rustcheck.html">Gratis Rustcheck</a><br><a href="geurtest.html">Geurtest</a><br><a href="veelgestelde-vragen.html">Veelgestelde vragen</a><br><a href="webshop.html">Webshop</a></p>
+      <p><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><br><a href="headspa.html">HeadSpa</a><br><a href="gezichtsbehandeling.html">Gezichtsbehandeling</a><br><a href="lichaam-asmr.html">Ontspanningsmassage</a><br><a href="cadeaubon.html">Cadeaubon</a><br><a href="behandelingen.html">Alle behandelingen en prijzen</a><br><a href="rustcheck.html">Gratis Rustcheck</a><br><a href="geurtest.html">Geurtest</a><br><a href="veelgestelde-vragen.html">Veelgestelde vragen</a><br><a href="#webstore-link">Webshop</a></p>
     </div>
     <div>
       <h3>Contact</h3>
-      <p>WhatsApp 06 38248785<br>info@salonpurpledream.nl<br><a href="https://www.instagram.com/salon_purple_dream/">Instagram @salon_purple_dream</a><br>Vronen 180, Nieuw-Vennep<br>De Lasso-Zuid 3F, Roelofarendsveen</p>
+      <p>WhatsApp 06 38248785<br><a href="contact.html">Stuur me een bericht</a><br><a href="https://www.instagram.com/salon_purple_dream/">Instagram @salon_purple_dream</a><br>Vronen 180, Nieuw-Vennep<br>De Lasso-Zuid 3F, Roelofarendsveen</p>
     </div>
     <div style="grid-column:1/-1;border-top:1px solid rgba(254,251,244,.15);padding-top:26px;margin-top:6px">
       <h3>Rust in je mailbox</h3>
