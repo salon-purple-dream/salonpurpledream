@@ -215,6 +215,11 @@ footer a{color:#cdbfd9}
 footer .klein{grid-column:1/-1;border-top:1px solid rgba(218,206,230,.15);padding-top:22px;margin-top:10px;font-size:.8rem;color:var(--grijspaars)}
 @media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
 
+.ideeen{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.idee{margin:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 0 rgba(61,37,71,.06)}
+.ideefoto{aspect-ratio:1;overflow:hidden}.ideefoto img{width:100%;height:100%;object-fit:cover;display:block}
+.idee figcaption{padding:16px 18px 20px}.idee h3{margin:0 0 4px;font-size:1.15rem}.idee p{margin:0;font-size:.93rem;color:var(--tekst-zacht)}
+@media (max-width:860px){.ideeen{grid-template-columns:1fr 1fr;gap:14px}.idee figcaption{padding:12px 12px 14px}.idee h3{font-size:1rem}}
 /* Menu en pagina's */
 .menu a[aria-current="page"]{color:var(--aubergine);font-weight:400}
 .menuknop{display:none;background:none;border:1px solid var(--grijspaars);border-radius:999px;padding:8px 14px;font:inherit;font-size:.88rem;color:var(--aubergine);cursor:pointer}
@@ -406,25 +411,7 @@ footer{border-top:3px solid transparent;border-image:linear-gradient(90deg,trans
 .filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 40px}.filter button{font:inherit;padding:10px 20px;border-radius:999px;border:1px solid #dacee6;background:#fff;color:#3d2547;cursor:pointer}.filter button[aria-pressed=true]{background:#3d2547;color:#fefbf4;border-color:#3d2547}
 .bg{margin-bottom:64px}.bg-kop{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center;margin-bottom:24px}.bg-foto{border-radius:20px;overflow:hidden;aspect-ratio:1/1}.bg-foto img{width:100%;height:100%;object-fit:cover}.bg-kop h2{margin:0 0 8px}.bg-kop p{color:var(--tekst-zacht);margin:0 0 10px}
 .bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}.bk{background:#fff;border:1px solid #ece4f2;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px}.bk[hidden]{display:none}.bk-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.bk-top h3{font-size:1.3rem;margin:0}.bk .prijs{font-family:var(--display);font-size:1.5rem;color:#3d2547;white-space:nowrap}.bk-tijd{margin:0;color:var(--tekst-zacht);font-size:.92rem}.bk-tekst{margin:4px 0 12px;flex:1}.bk .knop{align-self:flex-start}
-@media(max-width:640px){.bg-kop{grid-template-columns:1fr}.bg-foto{aspect-ratio:16/9}}
-/* Menu met Webshop: compacter op laptops */
-.mobielmenu.open{max-height:calc(100vh - 70px);max-height:calc(100dvh - 70px);overflow-y:auto;-webkit-overflow-scrolling:touch}.mobielmenu a{padding:9px 20px;font-size:1.12rem}
-@media (max-width:1640px) and (min-width:1181px){.menu{gap:13px!important;font-size:.84rem!important}.merk small{display:none}.merk span{font-size:1.2rem}.nav .knop{padding:9px 16px}}
-</style>
-<!-- Google Analytics met cookietoestemming -->
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-var pdKeuze=null;try{pdKeuze=localStorage.getItem('pd_cookies');}catch(e){}
-var pdJa=pdKeuze==='ja'?'granted':'denied';gtag('consent','default',{analytics_storage:pdJa,ad_storage:pdJa,ad_user_data:pdJa,ad_personalization:pdJa});
-gtag('js',new Date());gtag('config','G-5CRXLGV4NL');
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5CRXLGV4NL"></script>
-<script defer src="/cookiebanner.js"></script>
-<!-- Meta Pixel met cookietoestemming -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fbq('track','PageView');
-</script>
+@media(max-width:640px){.bg-kop{grid-template-columns:1fr}.bg-foto{aspect-ratio:16/9}}</style>
 </head>
 <body>
 <header class="nav">
@@ -433,13 +420,13 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
       <img src="img/logo-monogram.png" alt="" style="height:40px;width:auto">
       <span>Purple Dream<small>de salon voor ontspanning</small></span>
     </a>
-    <nav class="menu" aria-label="Hoofdmenu"><a href="asmr-hoofdmassage.html" data-nav="asmr-hoofdmassage">ASMR</a><a href="headspa.html" data-nav="headspa">HeadSpa</a><a href="gezichtsbehandeling.html" data-nav="gezichtsbehandeling">Gezicht</a><a href="lichaam-asmr.html" data-nav="lichaam-asmr">Ontspanningsmassage</a><a href="over-mij.html" data-nav="over-mij">Over mij</a><a href="reviews.html" data-nav="reviews">Reviews</a><a href="blog.html" data-nav="blog">Blog</a><a href="roelofarendsveen.html" data-nav="roelofarendsveen">Roelofarendsveen</a><a href="cadeaubon.html" data-nav="cadeaubon">Cadeaubon</a><a href="webshop.html" data-nav="webshop">Webshop</a><a href="contact.html" data-nav="contact">Contact</a></nav>
+    <nav class="menu" aria-label="Hoofdmenu"><a href="asmr-hoofdmassage.html" data-nav="asmr-hoofdmassage">ASMR</a><a href="headspa.html" data-nav="headspa">HeadSpa</a><a href="gezichtsbehandeling.html" data-nav="gezichtsbehandeling">Gezicht</a><a href="lichaam-asmr.html" data-nav="lichaam-asmr">Ontspanningsmassage</a><a href="over-mij.html" data-nav="over-mij">Over mij</a><a href="reviews.html" data-nav="reviews">Reviews</a><a href="blog.html" data-nav="blog">Blog</a><a href="roelofarendsveen.html" data-nav="roelofarendsveen">Roelofarendsveen</a><a href="cadeaubon.html" data-nav="cadeaubon">Cadeaubon</a><a href="contact.html" data-nav="contact">Contact</a></nav>
     <div class="navrechts">
       <button class="menuknop" id="menuknop" aria-expanded="false" aria-controls="mobielmenu">Menu</button>
       <a class="knop" href="#bookings-link">Boek nu</a>
     </div>
   </div>
-  <nav class="mobielmenu" id="mobielmenu" aria-label="Menu voor mobiel"><a href="index.html">Home</a><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><a href="headspa.html">HeadSpa</a><a href="gezichtsbehandeling.html">Gezicht</a><a href="lichaam-asmr.html">Ontspanningsmassage</a><a href="over-mij.html">Over mij</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="roelofarendsveen.html">Roelofarendsveen</a><a href="cadeaubon.html">Cadeaubon</a><a href="webshop.html">Webshop</a><a href="contact.html">Contact</a></nav>
+  <nav class="mobielmenu" id="mobielmenu" aria-label="Menu voor mobiel"><a href="index.html">Home</a><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><a href="headspa.html">HeadSpa</a><a href="gezichtsbehandeling.html">Gezicht</a><a href="lichaam-asmr.html">Ontspanningsmassage</a><a href="over-mij.html">Over mij</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="roelofarendsveen.html">Roelofarendsveen</a><a href="cadeaubon.html">Cadeaubon</a><a href="contact.html">Contact</a></nav>
 </header>
 <main><div class="wrap"><header class="artikelkop"><p class="kruimel"><a href="index.html">Home</a> / Privacybeleid</p><h1>Privacybeleid</h1><p class="intro">Je gegevens zijn bij mij in goede handen. Hier lees je wat ik ermee doe.</p></header>
 <article class="artikel"><h2>Wie ik ben</h2><p>Salon Purple Dream, Celina van der Aar, Vronen 180, Nieuw-Vennep. KvK 86768964. Ik ben verantwoordelijk voor de gegevens die je met me deelt. Vragen over je privacy? Stuur me een bericht via het contactformulier op deze website of app naar 06 38248785.</p><h2>Welke gegevens ik gebruik</h2><p>Als je een afspraak maakt: je naam, telefoonnummer, e-mailadres en de behandelingen die je hebt gehad.</p><p>Bij je eerste afspraak: de gegevens uit je intakeformulier. Daar kan informatie over je gezondheid en je huid in staan. Die gebruik ik alleen om de behandeling veilig en goed op jou af te stemmen, en alleen met jouw toestemming.</p><p>Als je het contactformulier, de Rustcheck of de nieuwsbrief invult: wat je daar zelf invult, zoals je naam, e-mailadres, je bericht en je uitkomst van de Rustcheck.</p><p>Als je met me appt: je telefoonnummer en de berichten die je stuurt.</p><h2>Waarvoor ik ze gebruik</h2><p>Om je afspraak te plannen en je herinneringen te sturen.</p><p>Om je behandeling op jou af te stemmen.</p><p>Om je vraag te beantwoorden of je je Rustcheck uitkomst te sturen.</p><p>Om je de nieuwsbrief te sturen, alleen als je je daarvoor hebt aangemeld. Afmelden kan altijd, met de link onderaan elke mail.</p><p>Voor mijn administratie, omdat de wet dat verplicht.</p><h2>Met wie ik ze deel</h2><p>Ik verkoop je gegevens nooit. Ik werk wel met een paar betrouwbare diensten die mij helpen:</p><p>Salonround, voor mijn agenda, betalingen, cadeaubonnen, webshop en nieuwsbrief. Netlify, waar mijn website staat en waar de formulieren binnenkomen. Google Maps, voor de kaartjes met mijn locaties. Trustindex, voor de Google reviews op mijn website. WhatsApp, als je met me appt.</p><p>Met deze diensten zijn afspraken gemaakt over het veilig omgaan met je gegevens. Sommige van hen kunnen gegevens buiten Europa verwerken. Zij volgen daarbij de Europese regels.</p><h2>Hoe lang ik ze bewaar</h2><p>Je klantgegevens en intakeformulier bewaar ik zolang je bij mij komt, en daarna nog maximaal twee jaar. Gegevens voor mijn administratie, zoals facturen, bewaar ik zeven jaar, omdat de wet dat verplicht. Berichten via het contactformulier of de Rustcheck verwijder ik binnen een jaar, tenzij je klant wordt.</p><h2>Cookies</h2><p>Mijn website plaatst zelf geen cookies om je te volgen. Wel kunnen de kaartjes van Google Maps, de reviews van Trustindex en de boekmodule van Salonround cookies plaatsen als je die gebruikt. Wil je dat niet, dan kun je cookies in je browser uitzetten.</p><h2>Jouw rechten</h2><p>Je mag altijd vragen welke gegevens ik van je heb, ze laten aanpassen of laten verwijderen, voor zover ik ze niet wettelijk moet bewaren. Je kunt ook je toestemming intrekken. Stuur me daarvoor een mail of appje, dan regel ik het binnen een maand.</p><p>Ben je niet tevreden over hoe ik met je gegevens omga? Laat het me eerst weten. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens.</p><h2>Veiligheid</h2><p>Ik ga zorgvuldig met je gegevens om. Mijn website gebruikt een beveiligde verbinding en alleen ik heb toegang tot je gegevens.</p><p style="color:var(--tekst-zacht);font-size:.9rem">Laatst bijgewerkt: november 2026</p></article></div><div style="height:60px"></div></main>
@@ -453,7 +440,7 @@ fbq('consent',pdKeuze==='ja'?'grant':'revoke');fbq('init','1512821560281701');fb
     </div>
     <div>
       <h3>Behandelingen</h3>
-      <p><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><br><a href="headspa.html">HeadSpa</a><br><a href="gezichtsbehandeling.html">Gezichtsbehandeling</a><br><a href="lichaam-asmr.html">Ontspanningsmassage</a><br><a href="cadeaubon.html">Cadeaubon</a><br><a href="behandelingen.html">Alle behandelingen en prijzen</a><br><a href="rustcheck.html">Gratis Rustcheck</a><br><a href="geurtest.html">Geurtest</a><br><a href="veelgestelde-vragen.html">Veelgestelde vragen</a><br><a href="webshop.html">Webshop</a></p>
+      <p><a href="asmr-hoofdmassage.html">ASMR hoofdmassage</a><br><a href="headspa.html">HeadSpa</a><br><a href="gezichtsbehandeling.html">Gezichtsbehandeling</a><br><a href="lichaam-asmr.html">Ontspanningsmassage</a><br><a href="cadeaubon.html">Cadeaubon</a><br><a href="behandelingen.html">Alle behandelingen en prijzen</a><br><a href="rustcheck.html">Gratis Rustcheck</a><br><a href="geurtest.html">Geurtest</a><br><a href="veelgestelde-vragen.html">Veelgestelde vragen</a><br><a href="#webstore-link">Webshop</a></p>
     </div>
     <div>
       <h3>Contact</h3>
