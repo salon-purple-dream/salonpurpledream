@@ -204,6 +204,7 @@ nav .inner { max-width: 460px; margin: 0 auto; display: grid; grid-template-colu
 .hidden { display: none !important; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
+<script data-goatcounter="https://salonpurpledream.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div class="app">
@@ -818,7 +819,7 @@ const DECKS = {
     ["✋", "De Hand Die Je Vasthoudt", "Je mag jezelf troosten, net zoals je een ander zou troosten.", "Sla je armen om jezelf heen of houd je eigen hand vast, en blijf zo even zitten."],
     ["✧", "Hulp Vragen Is Sterk", "Hulp vragen is geen zwakte. Het is goed voor jezelf zorgen.", "Kijk hieronder waar je terechtkunt, en kies een stap die nu bij je past."]
   ]},
-  lachen: { name: "Even lachen", ico: "☺", sub: "12 kaarten om even te lachen", free: true, cards: [
+  lachen: { name: "Even lachen", ico: "☺", sub: "24 kaarten om even te lachen", free: true, cards: [
     ["☺", "De Bank Roept", "Je bank mist je. Hij zei het zelf.", "Ga tien minuten op de bank liggen. Je doet het voor de bank."],
     ["◌", "De Was Kan Wachten", "Groot nieuws: de was loopt niet weg. Hij is er morgen gewoon nog. Echt waar.", "Kijk vriendelijk naar de wasmand, knik even en loop door."],
     ["☾", "De Pyjamadag", "Wie heeft ooit bedacht dat een pyjama alleen voor de nacht is?", "Trek na het eten meteen je pyjama aan. Officieel goedgekeurd door Purple Dream."],
@@ -830,7 +831,61 @@ const DECKS = {
     ["○", "Het Belangrijke Overleg", "Op het programma vandaag: helemaal niets. Met een korte pauze om twee uur.", "Zet tien minuten in je agenda en noem het belangrijk overleg. Doe dan niets."],
     ["◎", "De Spiegelwedstrijd", "Hé jij in de spiegel. Ja, jij. Je doet het geweldig.", "Trek een gek gezicht in de spiegel en kijk hoe lang je serieus kunt blijven."],
     ["✕", "Het Rebelse Rommeltje", "Een huis hoeft niet altijd perfect opgeruimd te zijn. Daar wordt niemand gelukkiger van.", "Laat vandaag bewust een klein rommeltje liggen en voel je er heerlijk rebels bij."],
-    ["♡", "De Slappe Lach", "Lachen is gratis, maakt je hoofd lichter en je hoeft er niet eens voor te sporten.", "App iemand met wie je altijd moet lachen en haal samen een grappige herinnering op."]
+    ["♡", "De Slappe Lach", "Lachen is gratis, maakt je hoofd lichter en je hoeft er niet eens voor te sporten.", "App iemand met wie je altijd moet lachen en haal samen een grappige herinnering op."],
+    ["▤", "De Geduldige Wasmand", "De wasmand is geduldig. Die wacht wel.", "Gun jezelf eerst tien minuten op de bank, voordat je ook maar één sok aanraakt."],
+    ["▦", "De Tabbladen", "Je hoofd heeft vandaag 47 tabbladen open.", "Schrijf drie dingen op die door je hoofd spoken. Op papier zijn ze ineens een stuk kleiner."],
+    ["✦", "De Schone Plint", "Er is nog nooit een vrouw beroemd geworden om een schone plint.", "Laat vandaag bewust één klusje liggen en kijk wat er gebeurt. Spoiler: niks."],
+    ["☾", "Het Potje Nachtcrème", "Je nachtcrème werkt niet vanuit het potje.", "Smeer hem vanavond echt op, met langzame rondjes, en tel tot tien voordat je verder rent."],
+    ["≈", "De Grote Zucht", "Je kunt niet gestrest zijn en tegelijk heerlijk zuchten. Probeer maar.", "Adem diep in door je neus en zucht hardop uit. Drie keer. De buren overleven het wel."],
+    ["☏", "Geen 24 Uur Service", "Jij hebt geen 24 uur service.", "Zet je telefoon een uur op stil. De wereld draait echt gewoon door, beloofd."],
+    ["◡", "De Lachrimpels", "Lachrimpels tellen niet. Die heb je verdiend.", "Doe vanavond een masker op en kijk iets waar je hardop om moet lachen."],
+    ["◇", "Het Taxibedrijf", "Je bent geen taxibedrijf, ook al voelt het soms zo.", "Wacht je in de auto op een kind? Motor uit, ogen dicht, schouders omlaag. Je eigen minispa."],
+    ["⌒", "De Oorschouders", "Je schouders horen niet bij je oren.", "Trek ze helemaal omhoog, hou even vast en laat ze vallen. Voelde dat goed? Nog een keer."],
+    ["∽", "De Schommel", "Piekeren is net schommelen. Je bent druk bezig, maar je komt nergens.", "Spreek met jezelf een piekerkwartiertje af. Daarbuiten heeft je hoofd vrij."],
+    ["◊", "De Mailpauze", "Jouw huid leest je mail niet. Die wil gewoon water.", "Zet een groot glas water naast je laptop en drink het leeg voordat je de volgende mail opent."],
+    ["☀", "De Verstopte Zon", "Ook in november schijnt de zon. Ergens. Achter die wolken.", "Smeer vanochtend gewoon je zonnebrand. Je huid bedankt je later, echt waar."]
+  ]},
+  vriendin: { name: "Voor een vriendin", ico: "✉", sub: "12 lieve kaarten om door te sturen", free: true, cards: [
+    ["✉", "Zomaar", "Ik dacht aan je. Gewoon zomaar.", "Neem vandaag een momentje voor jezelf. Van mij gekregen."],
+    ["☕", "Jouw Beurt", "Jij zorgt altijd voor iedereen. Vandaag mag iemand aan jou denken.", "Zet een kop thee, ga zitten en laat de rest even de rest."],
+    ["♡", "Beter Dan Je Denkt", "Je doet het beter dan je zelf denkt.", "Leg je hand op je hart en adem drie keer rustig uit. Je mag trots zijn."],
+    ["☾", "Slaap Lekker", "Ik hoop dat je vannacht heerlijk slaapt.", "Smeer vanavond je gezicht met aandacht in en leg je telefoon wat eerder weg."],
+    ["✧", "Fijn Dat Je Er Bent", "Fijn dat jij er bent. Echt.", "Kijk vandaag even in de spiegel en zeg het tegen jezelf. Ook als het gek voelt."],
+    ["◯", "De Knuffel", "Een dikke knuffel, maar dan op afstand.", "Sla je armen om jezelf heen en hou even vast. Die is van mij."],
+    ["❦", "Samen Dragen", "Je hoeft het niet allemaal alleen te dragen.", "Stuur iemand een berichtje als het zwaar is. Bijvoorbeeld mij."],
+    ["∽", "Zachtjes Aan", "Zachtjes aan vandaag, lieverd.", "Doe één ding minder dan je van plan was. Dat is ook een prestatie."],
+    ["✺", "Je Straalt", "Jij straalt, ook als je moe bent.", "Gun je huid vanavond een masker en jezelf tien minuten helemaal niks."],
+    ["✦", "Het Lichtpuntje", "Even een lichtpuntje in je week.", "Steek vanavond een kaarsje aan en kijk een paar minuten naar het vlammetje."],
+    ["✓", "Trots Op Je", "Ik ben trots op je.", "Schrijf drie dingen op die je deze week goed hebt gedaan. Klein telt ook."],
+    ["✎", "Met Pen", "Rust is geen beloning. Het is gewoon voor jou.", "Zet deze week een uurtje voor jezelf in je agenda. Met pen."]
+  ]},
+  man: { name: "Voor een man", ico: "◇", sub: "12 kaarten om naar een man te sturen", free: true, cards: [
+    ["⚒", "Niet Alles Fixen", "Jij hoeft niet altijd alles te fixen.", "Ga vanavond tien minuten zitten. Geen klus, geen scherm. Gewoon zitten."],
+    ["⌒", "Sterke Schouders", "Ook sterke schouders mogen even rusten.", "Laat je schouders drie keer zakken en adem diep uit. Niemand kijkt."],
+    ["☕", "De Echte Pauze", "Ik zie hoe hard je werkt.", "Neem vandaag een echte pauze, met koffie en zonder telefoon."],
+    ["○", "Het Plan Van Niks", "Even niks is ook een plan.", "Zet vanavond de tv uit en kijk tien minuten naar buiten. Of naar het plafond."],
+    ["❦", "Samen Oplossen", "Je hoeft het niet alleen op te lossen.", "Vertel vandaag iemand wat je dwarszit. Een paar zinnen is al genoeg."],
+    ["☾", "De Nachtrust", "Een goede nachtrust is geen luxe. Ook niet voor jou.", "Leg je telefoon vanavond buiten de slaapkamer en kijk hoe je slaapt."],
+    ["✺", "De Geheime Crème", "Er bestaat ook crème voor mannen. Echt waar.", "Smeer na het scheren of douchen je gezicht in. Niemand hoeft het te weten."],
+    ["✧", "Gewoon Omdat Het Kan", "Fijn dat jij er bent.", "Doe vandaag iets alleen omdat jij het leuk vindt. Zonder uitleg."],
+    ["≈", "De Rustige Adem", "Ademhalen kun je al. Rustig ademhalen is een kunst.", "Adem vier tellen in, hou vier tellen vast en adem zes tellen uit. Drie keer."],
+    ["❧", "Het Rondje Buiten", "Een wandeling lost meer op dan je denkt.", "Loop vandaag een rondje zonder doel en zonder muziek. Alleen jij en de buitenlucht."],
+    ["✓", "Meer Goed Dan Je Ziet", "Je doet meer goed dan je zelf ziet.", "Schrijf één ding op waar je trots op bent van deze week."],
+    ["◆", "Ook Sterk", "Rust nemen is ook sterk zijn.", "Plan deze week een uur voor jezelf. Sporten, klussen of helemaal niks: jij kiest."]
+  ]},
+  zacht: { name: "Lief voor jezelf", ico: "❀", sub: "12 zachte kaarten voor jezelf", cards: [
+    ["❀", "De Warme Wangen", "Je mag zacht zijn voor jezelf. Vandaag en elke dag.", "Leg je handen even op je wangen en voel hoe warm ze zijn. Dat ben jij."],
+    ["◎", "Genoeg", "Je bent niet te veel en ook niet te weinig.", "Adem drie keer diep in en zeg zachtjes: ik ben genoeg zoals ik ben."],
+    ["☾", "Veel Gegeven", "Moe zijn betekent niet dat je faalt. Het betekent dat je veel hebt gegeven.", "Ga vanavond een half uur eerder naar bed. Zonder schuldgevoel."],
+    ["✺", "Je Huid Draagt Mee", "Je huid draagt alles wat je meemaakt.", "Smeer vanavond je crème in met dezelfde zorg die je anderen geeft."],
+    ["▭", "Het Raam", "Er is niets mis met even stilstaan.", "Blijf vandaag één minuut bij het raam staan en kijk alleen maar naar buiten."],
+    ["✎", "Eén Zin", "Wat jij voelt, mag er zijn.", "Schrijf op hoe je je nu voelt, in één zin. Je hoeft er niets mee te doen."],
+    ["☁", "De Zachte Deken", "Je hoeft niet sterk te zijn om lief voor jezelf te zijn.", "Wikkel je vanavond in een zachte deken en laat je schouders zakken."],
+    ["≈", "De Lange Zucht", "Rust begint vaak met één diepe zucht.", "Zucht nu eens heel lang uit. Voel je hoe je hoofd een beetje stiller wordt?"],
+    ["♡", "Iets Lekkers", "Jij bent ook iemand om voor te zorgen.", "Maak vandaag iets lekkers voor jezelf, precies zoals jij het het liefst hebt."],
+    ["✓", "Eén Ding", "Je hoeft vandaag niet alles af te krijgen.", "Kies één ding dat echt moet. De rest mag morgen."],
+    ["◡", "De Veilige Plek", "Een rustig hoofd begint bij lieve gedachten.", "Denk aan een moment waarop je je helemaal veilig voelde. Blijf daar even."],
+    ["✿", "De Dag Loslaten", "Morgen is een nieuwe kans. Vanavond mag je gewoon rusten.", "Ruik voor het slapengaan aan je lievelingsgeur en laat de dag los."]
   ]},
   kind: { name: "Samen met je kind", ico: "❦", sub: "12 rustmomentjes om samen te doen", cards: [
     ["∴", "Het Ruggetje Kriebelen", "Een zachte aanraking zegt soms meer dan woorden.", "Kriebel om de beurt elkaars rug, twee minuten lang. Wie het lekkerst kriebelt, mag kiezen wat jullie daarna doen."],
@@ -1239,7 +1294,7 @@ function renderStacks() {
     b.addEventListener("click", () => {
       if (locked) { go("lid"); return; }
       if (!member && k === currentStack && k !== "zwaar") return;
-      currentStack = k; renderStacks(); drawStack();
+      currentStack = k; tel("stapel/" + k, "Stapel " + d.name); renderStacks(); drawStack();
     });
     box.appendChild(b);
   });
@@ -1333,7 +1388,9 @@ function applyMember() {
 }
 
 /* ===== Navigatie ===== */
+function tel(pad, titel) { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: "rustkaarten/" + pad, title: titel || pad, event: true }); } catch (e) {} }
 function go(view) {
+  tel(view);
   if (view === "wandeling") renderWalk(); else setBell(false);
   if (view === "avond") { eveStep = -1; renderEvening(); }
   if (view === "advent") { const n = advNow(); advSel = (n.m === 12 && n.d <= 24) ? n.d : null; renderAdvent(); if (!advSel) $("advOpen").classList.add("hidden"); }
@@ -1979,7 +2036,7 @@ function renderEvening() {
 }
 
 /* ===== Kaart voor een vriendin ===== */
-const FR_THEMES = [["basis", "Rust"], ["lachen", "Even lachen"], ["moeders", "Voor een moeder"], ["ondernemers", "Voor een ondernemer"], ["slaap", "Slaap lekker"]];
+const FR_THEMES = [["vriendin", "Lieve woorden"], ["man", "Voor een man"], ["basis", "Rust"], ["lachen", "Even lachen"], ["moeders", "Voor een moeder"], ["ondernemers", "Voor een ondernemer"], ["slaap", "Slaap lekker"]];
 const FR_IDEAS = ["Ik denk aan je", "Je verdient wat rust", "Zomaar, omdat je lief bent", "Je doet het zo goed"];
 let frDeck = "basis", frCi = 0;
 function b64e(o) { const b = new TextEncoder().encode(JSON.stringify(o)); let s = ""; b.forEach(x => s += String.fromCharCode(x)); return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""); }
