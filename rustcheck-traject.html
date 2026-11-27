@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Rustcheck voor jouw traject | Salon Purple Dream</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fefbf4;color:#3d2547;font-family:'Jost',sans-serif;font-weight:300;font-size:18px;line-height:1.55}
+main{max-width:640px;margin:0 auto;padding:28px 20px 60px}
+.merk{font-size:.8rem;letter-spacing:.3em;color:#7f649d;font-weight:400;text-align:center;margin:0 0 6px}
+h1,h2,h3,.naam{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;line-height:1.1;margin:0}
+h1{font-size:2.6rem;text-align:center}
+h2{font-size:1.9rem}
+h3{font-size:1.5rem}
+p{margin:0}
+.intro{text-align:center;margin:14px 0 26px}
+.kaart{background:#fff;border:1px solid #dacee6;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px;margin-bottom:18px}
+.kaart.paars{background:#3d2547;color:#fefbf4;border-color:#3d2547}
+.kaart.paars .klein{color:#dacee6}
+.kaart.zand{background:#e2d0be;border-color:#e2d0be}
+.klein{font-size:.9rem;color:#6a5578}
+label{display:flex;flex-direction:column;gap:6px;font-weight:400}
+input[type=text],textarea{font:inherit;padding:12px 14px;border-radius:12px;border:1px solid #9486a4;background:#fefbf4;color:#3d2547;width:100%}
+.knop{font:inherit;font-weight:400;padding:14px 22px;border-radius:999px;border:1px solid #3d2547;background:#3d2547;color:#fefbf4;cursor:pointer;text-align:center;text-decoration:none;display:inline-block}
+.knop.licht{background:transparent;color:#3d2547}
+.knop.goud{background:#e2d0be;border-color:#e2d0be;color:#3d2547}
+.knop:disabled{opacity:.4;cursor:default}
+.rij{display:flex;gap:12px;flex-wrap:wrap}
+.rij .knop{flex:1 1 200px}
+.voortgang{height:6px;border-radius:6px;background:#dacee6;overflow:hidden;margin-bottom:18px}
+.voortgang span{display:block;height:100%;width:0;background:#7f649d;transition:width .3s}
+.teller{display:flex;justify-content:space-between;font-size:.9rem;color:#7f649d;font-weight:400}
+.opties{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.optie{font:inherit;padding:16px 12px;border-radius:14px;border:1px solid #dacee6;background:#fefbf4;color:#3d2547;cursor:pointer;min-height:56px}
+.optie[aria-pressed=true]{background:#7f649d;border-color:#7f649d;color:#fff}
+.balk{display:grid;grid-template-columns:128px 1fr 34px;gap:10px;align-items:center;font-size:.95rem}
+.spoor{height:12px;border-radius:12px;background:#dacee6;overflow:hidden}
+.vul{height:100%;border-radius:12px;background:#7f649d}
+.vul.start{background:#9486a4}
+.gebied{display:flex;flex-direction:column;gap:6px;padding:12px 0;border-bottom:1px solid #ece4f2}
+.gebied:last-child{border-bottom:0}
+.gebied b{font-weight:400}
+.code{font-size:2rem;letter-spacing:.25em;font-weight:400;text-align:center;color:#e2d0be}
+.teken{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;color:#7f649d}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+<p class="merk">SALON PURPLE DREAM</p>
+<h1>Rustcheck voor jouw traject</h1>
+<div id="app"></div>
+</main>
+<script>
+(function(){
+var SCHAAL=[["0","Bijna nooit"],["1","Soms"],["2","Vaak"],["3","Bijna altijd"]];
+var NAAM={hoofd:"Rust in je hoofd",slaap:"Slaap en energie",tijd:"Tijd voor jezelf",huid:"Je huid",lijf:"Je lijf"};
+var ALG=[
+["hoofd","Ik kan mijn gedachten loslaten als ik dat wil."],
+["hoofd","'s Avonds komt mijn hoofd tot rust."],
+["slaap","Ik val makkelijk in slaap."],
+["slaap","Ik word uitgerust wakker."],
+["slaap","Ik heb overdag genoeg energie voor wat ik wil doen."],
+["tijd","Ik neem elke week een moment dat echt van mij is."],
+["tijd","Ik kan genieten zonder me schuldig te voelen."],
+["tijd","Ik durf nee te zeggen als iets me te veel wordt."]];
+var GLOW=[
+["huid","Mijn huid voelt comfortabel en soepel."],
+["huid","Ik vind dat mijn huid straalt."],
+["huid","Ik neem elke dag rustig de tijd voor mijn huidverzorging."],
+["huid","Ik kijk met een goed gevoel in de spiegel."]];
+var RUST=[
+["lijf","Mijn nek en schouders voelen soepel."],
+["lijf","Ik merk het op tijd als ik spanning vasthoud."],
+["lijf","Na een drukke dag kom ik snel weer tot rust."],
+["lijf","Ik neem thuis af en toe een rustmoment, met een geur of een hoofdmassage."]];
+var MAX={hoofd:6,slaap:9,tijd:9,huid:12,lijf:12};
+var TEVR=["Heel tevreden","Redelijk tevreden","Niet zo tevreden","Ik weet niet goed wat mijn huid nodig heeft"];
+var V={
+ waar:{id:"waar",kop:"Spanning",q:"Waar voel je spanning het eerst?",multi:true,o:["Nek","Schouders","Kaak","Rug","Hoofd","Ik merk het pas laat"]},
+ doe:{id:"doe",kop:"Spanning",q:"Wat doe je nu als je spanning voelt?",multi:true,o:["Ik ga gewoon door","Ik ga bewegen of wandelen","Ik neem een bad of douche","Ik pak mijn telefoon","Ik eet of drink iets lekkers","Ik praat erover met iemand","Ik neem een rustmoment voor mezelf"]},
+ helpt:{id:"helpt",kop:"Spanning",q:"Helpt dat?",o:["Ja, meestal wel","Soms","Eigenlijk niet"]},
+ was:{id:"was",kop:"Je huid",q:"Hoe voelt je huid een uurtje na het wassen?",o:["Trekkerig of strak","Comfortabel","Glimmend","Snel rood of prikkelig"]},
+ opvalt:{id:"opvalt",kop:"Je huid",q:"Wat valt je de laatste tijd op aan je huid?",multi:true,o:["Dof en moe","Droge plekken","Roodheid","Onzuiverheden","Fijne lijntjes","Pigmentvlekjes","Niets bijzonders"]},
+ gebruik:{id:"gebruik",kop:"Je huid",q:"Wat gebruik je nu elke dag voor je huid?",multi:true,o:["Reiniger","Lotion","Serum","Dagcrème","Nachtcrème","Oogcrème","Zonbescherming","Ik heb geen vaste verzorging"]},
+ merk:{id:"merk",kop:"Je huid",q:"Welk merk of welke producten gebruik je nu?",open:true,hint:"Je mag dit ook leeg laten."},
+ tevr:{id:"tevr",kop:"Je huid",q:"Hoe tevreden ben je over je huidverzorging?",o:TEVR},
+ huidwens:{id:"huidwens",kop:"Je huid",q:"Wat wens je je huid het meest toe?",o:["Weer stralen","Rust en minder roodheid","Zachtere lijntjes","Comfort"]},
+ wens:{id:"wens",kop:"Jouw wens",q:"Wat wil je na acht weken het allerliefst?",o:["Een hoofd dat stil kan worden","Lekkerder slapen","Een ontspannen lijf","Een huid die straalt","Weer tijd voor mezelf"]},
+ veranderd:{id:"veranderd",kop:"Jouw woorden",q:"Wat is er voor jou veranderd in deze acht weken?",open:true,hint:"In je eigen woorden. Je mag dit ook leeg laten."},
+ moment:{id:"moment",kop:"Jouw woorden",q:"Welk moment uit het traject neem je mee?",open:true,hint:"Je mag dit ook leeg laten."},
+ vasthouden:{id:"vasthouden",kop:"Jouw woorden",q:"Wat wil je vasthouden nu het traject klaar is?",open:true,hint:"Je mag dit ook leeg laten."}
+};
+var SLEUTEL="pd_traject_start2";
+var WA="https://wa.me/31638248785?text=";
+var app=document.getElementById("app");
+var st={soort:null,naam:"",traject:"",i:0,a:{},start:null,Q:[]};
+
+function h(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function bewaard(){try{var v=localStorage.getItem(SLEUTEL);return v?JSON.parse(v):null;}catch(e){return null;}}
+function bewaar(o){try{localStorage.setItem(SLEUTEL,JSON.stringify(o));}catch(e){}}
+function glow(){return st.traject==="8 Weken Glow";}
+function gebieden(){return ["hoofd","slaap","tijd",glow()?"huid":"lijf"];}
+function stellingen(){return ALG.concat(glow()?GLOW:RUST).map(function(s,n){return {id:"s"+n,kop:NAAM[s[0]],area:s[0],q:s[1],schaal:true};});}
+function lijst(){
+  var q=stellingen();
+  if(st.soort==="start"){
+    q=q.concat([V.waar,V.doe,V.helpt]);
+    q=q.concat(glow()?[V.was,V.opvalt,V.gebruik,V.merk,V.tevr,V.huidwens]:[V.gebruik,V.tevr]);
+    q.push(V.wens);
+  }else{q=q.concat([V.doe,V.tevr,V.veranderd,V.moment,V.vasthouden]);}
+  return q;
+}
+function scores(){var sc={};gebieden().forEach(function(k){sc[k]=0;});stellingen().forEach(function(s){sc[s.area]+=Number(st.a[s.id]||0);});return sc;}
+function twee(n){return (n<10?"0":"")+n;}
+function naarCode(sc,tev){var g=gebieden();return ""+sc[g[0]]+sc[g[1]]+sc[g[2]]+twee(sc[g[3]])+tev;}
+function vanCode(c){c=String(c).replace(/\D/g,"");if(c.length!==6)return null;var g=gebieden(),sc={};
+  sc[g[0]]=Number(c.charAt(0));sc[g[1]]=Number(c.charAt(1));sc[g[2]]=Number(c.charAt(2));sc[g[3]]=Number(c.substr(3,2));
+  if(sc[g[0]]>6||sc[g[3]]>12)return null;
+  var t=Number(c.charAt(5));return {sc:sc,tevr:t<4?TEVR[t]:"",doe:null};}
+function pct(k,v){return Math.round(v/MAX[k]*100);}
+function boven(){try{window.scrollTo(0,0);}catch(e){}}
+function tekst(v){return Array.isArray(v)?v.join(", "):(v||"");}
+
+function begin(){
+  var b=bewaard();
+  if(b&&b.traject&&!st.traject)st.traject=b.traject;
+  app.innerHTML='<p class="intro">Fijn dat je bij mij een traject volgt. Met deze Rustcheck kijken we hoe het nu met je gaat, en na acht weken wat er voor jou veranderd is. Het duurt ongeveer vijf minuten.</p>'+
+  '<div class="kaart"><label for="naam">Je voornaam<input id="naam" type="text" autocomplete="given-name" value="'+h(st.naam||(b&&b.naam)||"")+'"></label>'+
+  '<label>Welk traject volg je?</label><div class="opties">'+
+  '<button type="button" class="optie" data-t="8 Weken Glow">8 Weken Glow</button><button type="button" class="optie" data-t="8 Weken Rust">8 Weken Rust</button></div></div>'+
+  '<div class="kaart"><h3>Welke meting doe je?</h3><div class="rij">'+
+  '<button type="button" class="knop" id="kstart" disabled>Mijn startmeting</button>'+
+  '<button type="button" class="knop licht" id="keind" disabled>Mijn meting na 8 weken</button></div>'+
+  '<p class="klein">Deze check is bedoeld om even bij jezelf stil te staan. Het is geen medische test.</p></div>';
+  var kies=function(){var ok=document.getElementById("naam").value.trim()&&st.traject;document.getElementById("kstart").disabled=!ok;document.getElementById("keind").disabled=!ok;};
+  app.querySelectorAll(".optie").forEach(function(o){
+    o.setAttribute("aria-pressed",o.dataset.t===st.traject);
+    o.onclick=function(){st.traject=o.dataset.t;app.querySelectorAll(".optie").forEach(function(x){x.setAttribute("aria-pressed",x===o);});kies();};
+  });
+  document.getElementById("naam").oninput=kies;kies();
+  var ga=function(soort){st.naam=document.getElementById("naam").value.trim();st.soort=soort;st.i=0;st.a={};st.Q=lijst();
+    if(soort==="eind"){st.start=(b&&b.sc&&b.traject===st.traject)?b:null;if(!st.start)return vraagCode();}
+    vraag();};
+  document.getElementById("kstart").onclick=function(){ga("start");};
+  document.getElementById("keind").onclick=function(){ga("eind");};
+}
+
+function vraagCode(){
+  app.innerHTML='<div class="kaart"><h3>Je startcode</h3><p>Ik kan je startmeting niet vinden op dit toestel. Vul hier de startcode van zes cijfers in. Die staat in het berichtje dat je mij na je startmeting stuurde. Weet je hem niet meer? Vraag hem gerust aan mij.</p>'+
+  '<label for="code">Startcode<input id="code" type="text" inputmode="numeric" maxlength="6"></label>'+
+  '<div class="rij"><button type="button" class="knop licht" id="terug">Terug</button><button type="button" class="knop" id="door" disabled>Verder</button></div></div>';
+  var c=document.getElementById("code"),d=document.getElementById("door");
+  c.oninput=function(){d.disabled=!vanCode(c.value);};
+  d.onclick=function(){st.start=vanCode(c.value);vraag();};
+  document.getElementById("terug").onclick=begin;boven();
+}
+
+function vraag(){
+  var n=st.i,tot=st.Q.length;
+  if(n>=tot)return st.soort==="start"?uitslagStart():uitslagEind();
+  var s=st.Q[n],html='<div class="voortgang"><span style="width:'+(n/tot*100)+'%"></span></div><div class="kaart"><div class="teller"><span>Vraag '+(n+1)+' van '+tot+'</span><span>'+s.kop+'</span></div>';
+  var knoppen=function(door){return '<div class="rij"><button type="button" class="knop licht" id="terug">Terug</button>'+(door?'<button type="button" class="knop" id="door">'+(n===tot-1?"Bekijk mijn uitkomst":"Volgende")+'</button>':"")+'</div></div>';};
+  if(s.schaal){
+    html+='<h2>“'+h(s.q)+'”</h2><p class="klein">Hoe vaak geldt dit voor jou, de laatste weken?</p><div class="opties">'+
+    SCHAAL.map(function(o){return '<button type="button" class="optie" data-v="'+o[0]+'" aria-pressed="'+(st.a[s.id]===o[0])+'">'+o[1]+'</button>';}).join("")+'</div>'+knoppen(false);
+  }else if(s.open){
+    html+='<h2>'+h(s.q)+'</h2><p class="klein">'+s.hint+'</p><textarea id="tekst" rows="4">'+h(st.a[s.id]||"")+'</textarea>'+knoppen(true);
+  }else{
+    var gekozen=st.a[s.id]||(s.multi?[]:"");
+    html+='<h2>'+h(s.q)+'</h2>'+(s.multi?'<p class="klein">Kies alles wat bij je past.</p>':"")+'<div class="opties" style="grid-template-columns:1fr">'+
+    s.o.map(function(o){var aan=s.multi?gekozen.indexOf(o)>-1:gekozen===o;return '<button type="button" class="optie" data-v="'+h(o)+'" aria-pressed="'+aan+'">'+h(o)+'</button>';}).join("")+'</div>'+knoppen(s.multi);
+  }
+  app.innerHTML=html;
+  var verder=function(){st.i++;vraag();};
+  if(s.schaal){
+    app.querySelectorAll(".optie").forEach(function(o){o.onclick=function(){st.a[s.id]=o.dataset.v;o.setAttribute("aria-pressed","true");setTimeout(function(){if(st.i===n)verder();},200);};});
+  }else if(s.open){
+    document.getElementById("door").onclick=function(){st.a[s.id]=document.getElementById("tekst").value.trim();verder();};
+  }else if(s.multi){
+    if(!st.a[s.id])st.a[s.id]=[];
+    var d=document.getElementById("door");d.disabled=!st.a[s.id].length;
+    app.querySelectorAll(".optie").forEach(function(o){o.onclick=function(){var v=o.dataset.v,p=st.a[s.id].indexOf(v);if(p>-1)st.a[s.id].splice(p,1);else st.a[s.id].push(v);o.setAttribute("aria-pressed",p===-1);d.disabled=!st.a[s.id].length;};});
+    d.onclick=verder;
+  }else{
+    app.querySelectorAll(".optie").forEach(function(o){o.onclick=function(){st.a[s.id]=o.dataset.v;verder();};});
+  }
+  document.getElementById("terug").onclick=function(){if(st.i===0)return begin();st.i--;vraag();};
+  boven();
+}
+
+function balk(label,k,waarde,klasse){var p=pct(k,waarde);return '<div class="balk"><span>'+label+'</span><div class="spoor" role="img" aria-label="'+label+': '+p+' procent"><div class="vul '+(klasse||"")+'" style="width:'+Math.max(4,p)+'%"></div></div><span>'+p+'</span></div>';}
+
+function uitslagStart(){
+  var sc=scores(),g=gebieden(),tev=TEVR.indexOf(st.a.tevr),code=naarCode(sc,tev<0?9:tev);
+  bewaar({naam:st.naam,traject:st.traject,sc:sc,tevr:st.a.tevr,doe:st.a.doe,wens:st.a.wens,datum:new Date().toISOString().slice(0,10)});
+  var laag=g.slice().sort(function(a,b){return pct(a,sc[a])-pct(b,sc[b]);})[0];
+  var regels=["Hoi Celina, dit is mijn startmeting voor "+st.traject+".","Naam: "+st.naam];
+  g.forEach(function(k){regels.push(NAAM[k]+": "+pct(k,sc[k])+" procent");});
+  st.Q.forEach(function(q){if(!q.schaal&&tekst(st.a[q.id]))regels.push(q.q+" "+tekst(st.a[q.id]));});
+  regels.push("Startcode: "+code);
+  app.innerHTML='<div class="kaart paars"><p class="klein">Jouw startmeting</p><h2>Hier begin je, '+h(st.naam)+'</h2><p>'+NAAM[laag]+' mag de komende weken de meeste aandacht krijgen. Daar houd ik rekening mee in je behandelingen. Jouw wens voor deze acht weken: '+h(String(st.a.wens).toLowerCase())+'.</p></div>'+
+  '<div class="kaart"><h3>Waar sta je nu?</h3>'+g.map(function(k){return balk(NAAM[k],k,sc[k]);}).join("")+'<p class="klein">Hoe langer de balk, hoe meer rust en ruimte je nu al ervaart.</p></div>'+
+  '<div class="kaart paars"><p class="klein">Jouw startcode</p><p class="code">'+code+'</p><p class="klein">Stuur je startmeting naar mij. Dan bewaar ik je code en je antwoorden, en kunnen we over acht weken samen zien wat er veranderd is.</p>'+
+  '<a class="knop goud" href="'+WA+encodeURIComponent(regels.join("\n"))+'">Stuur naar Celina via WhatsApp</a></div>'+
+  '<div class="kaart"><p>Over acht weken doe je deze check opnieuw. Tot die tijd hoef je niets, alleen maar te genieten. 💜</p><p class="teken">Celina</p></div>';
+  boven();
+}
+
+function uitslagEind(){
+  var nu=scores(),start=st.start.sc,g=gebieden(),gegroeid=[];
+  var totS=0,totN=0;g.forEach(function(k){totS+=pct(k,start[k]);totN+=pct(k,nu[k]);if(nu[k]>start[k])gegroeid.push(NAAM[k]);});
+  var kop=totN>totS?"Kijk eens wat er gegroeid is":totN===totS?"Je bent stabiel gebleven":"Je vraagt nu nog veel van jezelf";
+  var uitleg=totN>totS?"In acht weken is er meer rust en ruimte gekomen. Dat heb je zelf gedaan, door elke twee weken tijd voor jezelf te nemen.":totN===totS?"Soms is gelijk blijven in een drukke tijd al heel wat. We kijken samen wat jou nu verder helpt.":"Dat kan gebeuren, zeker in een drukke periode. Laten we samen kijken wat jij nu nodig hebt.";
+  var regels=["Hoi Celina, dit is mijn meting na 8 weken voor "+st.traject+".","Naam: "+st.naam];
+  g.forEach(function(k){regels.push(NAAM[k]+": van "+pct(k,start[k])+" naar "+pct(k,nu[k])+" procent");});
+  st.Q.forEach(function(q){if(!q.schaal&&tekst(st.a[q.id]))regels.push(q.q+" "+tekst(st.a[q.id]));});
+  var extra="";
+  if(st.start.doe&&st.start.doe.length)extra+='<div class="gebied"><b>Als je spanning voelt</b><span class="klein">Bij de start: '+h(tekst(st.start.doe))+'</span><span>Nu: '+h(tekst(st.a.doe))+'</span></div>';
+  if(st.start.tevr)extra+='<div class="gebied"><b>Je huidverzorging</b><span class="klein">Bij de start: '+h(st.start.tevr)+'</span><span>Nu: '+h(st.a.tevr)+'</span></div>';
+  app.innerHTML='<div class="kaart paars"><p class="klein">Na acht weken</p><h2>'+kop+'</h2><p>'+uitleg+'</p></div>'+
+  '<div class="kaart"><h3>Toen en nu</h3>'+g.map(function(k){
+    var zin=nu[k]>start[k]?"Hier is meer rust gekomen.":nu[k]<start[k]?"Dit vraagt nu meer aandacht.":"Dit is gelijk gebleven.";
+    return '<div class="gebied"><b>'+NAAM[k]+'</b>'+balk("Start",k,start[k],"start")+balk("Nu",k,nu[k])+'<span class="klein">'+zin+'</span></div>';
+  }).join("")+'<p class="klein">Hoe langer de balk, hoe meer rust en ruimte.</p></div>'+
+  (extra?'<div class="kaart"><h3>Wat je anders doet</h3>'+extra+'</div>':"")+
+  (gegroeid.length?'<div class="kaart zand"><h3>Hier ben je in gegroeid</h3><p>'+gegroeid.join(", ")+'</p></div>':"")+
+  '<div class="kaart paars"><h3>Hoe houd je dit vast?</h3><p>Rust werkt het best als het geen uitzondering is. Deel je uitkomst met mij, dan kijken we samen welk ritme bij jou past.</p>'+
+  '<a class="knop goud" href="'+WA+encodeURIComponent(regels.join("\n"))+'">Stuur naar Celina via WhatsApp</a></div>'+
+  '<div class="kaart"><p>Dankjewel dat ik deze acht weken voor je mocht zorgen. 💜</p><p class="teken">Celina</p><p class="klein">Deze check is bedoeld om even bij jezelf stil te staan, niet als medisch advies. Slaap je al lange tijd slecht of voel je je vaak somber, praat er dan ook over met je huisarts.</p></div>';
+  boven();
+}
+begin();
+})();
+</script>
+</body>
+</html>
